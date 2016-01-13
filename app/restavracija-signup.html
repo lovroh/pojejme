@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Reactor - Bootstrap Admin Template</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <!-- build:css({.tmp,app}) styles/app.min.css -->
+  <link rel="stylesheet" href="styles/webfont.css">
+  <link rel="stylesheet" href="styles/climacons-font.css">
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles/font-awesome.css">
+  <link rel="stylesheet" href="styles/card.css">
+  <link rel="stylesheet" href="styles/sli.css">
+  <link rel="stylesheet" href="styles/animate.css">
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="stylesheet" href="styles/app.skins.css">
+  <!-- endbuild -->
+</head>
+
+<body class="page-loading">
+  <!-- page loading spinner -->
+  <div class="pageload">
+    <div class="pageload-inner">
+      <div class="sk-rotating-plane"></div>
+    </div>
+  </div>
+  <!-- /page loading spinner -->
+  <div class="app signup usersession">
+    <div class="session-wrapper">
+      <div class="page-height-o row-equal align-middle">
+        <div class="column">
+          <div class="card bg-white no-border">
+            <div class="card-block">
+              <form role="form" class="form-layout" action="registracija.php" method="POST">
+                <div class="text-center m-b">
+                  <h4 class="text-uppercase">Registrirajte se</h4>
+                </div>
+                <div class="form-inputs">
+                  <label class="text-uppercase">Ime restavracije</label>
+                  <input type="text" class="form-control input-lg" placeholder="Ime" name="ime" required>
+                  <label class="text-uppercase">Kraj</label>
+                  <input type="text" class="form-control input-lg" placeholder="Kraj" name="kraj" required>
+                  <label class="text-uppercase">Naslov</label>
+                  <input type="text" class="form-control input-lg" placeholder="Naslov" name="naslov" required>
+                  <label class="text-uppercase">Opis</label>
+                  <input type="text" class="form-control input-lg" placeholder="Opis" name="opis" required>
+                  <label class="text-uppercase">Poštna številka</label>
+                  <input type="text" class="form-control input-lg" placeholder="Poštna številka" name="postna_st" required>
+                  <label class="text-uppercase">Telefon</label>
+                  <input type="tel" class="form-control input-lg" placeholder="Telefon" name="telefon" required>
+                  <label class="text-uppercase">Vrsta restavracije</label>
+                  <input type="text" class="form-control input-lg" placeholder="Vrsta restavracije" name="vrsta" required>
+                  <!--
+                  <label class="text-uppercase">E-mail naslov</label>
+                  <input type="email" class="form-control input-lg" placeholder="Email" name="email" >
+                  <label class="text-uppercase">Ustvari geslo</label>
+                  <input type="password" class="form-control input-lg" placeholder="Password" >
+                  <label class="text-uppercase">Potrdi geslo</label>
+                  <input type="password" class="form-control input-lg" placeholder="Confirm password" >
+                  -->
+                </div>
+                <button type="submit" class="btn btn-primary btn-block btn-lg m-b">Registracija</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bottom footer -->
+    <footer class="session-footer">
+      <nav class="footer-right">
+        <ul class="nav">
+          <li>
+            <a href="javascript:;">Feedback</a>
+          </li>
+          <li>
+            <a href="javascript:;" class="scroll-up">
+              <i class="fa fa-angle-up"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="footer-left hidden-xs">
+        <ul class="nav">
+          <li>
+            <a href="javascript:;"><span>About</span> Reactor</a>
+          </li>
+          <li>
+            <a href="javascript:;">Privacy</a>
+          </li>
+          <li>
+            <a href="javascript:;">Terms</a>
+          </li>
+          <li>
+            <a href="javascript:;">Help</a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <!-- /bottom footer -->
+  </div>
+  <!-- build:js({.tmp,app}) scripts/app.min.js -->
+  <script src="scripts/helpers/modernizr.js"></script>
+  <script src="vendor/jquery/dist/jquery.js"></script>
+  <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="vendor/fastclick/lib/fastclick.js"></script>
+  <script src="vendor/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
+  <script src="scripts/helpers/smartresize.js"></script>
+  <script src="scripts/constants.js"></script>
+  <script src="scripts/main.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
