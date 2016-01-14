@@ -3731,7 +3731,7 @@ button.list-group-item-danger {
       border: 0; }
   .box-tab .tab-content {
     padding: 0.9375rem;
-    background-color: #F0F0F0; }
+    background-color: #fff; }
   .box-tab.justified .nav-tabs li {
     display: table-cell;
     float: none;
@@ -6131,7 +6131,8 @@ a.text-bluegrey:focus {
 .product-tile .product-image {
   border-radius: 0;
   background: white;
-  padding: 1.50em; }
+  padding: 3em;
+  box-shadow: 0 0.125rem 0.25rem rgba(50, 70, 75, 0.2); }
 
 .product-tile .product-meta {
   position: relative;
@@ -6159,10 +6160,11 @@ a.text-bluegrey:focus {
   padding-bottom: 0.75rem; }
 
 .product-actions {
+  padding: 0.75rem;
   text-align: right; }
   .product-actions .cart-button {
     position: absolute;
-    bottom: 5.00rem;
+    bottom: 6.25rem;
     right: 0.75rem;
     -webkit-transition: opacity 0.3s, transform 0.3s;
     transition: opacity 0.3s, transform 0.3s;
