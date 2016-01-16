@@ -1,9 +1,9 @@
 <?php
-	include 'includes/connection.php';
-	
-	$query = "SELECT * FROM meni";
-	
-	$result = mysql_query($query);
+include 'includes/connection.php';
+
+$query = "SELECT * FROM meni";
+
+$result = mysql_query($query);
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -396,144 +396,56 @@
 											</div>
 										</div>
 										<div class="tab-pane active in" id="vrsta1">
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+											<?php
+											while ($meni = mysql_fetch_array($result)) {
+												echo "<div class='tile-container'>
+<div class='col-md-6'>
+<div class='tile product-tile'>
+<div class='card bg-white no-border'>
+<div class='col-md-6'>
+<div class='product-image'>" . "<img class='card-img-top img-responsive center-block' alt='' src='http://lorempixel.com/600/500?1'>" . "</div>
+</div>
+<div class='row'>
+<div class='col-md-6'>
+<div class='card-block'>
+<div class='product-meta'>
+<h5 class='product-title text-capitalize'>" . $meni['jed'] . "</h5>
+<span class='product-price'>" . $meni['cena'] . " €</span>
+<span>
+<div class='rating'>
+<i class='icon-star text-primary'></i>
+<i class='icon-star text-primary'></i>
+<i class='icon-star text-primary'></i>
+<i class='icon-star text-primary'></i>
+</div> </span>
+<span>" . $meni['sestavine'] . "</span> </br>
+<span>" . $meni['info'] . "</span> </br>
+<span>Študentski boni: " . $meni['boni'] . "</span>
+</div>
+</br></br>
+<div class='row'>
+<div class='pull-right' >
+<button type='button' class='btn btn-danger'>
+Odstrani
+</button>
+</div>
+<div class='pull-left'>
+<div class='tool-button'>
+<button class='btn btn-primary btn-block' data-toggle='modal' data-target='.bs-modal-sm-3'>
+Spremeni
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>";
+											}
+											?>
 										</div>
 										<div class="tab-pane" id="vrsta2">
 											<div class="tile-container">
@@ -826,65 +738,66 @@
 							<p>
 								Pritegnite pozornost uporabnikov
 							</p>
-								<div class="row">
-									<label class="col-sm-2 control-label">Jed</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" name="jed">
-									</div>
+							<div class="row">
+								<label class="col-sm-2 control-label">Jed</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="jed">
 								</div>
-								</br>
-								<div class="row">
-									<label class="col-sm-2 control-label">Vrsta</label>
-									<div class="col-sm-10">
-										<select data-placeholder="Izberite ..." multiple class="chosen" style="width: 100%;" name="vrsta">
-											<option>Pica</option>
-											<option>Špageti</option>
-											<option>Zrezek</option>
-											<option>Juha</option>
-											<option>Pijača</option>
-											<option>Riba</option>
-											<option>Žar</option>
-										</select>
-									</div>
-								</div>
-								</br>
-								<div class="row">
-									<label class="col-sm-2 control-label">Cena</label>
-									<div class="col-sm-10">
-										<input type="number" class="form-control" name="cena">
-									</div>
-								</div>
-								</br>
-								<div class="row">
-									<label class="col-sm-2 control-label">Sestavine</label>
-									<div class="col-sm-10">
-										<input type="text" class="form-control" name="sestavine">
-									</div>
-								</div>
-								</br>
-								<div class="row">
-									<label class="col-sm-3 control-label">Študentski boni</label>
-									<div class="col-sm-8">
-										<select class="form-control" id="boni" name="boni">
-											<option value="Ne">Ne</option>
-											<option value="Da">Da</option>
-										</select>
-									</div>
-								</div>
+							</div>
 							</br>
-								<div class="row">
-									<label class="col-sm-2 control-label">Dodatne informacije</label>
-									<div class="col-sm-10">
-										<textarea class="form-control" name="info" rows="3"></textarea>
-									</div>
+							<div class="row">
+								<label class="col-sm-2 control-label">Vrsta</label>
+								<div class="col-sm-10">
+									<select data-placeholder="Izberite ..." multiple class="chosen" style="width: 100%;" name="vrsta">
+										<option>Pica</option>
+										<option>Špageti</option>
+										<option>Zrezek</option>
+										<option>Juha</option>
+										<option>Pijača</option>
+										<option>Riba</option>
+										<option>Žar</option>
+									</select>
 								</div>
-							
+							</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Cena</label>
+								<div class="col-sm-10">
+									<input type="number" class="form-control" name="cena">
+								</div>
+							</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Sestavine</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="sestavine">
+								</div>
+							</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-3 control-label">Študentski boni</label>
+								<div class="col-sm-8">
+									<select class="form-control" id="boni" name="boni">
+										<option value="Ne">Ne</option>
+										<option value="Da">Da</option>
+									</select>
+								</div>
+							</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Dodatne informacije</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" name="info" rows="3"></textarea>
+								</div>
+							</div>
+
 						</div>
 						<div class="modal-footer no-border">
 							<button type="button" class="btn btn-default" data-dismiss="modal">
 								Zapri
 							</button>
-							<input type="submit" name="submit" button type="button" class="btn btn-primary" value="Dodaj"></center>
+							<input type="submit" name="submit" button type="button" class="btn btn-primary" value="Dodaj">
+							</center>
 						</div>
 					</form>
 				</div>
