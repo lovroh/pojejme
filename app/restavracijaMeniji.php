@@ -397,41 +397,42 @@ $result = mysql_query($query);
 										</div>
 										<div class="tab-pane active in" id="vrsta1">
 											<?php
-											while ($meni = mysql_fetch_array($result)) {
-												echo "<div class='tile-container'>
-<div class='col-md-6'>
-<div class='tile product-tile'>
-<div class='card bg-white no-border'>
-<div class='col-md-6'>
-<div class='product-image'>" . "<img class='card-img-top img-responsive center-block' alt='' src='http://lorempixel.com/600/500?1'>" . "</div>
+while ($meni = mysql_fetch_array($result)) {
+echo '<div class="tile-container">
+<div class="col-md-6">
+<div class="tile product-tile">
+<div class="card bg-white no-border">
+<div class="col-md-6">
+<div class="product-image"><img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1"></div>
 </div>
-<div class='row'>
-<div class='col-md-6'>
-<div class='card-block'>
-<div class='product-meta'>
-<h5 class='product-title text-capitalize'>" . $meni['jed'] . "</h5>
-<span class='product-price'>" . $meni['cena'] . " €</span>
+<div class="row">
+<div class="col-md-6">
+<div class="card-block">
+<div class="product-meta">
+<h5 class="product-title text-capitalize">' . $meni['jed'] . '</h5>
+<span class="product-price">' . $meni['cena'] . ' €</span>
 <span>
-<div class='rating'>
-<i class='icon-star text-primary'></i>
-<i class='icon-star text-primary'></i>
-<i class='icon-star text-primary'></i>
-<i class='icon-star text-primary'></i>
+<div class="rating">
+<i class="icon-star text-primary"></i>
+<i class="icon-star text-primary"></i>
+<i class="icon-star text-primary"></i>
+<i class="icon-star text-primary"></i>
 </div> </span>
-<span>" . $meni['sestavine'] . "</span> </br>
-<span>" . $meni['info'] . "</span> </br>
-<span>Študentski boni: " . $meni['boni'] . "</span>
+<span>' . $meni['sestavine'] . '</span> </br>
+<span>' . $meni['info'] . '</span> </br>
+<span>Študentski boni: ' . $meni['boni'] . '</span>
 </div>
 </br></br>
-<div class='row'>
-<div class='pull-right' >
-<button type='button' class='btn btn-danger'>
-Odstrani
-</button>
+<div class="row">
+<div class="pull-right">
+<form action="spremeni_brisiMeni.php" method="post">
+<input type="hidden" value="'.$meni['id_meni'].'" name="id_meni">
+<input type="submit" button type="button" class="btn btn-danger" name="delete" value="Odstrani">
+</form>
 </div>
-<div class='pull-left'>
-<div class='tool-button'>
-<button class='btn btn-primary btn-block' data-toggle='modal' data-target='.bs-modal-sm-3'>
+<div class="pull-left"">
+<div class="tool-button">
+<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
 Spremeni
 </button>
 </div>
@@ -443,8 +444,8 @@ Spremeni
 </div>
 </div>
 </div>
-</div>";
-											}
+</div>';
+}
 											?>
 										</div>
 										<div class="tab-pane" id="vrsta2">
@@ -763,7 +764,7 @@ Spremeni
 							<div class="row">
 								<label class="col-sm-2 control-label">Cena</label>
 								<div class="col-sm-10">
-									<input type="number" class="form-control" name="cena">
+									<input type="number" step="0.1" class="form-control" name="cena">
 								</div>
 							</div>
 							</br>
@@ -812,74 +813,75 @@ Spremeni
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
 							×
 						</button>
-						<h4 class="modal-title">Spremeni</h4>
+						<h4 class="modal-title">Dodajanje hrane</h4>
 					</div>
-					<div class="modal-body">
-						<p>
-							Pritegnite pozornost uporabnikov
-						</p>
-						<form class="form-horizontal" role="form">
-							<div class="form-group">
-								<label class="col-sm-2 control-label">Obdobje</label>
-								<div class="input-prepend input-group m-b col-sm-10">
-									<span class="add-on input-group-addon"><i class="icon-calendar"></i></span>
-									<input type="text" name="reservation" class="form-control drp" placeholder="Obdobje veljavnosti" />
-								</div>
-							</div>
-							<div class="form-group">
+					<form action="spremeni_brisiMeni.php" method="post">
+						<div class="modal-body">
+							<p>
+								Pritegnite pozornost uporabnikov
+							</p>
+							<div class="row">
 								<label class="col-sm-2 control-label">Jed</label>
 								<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="Jed">
+									<input type="text" class="form-control" name="jed">
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">Cena</label>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Vrsta</label>
 								<div class="col-sm-10">
-									<input type="email" class="form-control" placeholder="Cena">
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">Sestavine</label>
-								<div class="col-sm-10">
-									<select data-placeholder="Glavne sestavine" multiple class="chosen" style="width: 100%;">
-										<option>Paradižnik</option>
-										<option>Sir</option>
+									<select data-placeholder="Izberite ..." multiple class="chosen" style="width: 100%;" name="vrsta">
+										<option>Pica</option>
 										<option>Špageti</option>
-										<option>Piščanec</option>
-										<option>Govedina</option>
-										<option>Krompir</option>
-										<option>Tuna</option>
-										<option>Paprika</option>
+										<option>Zrezek</option>
+										<option>Juha</option>
+										<option>Pijača</option>
+										<option>Riba</option>
+										<option>Žar</option>
 									</select>
 								</div>
 							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label"></label>
-								<div class="btn-group col-sm-10" data-toggle="buttons">
-									<label class="btn btn-default">
-										<input type="radio" id="q156" name="quality[25]" value="1" />
-										Študentski bon </label>
-									<label class="btn btn-default active">
-										<input type="radio" id="q157" name="quality[25]" value="2" />
-										Brez </label>
-								</div>
-							</div>
-							<div class="form-group">
-								<label class="col-sm-2 control-label">Opis</label>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Cena</label>
 								<div class="col-sm-10">
-									<textarea class="form-control" rows="3"></textarea>
+									<input type="number" step="0.1" class="form-control" name="cena">
 								</div>
 							</div>
-						</form>
-					</div>
-					<div class="modal-footer no-border">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							Zapri
-						</button>
-						<button type="button" class="btn btn-primary">
-							Spremeni
-						</button>
-					</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Sestavine</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" name="sestavine">
+								</div>
+							</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-3 control-label">Študentski boni</label>
+								<div class="col-sm-8">
+									<select class="form-control" id="boni" name="boni">
+										<option value="Ne">Ne</option>
+										<option value="Da">Da</option>
+									</select>
+								</div>
+							</div>
+							</br>
+							<div class="row">
+								<label class="col-sm-2 control-label">Dodatne informacije</label>
+								<div class="col-sm-10">
+									<textarea class="form-control" name="info" rows="3"></textarea>
+								</div>
+							</div>
+
+						</div>
+						<div class="modal-footer no-border">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Zapri
+							</button>
+							<input type="submit" name="spremeni" button type="button" class="btn btn-primary" value="Spremeni">
+							</center>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
