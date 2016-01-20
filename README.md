@@ -1,2 +1,0 @@
-# pojejme
-RIS Projekt
