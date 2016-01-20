@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -26,7 +25,7 @@
 		<!-- endbuild -->
 	</head>
 
-		<body class="page-loading">
+	<body class="page-loading">
 		<!-- page loading spinner -->
 		<div class="pageload">
 			<div class="pageload-inner">
@@ -185,108 +184,128 @@
 					</div>
 					<ul class="nav navbar-nav hidden-xs">
 
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i
+						<li class="searchbox">
+							<a href="javascript:;"
+							data-toggle="search"> <i
 							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-pointer"></i>
-					</a></li>
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i class="search-close-icon  hide"></i>
-							<i class="search-open-icon "><p>naslov, mesto..</p></i>
-					</a></li>
-					<li class="navbar-form search-form hide"><input type="search"
-						class="form-control search-input" placeholder="naslov, mesto..">
-						<div class="search-predict hide">
-							<a href="#">Searching for 'purple rain'</a>
-							<div class="heading">
-								<span class="title">People</span>
-							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
+							class="search-open-icon icon-pointer"></i> </a>
+						</li>
+						<li class="searchbox">
+							<a href="javascript:;"
+							data-toggle="search"> <i class="search-close-icon  hide"></i> <i class="search-open-icon ">
+							<p>
+								naslov, mesto..
+							</p></i> </a>
+						</li>
+						<li class="navbar-form search-form hide">
+							<input type="search"
+							class="form-control search-input" placeholder="naslov, mesto..">
+							<div class="search-predict hide">
+								<a href="#">Searching for 'purple rain'</a>
+								<div class="heading">
+									<span class="title">People</span>
+								</div>
+								<ul class="predictive-list">
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
+											Carpenter</span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
+											Moreno</span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
+											Robertson</span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span>
-								</a></li>
-							</ul>
-							<div class="heading">
-								<span class="title">Page posts</span>
+											Sullivan</span> </a>
+									</li>
+								</ul>
+								<div class="heading">
+									<span class="title">Page posts</span>
+								</div>
+								<ul class="predictive-list">
+									<li>
+										<a class="avatar" href="#"> <img
+										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>The latest news for cloud-based developers </span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
+										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>Trending Goods of the Week</span> </a>
+									</li>
+								</ul>
 							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>The latest news for cloud-based developers </span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>Trending Goods of the Week</span>
-								</a></li>
-							</ul>
-						</div></li>
-				</ul>
+						</li>
+					</ul>
 
-				<ul class="nav navbar-nav hidden-xs">
+					<ul class="nav navbar-nav hidden-xs">
 
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i
+						<li class="searchbox">
+							<a href="javascript:;"
+							data-toggle="search"> <i
 							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-magnifier"></i>
-					</a></li>
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i class="search-close-icon  hide"></i>
-							<i class="search-open-icon "><p>npr. sushi, Mehiška,
-									ribe..</p></i>
-					</a></li>
-					<li class="navbar-form search-form hide"><input type="search"
-						class="form-control search-input" placeholder="npr. sushi, Mehiška, ribe..">
-						<div class="search-predict hide">
-							<a href="#">Searching for 'purple rain'</a>
-							<div class="heading">
-								<span class="title">People</span>
-							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
+							class="search-open-icon icon-magnifier"></i> </a>
+						</li>
+						<li class="searchbox">
+							<a href="javascript:;"
+							data-toggle="search"> <i class="search-close-icon  hide"></i> <i class="search-open-icon ">
+							<p>
+								npr. sushi, Mehiška,
+								ribe..
+							</p></i> </a>
+						</li>
+						<li class="navbar-form search-form hide">
+							<input type="search"
+							class="form-control search-input" placeholder="npr. sushi, Mehiška, ribe..">
+							<div class="search-predict hide">
+								<a href="#">Searching for 'purple rain'</a>
+								<div class="heading">
+									<span class="title">People</span>
+								</div>
+								<ul class="predictive-list">
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
+											Carpenter</span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
+											Moreno</span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
+											Robertson</span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
 										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span>
-								</a></li>
-							</ul>
-							<div class="heading">
-								<span class="title">Page posts</span>
+											Sullivan</span> </a>
+									</li>
+								</ul>
+								<div class="heading">
+									<span class="title">Page posts</span>
+								</div>
+								<ul class="predictive-list">
+									<li>
+										<a class="avatar" href="#"> <img
+										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>The latest news for cloud-based developers </span> </a>
+									</li>
+									<li>
+										<a class="avatar" href="#"> <img
+										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>Trending Goods of the Week</span> </a>
+									</li>
+								</ul>
 							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>The latest news for cloud-based developers </span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>Trending Goods of the Week</span>
-								</a></li>
-							</ul>
-						</div></li>
-				</ul>
+						</li>
+					</ul>
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- kosarica -->
 						<li>
@@ -378,7 +397,7 @@
 							Dodaj svojo restavracijo in začni prejemati naročila preko spleta
 						</div>
 					</div>
-					<form id="wizardForm" class="form-horizontal" role="form" action="dodajRestavracijo.php" method="post">
+					<form id="wizardForm" class="form-horizontal" role="form" action="dodajRestavracijo.php" method="post" enctype="multipart/form-data">
 						<div class="card">
 							<div class="card-block p-a-0">
 								<div class="box-tab m-b-0" id="rootwizard">
@@ -397,91 +416,68 @@
 										</li>
 									</ul>
 									<div class="tab-content">
-										
 										<div class="tab-pane p-x-lg" id="tab1">
 											<div class="row">
 												<div class="col-sm-6">
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Ime restavracije</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="ime" name="ime">
-														</div>
+													<label class="col-sm-3 control-label">Ime restavracije</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="ime" name="ime">
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Vrsta</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="vrsta" name="vrsta">
-														</div>
+													</br></br>
+													<label class="col-sm-3 control-label">Vrsta</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="vrsta" name="vrsta">
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Email</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="emailfield" name="emailfield">
-														</div>
+													</br></br>
+													<label class="col-sm-3 control-label">Email</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="emailfield" name="emailfield">
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Telefon</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="number" name="number">
-														</div>
+													</br></br>
+													<label class="col-sm-3 control-label">Telefon</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="number" name="number">
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Geslo</label>
-														<div class="col-sm-8">
-															<input type="password" class="form-control" id="passwordfield" name="passwordfield">
-														</div>
+													</br></br>
+													<label class="col-sm-3 control-label">Geslo</label>
+													<div class="col-sm-8">
+														<input type="password" class="form-control" id="passwordfield" name="passwordfield">
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Potrdi geslo</label>
-														<div class="col-sm-8">
-															<input type="password" class="form-control" id="cpasswordfield" name="cpasswordfield">
-														</div>
+													</br></br>
+													<label class="col-sm-3 control-label">Potrdi geslo</label>
+													<div class="col-sm-8">
+														<input type="password" class="form-control" id="cpasswordfield" name="cpasswordfield">
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Študentski boni</label>
-														<div class="col-sm-8">
-															<select class="form-control" id="boni" name="boni">
-																<option value="Ne">Ne</option>
-																<option value="Da">Da</option>
-															</select>
-														</div>
+													</br></br>
+													<label class="col-sm-3 control-label">Študentski boni</label>
+													<div class="col-sm-8">
+														<select class="form-control" id="boni" name="boni">
+															<option value="Ne">Ne</option>
+															<option value="Da">Da</option>
+														</select>
 													</div>
 												</div>
 												<div class="col-sm-6">
-													<div class="form-group">
-														<img class="col-sm-4 col-sm-offset-4" alt="" src="http://lorempixel.com/600/500?1" width="150" height="150">
-														<div class="col-sm-8 col-sm-offset-3">
-															<input type="file">
-															<p class="help-block">
-																Dodajte logo ali sliko restavracije
-															</p>
-														</div>
-													</div>
+													<input type="file" name="slika">
+													<p class="help-block">
+														Dodajte logo ali sliko restavracije
+													</p>
 												</div>
 											</div>
 										</div>
 										<div class="tab-pane p-x-lg" id="tab2">
 											<div class="row">
 												<div class="col-sm-6">
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Kraj</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="kraj" name="kraj">
-														</div>
+													<label class="col-sm-3 control-label">Kraj</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="kraj" name="kraj">
 													</div>
 												</div>
 												<div class="col-sm-6">
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Naslov</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="naslov" name="naslov">
-														</div>
+													<label class="col-sm-3 control-label">Naslov</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" id="naslov" name="naslov">
 													</div>
-												</div>
-											</div>
-											<div class="container col-sm-12">
-												<div class="world-map page-height-xs">
-													<div id="google-container"></div>
 												</div>
 											</div>
 										</div>
@@ -489,62 +485,56 @@
 											<div class="row">
 												<div class="col-sm-6">
 													<h5>Med tednom</h5>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Začetek</label>
-														<div class="input-group col-sm-8">
-															<input type="text" class="form-control time-picker" id="teden1" name="teden1"/>
-															<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-														</div>
+													<label class="col-sm-3 control-label">Začetek</label>
+													<div class="input-group col-sm-8">
+														<input type="text" class="form-control time-picker" id="teden1" name="teden1"/>
+														<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Konec</label>
-														<div class="input-group col-sm-8">
-															<input type="text" class="form-control time-picker" id="teden2" name="teden2"/>
-															<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-														</div>
+													</br>
+													<label class="col-sm-3 control-label">Konec</label>
+													<div class="input-group col-sm-8">
+														<input type="text" class="form-control time-picker" id="teden2" name="teden2"/>
+														<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 													</div>
 												</div>
 												<div class="col-sm-6">
 													<div class="credit-card hide"></div>
 													<h5>Sobota</h5>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Začetek</label>
-														<div class="input-group col-sm-8">
-															<input type="text" class="form-control time-picker" id="sobota1" name="sobota1"/>
-															<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-														</div>
+													<label class="col-sm-3 control-label">Začetek</label>
+													<div class="input-group col-sm-8">
+														<input type="text" class="form-control time-picker" id="sobota1" name="sobota1"/>
+														<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Konec</label>
-														<div class="input-group col-sm-8">
-															<input type="text" class="form-control time-picker" id="sobota2" name="sobota2"/>
-															<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-														</div>
+													</br>
+													<label class="col-sm-3 control-label">Konec</label>
+													<div class="input-group col-sm-8">
+														<input type="text" class="form-control time-picker" id="sobota2" name="sobota2"/>
+														<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 													</div>
 													<h5>Nedelja</h5>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Začetek</label>
-														<div class="input-group col-sm-8">
-															<input type="text" class="form-control time-picker" id="nedelja1" name="nedelja1"/>
-															<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-														</div>
+													<label class="col-sm-3 control-label">Začetek</label>
+													<div class="input-group col-sm-8">
+														<input type="text" class="form-control time-picker" id="nedelja1" name="nedelja1"/>
+														<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 													</div>
-													<div class="form-group">
-														<label class="col-sm-3 control-label">Konec</label>
-														<div class="input-group col-sm-8">
-															<input type="text" class="form-control time-picker" id="nedelja2" name="nedelja2"/>
-															<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-														</div>
+													</br>
+													<label class="col-sm-3 control-label">Konec</label>
+													<div class="input-group col-sm-8">
+														<input type="text" class="form-control time-picker" id="nedelja2" name="nedelja2"/>
+														<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 													</div>
+													</br>
 													<h4>Delovni čas je možno spreminjati tudi kasneje</h4>
 												</div>
 											</div>
 										</div>
 										<div class="tab-pane p-x-lg" id="tab5">
-											<center><h4>Podatke je možno spreminjati, zato brez skrbi.</br> V primeru vprašanj nam pišite na naš elektronski naslov. </h4></br> </br>
-											<input type="submit" name="submit" button type="button" class="btn btn-success btn-lg" value="Dokončaj registracijo"></center>
+											<center>
+												<h4>Podatke je možno spreminjati, zato brez skrbi.</br> V primeru vprašanj nam pišite na naš elektronski naslov. </h4></br> </br>
+												<input type="submit" name="submit" button type="button" class="btn btn-success btn-lg" value="Dokončaj registracijo">
+											</center>
 										</div>
-										
+
 										<div class="wizard-pager">
 											<div class="pull-right">
 												<button type="button" class="btn btn-primary button-next">
@@ -596,111 +586,111 @@
 				</nav>
 			</footer>
 			<!-- /bottom footer -->
-<!-- iskanje modal mobile -->
-		<div class="modal bs-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							×
-						</button>
-						<h4 class="modal-title">Iskanje</h4>
-					</div>
-					<div class="modal-body">
-						<div class="form-group">
-							<span class="input m-b-md">
-								<input class="input__field" type="text" id="input-1">
-								<label class="input__label" for="input-1"> <span class="input__label-content">Lokacija</span> </label> </span>
-							<span class="input m-b-md">
-								<input class="input__field" type="text" id="input-2">
-								<label class="input__label" for="input-2"> <span class="input__label-content">Restavracija</span> </label> </span>
+			<!-- iskanje modal mobile -->
+			<div class="modal bs-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title">Iskanje</h4>
 						</div>
-					</div>
-					<div class="modal-footer no-border">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							Zapri
-						</button>
-						<button type="button" class="btn btn-primary">
-							Išči
-						</button>
+						<div class="modal-body">
+							<div class="form-group">
+								<span class="input m-b-md">
+									<input class="input__field" type="text" id="input-1">
+									<label class="input__label" for="input-1"> <span class="input__label-content">Lokacija</span> </label> </span>
+								<span class="input m-b-md">
+									<input class="input__field" type="text" id="input-2">
+									<label class="input__label" for="input-2"> <span class="input__label-content">Restavracija</span> </label> </span>
+							</div>
+						</div>
+						<div class="modal-footer no-border">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Zapri
+							</button>
+							<button type="button" class="btn btn-primary">
+								Išči
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- /iskanje modal mobile-->
-		<!-- filter modal mobile -->
-		<div class="modal bs-modal-sm2" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							×
-						</button>
-						<h4 class="modal-title">Filter</h4>
-					</div>
-					<div class="modal-body">
-						<div class="form-group">
-							<!-- studentski boni da ali ne -->
-							<input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
-							<br />
-							<!-- /studentski boni da ali ne -->
-							<!-- hrana -->
-							<h4>Vrsta kuhinje</h4>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r11">
-								<label for="r11">Picerija</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r12">
-								<label for="r12">Špagetarija</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r13">
-								<label for="r13">Fast food</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r14">
-								<label for="r14">Mehiška</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r15">
-								<label for="r15">Jedi na žlico</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r16">
-								<label for="r16">Pijača</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r17">
-								<label for="r17">Morske jedi</label>
-							</div>
-							<!-- /hrana -->
-							<!-- cena -->
-							<h4>Cena</h4>
-							<br />
-							<div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-							<!-- /cena -->
-							<!-- ocena -->
-							<h4>Ocena</h4>
-							<font size="5">
-								<center>
-									<input type="number" name="your_awesome_parameter" id="some_id" class="rating" data-max="5" data-min="1" data-icon-lib="fa mr5" data-active-icon="fa-star text-warning" data-inactive-icon="fa-star-o" data-clearable-icon="fa-trash-o" data-clearable=" " />
-								</center> </font>
-							<!-- /ocena -->
+			<!-- /iskanje modal mobile-->
+			<!-- filter modal mobile -->
+			<div class="modal bs-modal-sm2" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title">Filter</h4>
 						</div>
-					</div>
-					<div class="modal-footer no-border">
-						<button type="button" class="btn btn-default" data-dismiss="modal">
-							Zapri
-						</button>
-						<button type="button" class="btn btn-primary">
-							Išči
-						</button>
-					</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<!-- studentski boni da ali ne -->
+								<input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
+								<br />
+								<!-- /studentski boni da ali ne -->
+								<!-- hrana -->
+								<h4>Vrsta kuhinje</h4>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r11">
+									<label for="r11">Picerija</label>
+								</div>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r12">
+									<label for="r12">Špagetarija</label>
+								</div>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r13">
+									<label for="r13">Fast food</label>
+								</div>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r14">
+									<label for="r14">Mehiška</label>
+								</div>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r15">
+									<label for="r15">Jedi na žlico</label>
+								</div>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r16">
+									<label for="r16">Pijača</label>
+								</div>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r17">
+									<label for="r17">Morske jedi</label>
+								</div>
+								<!-- /hrana -->
+								<!-- cena -->
+								<h4>Cena</h4>
+								<br />
+								<div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
+								<!-- /cena -->
+								<!-- ocena -->
+								<h4>Ocena</h4>
+								<font size="5">
+									<center>
+										<input type="number" name="your_awesome_parameter" id="some_id" class="rating" data-max="5" data-min="1" data-icon-lib="fa mr5" data-active-icon="fa-star text-warning" data-inactive-icon="fa-star-o" data-clearable-icon="fa-trash-o" data-clearable=" " />
+									</center> </font>
+								<!-- /ocena -->
+							</div>
+						</div>
+						<div class="modal-footer no-border">
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Zapri
+							</button>
+							<button type="button" class="btn btn-primary">
+								Išči
+							</button>
+						</div>
 
+					</div>
 				</div>
 			</div>
-		</div>
 		</div>
 		<!-- build:js({.tmp,app}) scripts/app.min.js -->
 		<script src="scripts/helpers/modernizr.js"></script>
@@ -747,12 +737,12 @@
 		<script src="scripts/forms/wizard.js"></script>
 		<script src="scripts/forms/plugins.js"></script>
 		<script src="scripts/maps/gmaps.js"></script>
-		  <script type="text/javascript">
-    $('.slider').each(function () {
-      var data = $(this).data();
-      $(this).slider(data);
-    });
-  </script>
+		<script type="text/javascript">
+			$('.slider').each(function() {
+				var data = $(this).data();
+				$(this).slider(data);
+			});
+		</script>
 		<!-- end initialize page scripts -->
 	</body>
 
