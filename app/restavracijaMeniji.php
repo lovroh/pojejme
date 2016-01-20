@@ -54,51 +54,46 @@ $result = mysql_query($query);
 		<!-- /page loading spinner -->
 		<div class="app layout-fixed-header">
 			<!-- sidebar panel -->
-			<div class="sidebar-panel offscreen-left">
-				<div class="brand">
-					<!-- toggle offscreen menu -->
-					<div class="toggle-offscreen">
-						<a href="javascript:;" class="visible-xs hamburger-icon" data-toggle="offscreen" data-move="ltr"> <span></span> <span></span> <span></span> </a>
-					</div>
-					<!-- /toggle offscreen menu -->
-					<!-- logo -->
-					<a class="brand-logo"> <span>POJEJ.ME</span> </a>
-					<!-- /logo -->
-				</div>
-				<!-- main navigation -->
-				<nav role="navigation">
-					<!-- za vse zaslone -->
-					<ul class="nav">
-						<!-- domov -->
-						<li>
-							<a href="restavracijaDomov.html"> <i class="icon-home"></i><span>Domov</span></a>
-						</li>
-						<!-- /domov -->
-						<!-- narocila -->
-						<li>
-							<a href="restavracijaNarocila.html"> <i class="icon-list"></i><span>Naročila</span></a>
-						</li>
-						<!-- /narocila -->
-						<!-- meniji -->
-						<li>
-							<a href="restavracijaMeniji.html"> <i class="icon-book-open"></i><span>Meniji</span></a>
-						</li>
-						<!-- /meniji -->
-						<!-- komentarji -->
-						<li>
-							<a href="restavracijaKomentarji.html"> <i class="icon-users"></i><span>Komentarji</span></a>
-						</li>
-						<!-- /komentarji -->
-						<!-- urejanje -->
-						<li>
-							<a href="restavracijaUrejanje.html"> <i class="icon-wrench"></i><span>Urejanje</span></a>
-						</li>
-						<!-- /urejanje -->
-					</ul>
-					<!-- za vse zaslone -->
-				</nav>
-				<!-- /main navigation -->
-			</div>
+				<div class="sidebar-panel offscreen-left">
+	<div class="brand">
+		<!-- toggle offscreen menu -->
+		<div class="toggle-offscreen">
+			<a href="javascript:;" class="visible-xs hamburger-icon" data-toggle="offscreen" data-move="ltr"> <span></span> <span></span> <span></span> </a>
+		</div>
+		<!-- /toggle offscreen menu -->
+		<!-- logo -->
+		<a class="brand-logo"> <span>POJEJ.ME</span> </a>
+		<!-- /logo -->
+	</div>
+	<!-- main navigation -->
+	<nav role="navigation">
+		<!-- za vse zaslone -->
+		<ul class="nav">
+			<!-- domov -->
+			<li>
+				<a href="restavracijaDomov.php"> <i class="icon-home"></i><span>Domov</span></a>
+			</li>
+			<!-- /domov -->
+			<!-- narocila -->
+			<li>
+				<a href="restavracijaNarocila.php"> <i class="icon-list"></i><span>Naročila</span></a>
+			</li>
+			<!-- /narocila -->
+			<!-- meniji -->
+			<li>
+				<a href="restavracijaMeniji.php"> <i class="icon-book-open"></i><span>Meniji</span></a>
+			</li>
+			<!-- /meniji -->
+			<!-- urejanje -->
+			<li>
+				<a href="restavracijaUrejanje.php"> <i class="icon-wrench"></i><span>Urejanje</span></a>
+			</li>
+			<!-- /urejanje -->
+		</ul>
+		<!-- za vse zaslone -->
+	</nav>
+	<!-- /main navigation -->
+</div>
 			<!-- /sidebar panel -->
 			<!-- content panel -->
 			<div class="main-panel">
@@ -114,130 +109,13 @@ $result = mysql_query($query);
 						<a class="brand-logo"> <span>POJEJ.ME</span> </a>
 						<!-- /logo -->
 					</div>
-					<ul class="nav navbar-nav hidden-xs">
-
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i
-							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-pointer"></i> </a>
-						</li>
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i class="search-close-icon  hide"></i> <i class="search-open-icon ">
-							<p>
-								naslov, mesto..
-							</p></i> </a>
-						</li>
-						<li class="navbar-form search-form hide">
-							<input type="search"
-							class="form-control search-input" placeholder="naslov, mesto..">
-							<div class="search-predict hide">
-								<a href="#">Searching for 'purple rain'</a>
-								<div class="heading">
-									<span class="title">People</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span> </a>
-									</li>
-								</ul>
-								<div class="heading">
-									<span class="title">Page posts</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>The latest news for cloud-based developers </span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>Trending Goods of the Week</span> </a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-
-					<ul class="nav navbar-nav hidden-xs">
-
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i
-							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-magnifier"></i> </a>
-						</li>
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i class="search-close-icon  hide"></i> <i class="search-open-icon ">
-							<p>
-								npr. sushi, Mehiška,
-								ribe..
-							</p></i> </a>
-						</li>
-						<li class="navbar-form search-form hide">
-							<input type="search"
-							class="form-control search-input" placeholder="npr. sushi, Mehiška, ribe..">
-							<div class="search-predict hide">
-								<a href="#">Searching for 'purple rain'</a>
-								<div class="heading">
-									<span class="title">People</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span> </a>
-									</li>
-								</ul>
-								<div class="heading">
-									<span class="title">Page posts</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>The latest news for cloud-based developers </span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>Trending Goods of the Week</span> </a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
+					<form action="" method="post">
+						<ul class="nav navbar-nav hidden-xs">
+	
+							
+									
+						</ul>
+					</form>
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- kosarica -->
 						<li>
@@ -330,25 +208,6 @@ $result = mysql_query($query);
 								<img class="profile-avatar" src="images/avatar.jpg" alt="" />
 							</div>
 							<div class="col p-b-lg col-xs-9">
-								<div class="profile-stats text-center">
-									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">
-											<div class="rating">
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-											</div></h4>
-											<small>Ocena</small>
-										</div>
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">89</h4>
-											<small>Komentarji</small>
-										</div>
-									</div>
-								</div>
 								<div class="profile-user">
 									<h4 class="m-t-0 m-b-0">Restavracija 1</h4>
 									<small class="">Picerija in špagetarija</small>
@@ -367,22 +226,7 @@ $result = mysql_query($query);
 						</div>
 						<div class="row">
 							<div class="card-block p-a-0">
-								<div class="box-tab justified m-b-0 ">
-									<ul class="wizard-tabs">
-										<li class="active">
-											<a href="#vrsta1" data-toggle="tab">Vrsta 1</a>
-										</li>
-										<li>
-											<a href="#vrsta2" data-toggle="tab">Vrsta 2</a>
-										</li>
-										<li>
-											<a href="#vrsta3" data-toggle="tab">Vrsta 3</a>
-										</li>
-										<li>
-											<a href="#vrsta4" data-toggle="tab">Vrsta 4</a>
-										</li>
-									</ul>
-									<div class="tab-content">
+					
 										<div class="text-center">
 											<div class="card bg-white no-border">
 												<div class="card-block demo-button">
@@ -395,7 +239,7 @@ $result = mysql_query($query);
 												</div>
 											</div>
 										</div>
-										<div class="tab-pane active in" id="vrsta1">
+										
 											<?php
 while ($meni = mysql_fetch_array($result)) {
 echo '<div class="tile-container">
@@ -403,21 +247,14 @@ echo '<div class="tile-container">
 <div class="tile product-tile">
 <div class="card bg-white no-border">
 <div class="col-md-6">
-<div class="product-image"><img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1"></div>
+<div class="product-image"><img class="card-img-top img-responsive center-block" alt="" src="data:image/jpeg;base64,'.base64_encode( $meni['slika'] ).'"></div>
 </div>
 <div class="row">
 <div class="col-md-6">
 <div class="card-block">
 <div class="product-meta">
-<h5 class="product-title text-capitalize">' . $meni['jed'] . '</h5>
+<h5 class="product-title">' . $meni['jed'] . '</h5>
 <span class="product-price">' . $meni['cena'] . ' €</span>
-<span>
-<div class="rating">
-<i class="icon-star text-primary"></i>
-<i class="icon-star text-primary"></i>
-<i class="icon-star text-primary"></i>
-<i class="icon-star text-primary"></i>
-</div> </span>
 <span>' . $meni['sestavine'] . '</span> </br>
 <span>' . $meni['info'] . '</span> </br>
 <span>Študentski boni: ' . $meni['boni'] . '</span>
@@ -425,17 +262,10 @@ echo '<div class="tile-container">
 </br></br>
 <div class="row">
 <div class="pull-right">
-<form action="spremeni_brisiMeni.php" method="post">
+<form action="brisiMeni.php" method="post">
 <input type="hidden" value="'.$meni['id_meni'].'" name="id_meni">
 <input type="submit" button type="button" class="btn btn-danger" name="delete" value="Odstrani">
 </form>
-</div>
-<div class="pull-left"">
-<div class="tool-button">
-<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-Spremeni
-</button>
-</div>
 </div>
 </div>
 </div>
@@ -447,245 +277,10 @@ Spremeni
 </div>';
 }
 											?>
-										</div>
-										<div class="tab-pane" id="vrsta2">
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="vrsta3">
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="vrsta4">
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
-																		</div>
-																		</br></br>
-																		<div class="row">
-																			<div class="pull-right" >
-																				<button type="button" class="btn btn-danger">
-																					Odstrani
-																				</button>
-																			</div>
-																			<div class="pull-left">
-																				<div class="tool-button">
-																					<button class="btn btn-primary btn-block" data-toggle="modal" data-target=".bs-modal-sm-3">
-																						Spremeni
-																					</button>
-																				</div>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+										
+										
+										
+									
 							</div>
 						</div>
 					</div>
@@ -734,11 +329,18 @@ Spremeni
 						</button>
 						<h4 class="modal-title">Dodajanje hrane</h4>
 					</div>
-					<form action="dodajMeni.php" method="post">
+					<form action="dodajMeni.php" method="post" enctype="multipart/form-data">
 						<div class="modal-body">
 							<p>
 								Pritegnite pozornost uporabnikov
 							</p>
+							<div class="row">
+								<label class="col-sm-2 control-label">Slika</label>
+								<div class="col-sm-10">
+									<input type="file" name="slika">
+								</div>
+							</div>
+							</br>
 							<div class="row">
 								<label class="col-sm-2 control-label">Jed</label>
 								<div class="col-sm-10">
@@ -754,9 +356,11 @@ Spremeni
 										<option>Špageti</option>
 										<option>Zrezek</option>
 										<option>Juha</option>
+										<option>Jed na žlico</option>
 										<option>Pijača</option>
 										<option>Riba</option>
 										<option>Žar</option>
+										<option>Drugo</option>
 									</select>
 								</div>
 							</div>
@@ -791,7 +395,6 @@ Spremeni
 									<textarea class="form-control" name="info" rows="3"></textarea>
 								</div>
 							</div>
-
 						</div>
 						<div class="modal-footer no-border">
 							<button type="button" class="btn btn-default" data-dismiss="modal">
@@ -805,87 +408,6 @@ Spremeni
 			</div>
 		</div>
 		<!-- /dodaj modal -->
-		<!-- spremeni modal -->
-		<div class="modal bs-modal-sm-3" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-							×
-						</button>
-						<h4 class="modal-title">Dodajanje hrane</h4>
-					</div>
-					<form action="spremeni_brisiMeni.php" method="post">
-						<div class="modal-body">
-							<p>
-								Pritegnite pozornost uporabnikov
-							</p>
-							<div class="row">
-								<label class="col-sm-2 control-label">Jed</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="jed">
-								</div>
-							</div>
-							</br>
-							<div class="row">
-								<label class="col-sm-2 control-label">Vrsta</label>
-								<div class="col-sm-10">
-									<select data-placeholder="Izberite ..." multiple class="chosen" style="width: 100%;" name="vrsta">
-										<option>Pica</option>
-										<option>Špageti</option>
-										<option>Zrezek</option>
-										<option>Juha</option>
-										<option>Pijača</option>
-										<option>Riba</option>
-										<option>Žar</option>
-									</select>
-								</div>
-							</div>
-							</br>
-							<div class="row">
-								<label class="col-sm-2 control-label">Cena</label>
-								<div class="col-sm-10">
-									<input type="number" step="0.1" class="form-control" name="cena">
-								</div>
-							</div>
-							</br>
-							<div class="row">
-								<label class="col-sm-2 control-label">Sestavine</label>
-								<div class="col-sm-10">
-									<input type="text" class="form-control" name="sestavine">
-								</div>
-							</div>
-							</br>
-							<div class="row">
-								<label class="col-sm-3 control-label">Študentski boni</label>
-								<div class="col-sm-8">
-									<select class="form-control" id="boni" name="boni">
-										<option value="Ne">Ne</option>
-										<option value="Da">Da</option>
-									</select>
-								</div>
-							</div>
-							</br>
-							<div class="row">
-								<label class="col-sm-2 control-label">Dodatne informacije</label>
-								<div class="col-sm-10">
-									<textarea class="form-control" name="info" rows="3"></textarea>
-								</div>
-							</div>
-
-						</div>
-						<div class="modal-footer no-border">
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Zapri
-							</button>
-							<input type="submit" name="spremeni" button type="button" class="btn btn-primary" value="Spremeni">
-							</center>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- /spremeni modal -->
 		<!-- build:js({.tmp,app}) scripts/app.min.js -->
 		<script src="scripts/helpers/modernizr.js"></script>
 		<script src="vendor/jquery/dist/jquery.js"></script>
