@@ -19,7 +19,7 @@
 	
 
 	$sql = "UPDATE uporabnik SET ime='$ime', priimek='$priimek', opis='$opis', email='$email',
-	telefonska='$telefonska', ulica='$ulica', kraj='$kraj', postnast='$postnast' WHERE uporabnik='$uporabnik'";
+	telefonska='$telefonska', ulica='$ulica', kraj='$kraj', postnast='$postnast' WHERE username='$username'";
 
 	if (!$conn->query($sql))
 		   echo "Error: " . $sql . "<br>" . $conn->error;

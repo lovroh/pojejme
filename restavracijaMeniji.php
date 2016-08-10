@@ -1,13 +1,13 @@
 <?php
-include 'includes/connection.php';
+include 'connection.php';
+session_start();
 
 $query = "SELECT * FROM meni";
 
-$result = mysql_query($query);
+$result = mysqli_query($con, $query);;
 ?>
 <!doctype html>
 <html class="no-js" lang="">
-
 	<head>
 		<meta charset="utf-8">
 		<title>Meniji</title>
@@ -54,46 +54,46 @@ $result = mysql_query($query);
 		<!-- /page loading spinner -->
 		<div class="app layout-fixed-header">
 			<!-- sidebar panel -->
-				<div class="sidebar-panel offscreen-left">
-	<div class="brand">
-		<!-- toggle offscreen menu -->
-		<div class="toggle-offscreen">
-			<a href="javascript:;" class="visible-xs hamburger-icon" data-toggle="offscreen" data-move="ltr"> <span></span> <span></span> <span></span> </a>
-		</div>
-		<!-- /toggle offscreen menu -->
-		<!-- logo -->
-		<a class="brand-logo"> <span>POJEJ.ME</span> </a>
-		<!-- /logo -->
-	</div>
-	<!-- main navigation -->
-	<nav role="navigation">
-		<!-- za vse zaslone -->
-		<ul class="nav">
-			<!-- domov -->
-			<li>
-				<a href="restavracijaDomov.php"> <i class="icon-home"></i><span>Domov</span></a>
-			</li>
-			<!-- /domov -->
-			<!-- narocila -->
-			<li>
-				<a href="restavracijaNarocila.php"> <i class="icon-list"></i><span>Naročila</span></a>
-			</li>
-			<!-- /narocila -->
-			<!-- meniji -->
-			<li>
-				<a href="restavracijaMeniji.php"> <i class="icon-book-open"></i><span>Meniji</span></a>
-			</li>
-			<!-- /meniji -->
-			<!-- urejanje -->
-			<li>
-				<a href="restavracijaUrejanje.php"> <i class="icon-wrench"></i><span>Urejanje</span></a>
-			</li>
-			<!-- /urejanje -->
-		</ul>
-		<!-- za vse zaslone -->
-	</nav>
-	<!-- /main navigation -->
-</div>
+			<div class="sidebar-panel offscreen-left">
+				<div class="brand">
+					<!-- toggle offscreen menu -->
+					<div class="toggle-offscreen">
+						<a href="javascript:;" class="visible-xs hamburger-icon" data-toggle="offscreen" data-move="ltr"> <span></span> <span></span> <span></span> </a>
+					</div>
+					<!-- /toggle offscreen menu -->
+					<!-- logo -->
+					<a class="brand-logo"> <span>POJEJ.ME</span> </a>
+					<!-- /logo -->
+				</div>
+				<!-- main navigation -->
+				<nav role="navigation">
+					<!-- za vse zaslone -->
+					<ul class="nav">
+						<!-- domov -->
+						<li>
+							<a href="restavracijaDomov.php"> <i class="icon-home"></i><span>Domov</span></a>
+						</li>
+						<!-- /domov -->
+						<!-- narocila -->
+						<li>
+							<a href="restavracijaNarocila.php"> <i class="icon-list"></i><span>Naročila</span></a>
+						</li>
+						<!-- /narocila -->
+						<!-- meniji -->
+						<li>
+							<a href="restavracijaMeniji.php"> <i class="icon-book-open"></i><span>Meniji</span></a>
+						</li>
+						<!-- /meniji -->
+						<!-- urejanje -->
+						<li>
+							<a href="restavracijaUrejanje.php"> <i class="icon-wrench"></i><span>Urejanje</span></a>
+						</li>
+						<!-- /urejanje -->
+					</ul>
+					<!-- za vse zaslone -->
+				</nav>
+				<!-- /main navigation -->
+			</div>
 			<!-- /sidebar panel -->
 			<!-- content panel -->
 			<div class="main-panel">
@@ -109,6 +109,7 @@ $result = mysql_query($query);
 						<a class="brand-logo"> <span>POJEJ.ME</span> </a>
 						<!-- /logo -->
 					</div>
+					<!-- forma za iskanje -->
 					<form action="" method="post">
 						<ul class="nav navbar-nav hidden-xs">
 	
@@ -116,80 +117,21 @@ $result = mysql_query($query);
 									
 						</ul>
 					</form>
+					<!-- /forma za iskanje -->
 					<ul class="nav navbar-nav navbar-right hidden-xs">
-						<!-- kosarica -->
-						<li>
-							<a href="javascript:;" class="ripple"
-							data-toggle="dropdown"> <i class="icon-basket"></i> </a>
-							<ul class="dropdown-menu notifications">
-								<li class="notifications-header">
-									<p class="text-muted small">
-										You have 3 new messages
-									</p>
-								</li>
-								<li>
-									<ul class="notifications-list">
-										<li>
-											<a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-success text-white">
-													<i class="icon-bulb"></i>
-												</div>
-											</div> <span class="notification-message"><b>Sean</b> launched a new application</span> <span class="time">2s</span> </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-danger text-white">
-													<i class="icon-cursor"></i>
-												</div>
-											</div> <span class="notification-message"><b>Removed
-												calendar</b> from app list</span> <span class="time">4h</span> </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-primary text-white">
-													<i class="icon-basket"></i>
-												</div>
-											</div> <span class="notification-message"><b>Denise</b> bought <b>Urban Admin Kit</b></span> <span class="time">2d</span> </a>
-										</li>
-										<li>
-											<a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-info text-white">
-													<i class="icon-bubble"></i>
-												</div>
-											</div> <span class="notification-message"><b>Vincent
-												commented</b> on an item</span> <span class="time">2s</span> </a>
-										</li>
-										<li>
-											<a href="javascript:;"> <span
-											class="notification-icon"> <img src="images/face3.jpg"
-												class="avatar img-circle" alt=""> </span> <span class="notification-message"><b>Jack Hunt</b> has <b>joined</b> mailing list</span> <span class="time">9d</span> </a>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<!-- /kosarica -->
 						<!-- uporabnik-->
 						<li>
 							<a href="javascript:;" class="ripple"
-							data-toggle="dropdown"> <img src="images/avatar.jpg"
-							class="header-avatar img-circle" alt="user" title="user"> <span>Nikola
+							   data-toggle="dropdown"> <img src="images/avatar.jpg"
+															class="header-avatar img-circle" alt="user" title="user"> <span>Nikola
 								Vočanec</span> <span class="caret"></span> </a>
 							<ul class="dropdown-menu">
 								<li>
 									<a href="javascript:;">Nastavitve</a>
 								</li>
-								<li>
-									<a href="javascript:;">Zgodovina nakupov</a>
-								</li>
-
 								<li role="separator" class="divider"></li>
 								<li>
-									<a href="extras-signin.html">Odjava</a>
+									<a href="odjava.php">Odjava</a>
 								</li>
 							</ul>
 						</li>
@@ -241,7 +183,7 @@ $result = mysql_query($query);
 										</div>
 										
 											<?php
-while ($meni = mysql_fetch_array($result)) {
+while ($meni = mysqli_fetch_array($result)) {
 echo '<div class="tile-container">
 <div class="col-md-6">
 <div class="tile product-tile">
@@ -293,26 +235,7 @@ echo '<div class="tile-container">
 				<nav class="footer-right">
 					<ul class="nav">
 						<li>
-							<a href="javascript:;">Feedback</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="scroll-up"> <i class="fa fa-angle-up"></i> </a>
-						</li>
-					</ul>
-				</nav>
-				<nav class="footer-left hidden-xs">
-					<ul class="nav">
-						<li>
-							<a href="javascript:;"><span>About</span> Reactor</a>
-						</li>
-						<li>
-							<a href="javascript:;">Privacy</a>
-						</li>
-						<li>
-							<a href="javascript:;">Terms</a>
-						</li>
-						<li>
-							<a href="javascript:;">Help</a>
+							<a href="landingPage/index.php"> <i class="fa fa-angle-left"> </i><span> Nazaj</span></a>
 						</li>
 					</ul>
 				</nav>
