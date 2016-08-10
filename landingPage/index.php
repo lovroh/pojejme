@@ -90,12 +90,6 @@
                                  <li><a href='../uporabnik-registracija.html'>Registracija</a></li>
                               </ul>
                             </li>";
-                             echo "<li class='dropdown'>
-                               <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Restavracija</a>
-                               <ul class='dropdown-menu'>
-                                 <li><a href='../restavracijaPrijava.html'>Prijava</a></li>
-                              </ul>
-                            </li>";
                         }
                                      
                     ?>
@@ -243,7 +237,8 @@
                     <h2 class="section-heading">Za nove restavracije</h2>
                     <hr class="light">
                     <p class="text-faded">Uporaba aplikacije je enostavna, naredite prve korake do elektronskega sprejemanja naročil</p>
-                    <a href="#" class="btn btn-default btn-xl">Začni</a>
+                    <a href="../dodajanjeRestavracije.html" class="btn btn-default btn-xl">Registracija</a>
+                    <a href="../restavracijaPrijava.html" class="btn btn-default btn-xl">Prijava</a>
                 </div>
             </div>
         </div>

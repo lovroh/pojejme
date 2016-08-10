@@ -1,5 +1,12 @@
 <?php
-	session_start();
+include 'connection.php';
+session_start();
+
+$id = $_SESSION['id_restavracija'];
+$query2 = "SELECT * FROM restavracija WHERE id_restavracija = '$id'";
+$result2 = mysqli_query($con, $query2);
+
+$restavracija = mysqli_fetch_array($result2);
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -117,9 +124,11 @@
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- uporabnik-->
 						<li>
+							<?php echo '
 							<a href="javascript:;" class="ripple"
-							   data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
-								<span>
+							   data-toggle="dropdown"> <img src="data:image/jpeg;base64,'.base64_encode( $restavracija['slika'] ).'" class="header-avatar img-circle" alt="user" title="user">
+								<span>';
+							?>
 									<?php
 									echo $_SESSION['ime'];
 									?>
@@ -142,12 +151,12 @@
 				<div class="main-content">
 					<div class="m-t-n m-b">
 						<div class="card m-b-0 bg-primary-dark p-a-md no-border m-b m-x-n-g">
-							<div class="card-img-overlay p-a-0 " style="background: url(http://lorempixel.com/1920/600?8) no-repeat; background-size: cover;"></div>
+							<div class="card-img-overlay p-a-0 " style="background-color: rgba(175, 188, 255, 1); background-size: cover;"></div>
 							<div class="card-block" style="height: 200px"></div>
 						</div>
 						<div class="row profile-header text-white">
 							<div class="col col-xs-3">
-								<img class="profile-avatar" src="images/avatar.jpg" alt="" />
+								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $restavracija['slika'] ).'" alt="" style="max-height: 252px; max-width: 252px"/>'; ?>
 							</div>
 							<div class="col p-b-lg col-xs-9">
 								<div class="profile-stats text-center">
@@ -201,237 +210,122 @@
 											<a href="#osnovno" data-toggle="tab">Osnovni podatki</a>
 										</li>
 										<li>
-											<a href="#lokacija" data-toggle="tab">Lokacija</a>
-										</li>
-										<li>
 											<a href="#cas" data-toggle="tab">Delovni čas</a>
 										</li>
 									</ul>
-									<div class="tab-content">
-										<div class="tab-pane active in" id="osnovno">
-											<div class="card bg-white no-border">
-												<div class="card-block">
-													<div class="row">
-														<div class="col-sm-6">
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Ime restavracije</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" id="namefield" name="namefield">
+									<form action="urejanjeRestavracije.php" method="post" enctype="multipart/form-data">
+										<div class="tab-content">
+											<div class="tab-pane active in" id="osnovno">
+												<div class="card bg-white no-border">
+													<div class="card-block">
+														<div class="row">
+															<div class="col-sm-6">
+																<div class="form-group">
+																	<label class="col-sm-3 control-label">Ime restavracije</label>
+																	<div class="col-sm-8">
+																		<input type="text" class="form-control" id="ime" name="ime" value="<?php echo $restavracija['ime']; ?>">
+																	</div>
 																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Vrsta</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" id="namefield" name="namefield">
+																</br></br>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label">Vrsta</label>
+																	<div class="col-sm-8">
+																		<input type="text" class="form-control" id="vrsta" name="vrsta" value="<?php echo $restavracija['vrsta']; ?>">
+																	</div>
 																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Email</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" id="emailfield" name="emailfield">
+																</br></br>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label">Telefon</label>
+																	<div class="col-sm-8">
+																		<input type="text" class="form-control" id="number" name="number" value="<?php echo $restavracija['number']; ?>">
+																	</div>
 																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Geslo</label>
-																<div class="col-sm-8">
-																	<input type="password" class="form-control" id="passwordfield" name="passwordfield">
+																</br></br>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label">Kraj</label>
+																	<div class="col-sm-8">
+																		<input type="text" class="form-control" id="kraj" name="kraj" value="<?php echo $restavracija['kraj']; ?>">
+																	</div>
 																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Potrdi geslo</label>
-																<div class="col-sm-8">
-																	<input type="password" class="form-control" id="cpasswordfield" name="cpasswordfield">
+																</br></br>
+																<div class="form-group">
+																	<label class="col-sm-3 control-label">Naslov</label>
+																	<div class="col-sm-8">
+																		<input type="text" class="form-control" id="naslov" name="naslov" value="<?php echo $restavracija['naslov']; ?>">
+																	</div>
 																</div>
-															</div>
-															<div class="form-group">
+																</br></br>
 																<label class="col-sm-3 control-label">Študentski boni</label>
 																<div class="col-sm-8">
-																	<select class="form-control">
-																		<option selected="" disabled="" value="Status">Izberi</option>
-																		<option value="1">Da</option>
-																		<option value="0">Ne</option>
+																	<select class="form-control" id="boni" name="boni" value="<?php echo $restavracija['boni']; ?>">
+																		<option value="Ne">Ne</option>
+																		<option value="Da">Da</option>
 																	</select>
 																</div>
 															</div>
-														</div>
-														<div class="col-sm-6">
-															<div class="form-group">
-																<img class="col-sm-4 col-sm-offset-4" alt="" src="http://lorempixel.com/600/500?1" width="150" height="150">
-																<div class="col-sm-8 col-sm-offset-3">
-																	<input type="file">
-																	<p class="help-block">
-																		Posdobite logo ali sliko restavracije
-																	</p>
-																</div>
+															<div class="col-sm-6">
+																<input type="file" name="slika">
+																<p class="help-block">
+																	Dodajte logo ali sliko restavracije
+																</p>
 															</div>
 														</div>
 													</div>
-												</div>
-												<div class="pull-right">
-															<button type="button" class="btn btn-primary">
-																Shrani spremembe
-															</button>
-														</div>
-											</div>
-										</div>
-										<div class="tab-pane" id="lokacija">
-											<div class="card bg-white no-border">
-												<div class="card-block">
-													<div class="row">
-														<div class="col-sm-6">
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Kraj</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" id="namefield" name="namefield">
-																</div>
-															</div>
-														</div>
-														<div class="col-sm-6">
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Naslov</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" id="namefield" name="namefield">
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-												<div class="card-block">
-													<div class="world-map page-height-xs">
-														<div id="google-container"></div>
-													</div>
-												</div>
-												<div class="pull-right">
-													<button type="button" class="btn btn-primary">
-														Shrani spremembe
-													</button>
 												</div>
 											</div>
-										</div>
-										<div class="tab-pane" id="cas">
-											<div class="card bg-white no-border">
-												<div class="card-block">
-													<div class="row">
-														<div class="col-sm-6">
-															<h5>Ponedeljek</h5>
-															<div class="form-group">
+											<div class="tab-pane" id="cas">
+												<div class="card bg-white no-border">
+													<div class="card-block">
+														<div class="row">
+															<div class="col-sm-6">
+																<h5>Med tednom</h5>
 																<label class="col-sm-3 control-label">Začetek</label>
 																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
+																	<input type="text" class="form-control time-picker" id="teden1" name="teden1" value="<?php echo $restavracija['teden1']; ?>"/>
 																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 																</div>
-															</div>
-															<div class="form-group">
+																</br>
 																<label class="col-sm-3 control-label">Konec</label>
 																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
+																	<input type="text" class="form-control time-picker" id="teden2" name="teden2" value="<?php echo $restavracija['teden2']; ?>"/>
 																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 																</div>
 															</div>
-															<h5>Torek</h5>
-															<div class="form-group">
+															<div class="col-sm-6">
+																<h5>Sobota</h5>
 																<label class="col-sm-3 control-label">Začetek</label>
 																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
+																	<input type="text" class="form-control time-picker" id="sobota1" name="sobota1" value="<?php echo $restavracija['sobota1']; ?>"/>
 																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 																</div>
-															</div>
-															<div class="form-group">
+																</br>
 																<label class="col-sm-3 control-label">Konec</label>
 																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
+																	<input type="text" class="form-control time-picker" id="sobota2" name="sobota2" value="<?php echo $restavracija['sobota2']; ?>"/>
 																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 																</div>
-															</div>
-															<h5>Sreda</h5>
-															<div class="form-group">
+																<h5>Nedelja</h5>
 																<label class="col-sm-3 control-label">Začetek</label>
 																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
+																	<input type="text" class="form-control time-picker" id="nedelja1" name="nedelja1" value="<?php echo $restavracija['nedelja1']; ?>"/>
 																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 																</div>
-															</div>
-															<div class="form-group">
+																</br>
 																<label class="col-sm-3 control-label">Konec</label>
 																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<h5>Četrtek</h5>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Začetek</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Konec</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<h5>Petek</h5>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Začetek</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Konec</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-														</div>
-														<div class="col-sm-6">
-															<div class="credit-card hide"></div>
-															<h5>Sobota</h5>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Začetek</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Konec</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<h5>Nedelja</h5>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Začetek</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
-																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-3 control-label">Konec</label>
-																<div class="input-group col-sm-8">
-																	<input type="text" class="form-control time-picker" />
+																	<input type="text" class="form-control time-picker" id="nedelja2" name="nedelja2" value="<?php echo $restavracija['nedelja2']; ?>"/>
 																	<span class="input-group-addon add-on"> <i class="fa fa-clock-o"></i> </span>
 																</div>
 															</div>
 														</div>
 													</div>
 												</div>
-												<div class="pull-right">
-													<button type="button" class="btn btn-primary">
-														Shrani spremembe
-													</button>
-												</div>
+											</div>
+											<div class="pull-right">
+												<input type="submit" name="submit" button type="button" class="btn btn-primary" value="Shrani spremembe" />
 											</div>
 										</div>
-									</div>
+									</form>
 								</div>
 							</div>
 						</div>

@@ -15,12 +15,10 @@ if(isset($_POST["submit"])) {
 
         if(mysqli_num_rows($result) == 1) {
             $_SESSION['id_restavracija'] = $row['id_restavracija'];
-            $_SESSION['slika'] = $row['slika'];
             $_SESSION['ime'] = $row['ime'];
             $_SESSION['vrsta'] = $row['vrsta'];
             $_SESSION['emailfield'] = $row['emailfield'];
             $_SESSION['number'] = $row['number'];
-            $_SESSION['passwordfield'] = $row['passwordfield'];
             $_SESSION['boni'] = $row['boni'];
             $_SESSION['kraj'] = $row['kraj'];
             $_SESSION['naslov'] = $row['naslov'];

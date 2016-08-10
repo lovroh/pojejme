@@ -4,8 +4,13 @@ session_start();
 
 $id = $_SESSION['id_restavracija'];
 $query = "SELECT * FROM meni WHERE fk_id_restavracija = '$id'";
+$query2 = "SELECT slika FROM restavracija WHERE id_restavracija = '$id'";
 
-$result = mysqli_query($con, $query);;
+
+$result = mysqli_query($con, $query);
+$result2 = mysqli_query($con, $query2);
+
+$slika = mysqli_fetch_array($result2);
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -122,9 +127,11 @@ $result = mysqli_query($con, $query);;
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- uporabnik-->
 						<li>
+							<?php echo '
 							<a href="javascript:;" class="ripple"
-							   data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
-								<span>
+							   data-toggle="dropdown"> <img src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" class="header-avatar img-circle" alt="user" title="user">
+								<span>';
+								?>
 									<?php
 									echo $_SESSION['ime'];
 									?>
@@ -146,14 +153,33 @@ $result = mysqli_query($con, $query);;
 				<div class="main-content">
 					<div class="m-t-n m-b">
 						<div class="card m-b-0 bg-primary-dark p-a-md no-border m-b m-x-n-g">
-							<div class="card-img-overlay p-a-0 " style="background: url(http://lorempixel.com/1920/600?8) no-repeat; background-size: cover;"></div>
+							<div class="card-img-overlay p-a-0 " style="background-color: rgba(175, 188, 255, 1); background-size: cover;"></div>
 							<div class="card-block" style="height: 200px"></div>
 						</div>
 						<div class="row profile-header text-white">
 							<div class="col col-xs-3">
-								<img class="profile-avatar" src="images/avatar.jpg" alt="" />
+								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" alt=""  height="252" width="252"/>'; ?>
 							</div>
 							<div class="col p-b-lg col-xs-9">
+								<div class="profile-stats text-center">
+									<div class="row">
+										<div class="col-xs-6">
+											<h4 class="m-t-0 m-b-0">
+												<div class="rating">
+													<i class="icon-star text-white"></i>
+													<i class="icon-star text-white"></i>
+													<i class="icon-star text-white"></i>
+													<i class="icon-star text-white"></i>
+													<i class="icon-star text-white"></i>
+												</div></h4>
+											<small>Ocena</small>
+										</div>
+										<div class="col-xs-6">
+											<h4 class="m-t-0 m-b-0">89</h4>
+											<small>Komentarji</small>
+										</div>
+									</div>
+								</div>
 								<div class="profile-user">
 									<h4 class="m-t-0 m-b-0">
 										<?php
@@ -210,7 +236,7 @@ echo '<div class="tile-container">
 <h5 class="product-title">' . $meni['jed'] . '</h5>
 <span class="product-price">' . $meni['cena'] . ' €</span>
 <span>' . $meni['sestavine'] . '</span> </br>
-<span>' . $meni['info'] . '</span> </br>
+<span>' . $meni['info'] . '</span> </br></br>
 <span>Študentski boni: ' . $meni['boni'] . '</span>
 </div>
 </br></br>
