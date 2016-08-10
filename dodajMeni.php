@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+session_start();
 
 if($_FILES['slika']['tmp_name'] == null){
     $slika = addslashes(file_get_contents('images/none.jpg'));
@@ -15,6 +16,7 @@ $cena = $_POST['cena'];
 $sestavine = $_POST['sestavine'];
 $boni = $_POST['boni'];
 $info = $_POST['info'];
+$id_restavracija = $_SESSION['id_restavracija'];
 
 if (!$_POST['submit']) {
 	echo "Vnesite zahtevane podatke!";
@@ -23,8 +25,8 @@ if (!$_POST['submit']) {
     if ($velikost == FALSE) {
         echo "Izbrana datoteka ni slika!";
     } else{
-        mysqli_query($con, "INSERT INTO meni (`id_meni`, `slika`, `jed`, `vrsta`, `cena`, `sestavine`, `boni`, `info`)
-            VALUES(NULL, '$slika', '$jed', '$vrsta', '$cena', '$sestavine', '$boni', '$info')") or die(mysqli_error($con));
+        mysqli_query($con, "INSERT INTO meni (`id_meni`, `slika`, `jed`, `vrsta`, `cena`, `sestavine`, `boni`, `info`, `fk_id_restavracija`)
+            VALUES(NULL, '$slika', '$jed', '$vrsta', '$cena', '$sestavine', '$boni', '$info', '$id_restavracija')") or die(mysqli_error($con));
 
         echo "Meni je dodan!";
         header('Location: restavracijaMeniji.php');

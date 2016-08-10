@@ -117,12 +117,15 @@
 						<!-- uporabnik-->
 						<li>
 							<a href="javascript:;" class="ripple"
-							   data-toggle="dropdown"> <img src="images/avatar.jpg"
-															class="header-avatar img-circle" alt="user" title="user"> <span>Nikola
-								Vočanec</span> <span class="caret"></span> </a>
+							   data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
+								<span>
+									<?php
+									echo $_SESSION['ime'];
+									?>
+								</span> <span class="caret"></span> </a>
 							<ul class="dropdown-menu">
 								<li>
-									<a href="javascript:;">Nastavitve</a>
+									<a href="restavracijaUrejanje.php">Nastavitve</a>
 								</li>
 								<li role="separator" class="divider"></li>
 								<li>
@@ -166,8 +169,16 @@
 									</div>
 								</div>
 								<div class="profile-user">
-									<h4 class="m-t-0 m-b-0">Restavracija 1</h4>
-									<small class="">Picerija in špagetarija</small>
+									<h4 class="m-t-0 m-b-0">
+										<?php
+										echo $_SESSION['ime'];
+										?>
+									</h4>
+									<small class="">
+										<?php
+										echo $_SESSION['vrsta'];
+										?>
+									</small>
 								</div>
 							</div>
 						</div>

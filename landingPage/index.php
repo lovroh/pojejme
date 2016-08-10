@@ -72,28 +72,28 @@
                             echo "<li class='dropdown'>
                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dobrodošel, ".$_SESSION['ime']." ".$_SESSION['priimek']."</a>
                                <ul class='dropdown-menu'>
-                                 <li><a href='../static/app/odjava.php'>Odjava</a></li>
+                                 <li><a href='../odjava.php'>Odjava</a></li>
                               </ul>
                             </li>";
                         } else if (isset($_SESSION['loggedin_restavracija']) && $_SESSION['loggedin_restavracija'] == true) {
                             echo "<li class='dropdown'>
                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dobrodošli, ".$_SESSION['ime']."</a>
                                <ul class='dropdown-menu'>
-                                 <li><a href='../static/app/odjava.php'>Odjava</a></li>
+                                 <li><a href='../odjava.php'>Odjava</a></li>
                               </ul>
                             </li>";
                         } else {
                             echo "<li class='dropdown'>
                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Uporabnik</a>
                                <ul class='dropdown-menu'>
-                                 <li><a href='../static/app/uporabnik-prijava.html'>Prijava</a></li>
-                                 <li><a href='../static/app/uporabnik-registracija.html'>Registracija</a></li>
+                                 <li><a href='../uporabnik-prijava.html'>Prijava</a></li>
+                                 <li><a href='../uporabnik-registracija.html'>Registracija</a></li>
                               </ul>
                             </li>";
                              echo "<li class='dropdown'>
                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Restavracija</a>
                                <ul class='dropdown-menu'>
-                                 <li><a href='../static/app/restavracija-prijava.html'>Prijava</a></li>
+                                 <li><a href='../restavracijaPrijava.html'>Prijava</a></li>
                               </ul>
                             </li>";
                         }
