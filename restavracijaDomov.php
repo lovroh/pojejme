@@ -3,7 +3,10 @@ include 'connection.php';
 session_start();
 
 $id = $_SESSION['id_restavracija'];
-$query2 = "SELECT slika FROM restavracija WHERE id_restavracija = '$id'";
+$query = "SELECT * FROM obvestilo WHERE fk_id_restavracija = '$id'";
+$result = mysqli_query($con, $query);
+
+$query2 = "SELECT * FROM restavracija WHERE id_restavracija = '$id'";
 $result2 = mysqli_query($con, $query2);
 
 $slika = mysqli_fetch_array($result2);
@@ -213,18 +216,18 @@ $slika = mysqli_fetch_array($result2);
 														Obvestite svoje stranke o novih dogodkih
 													</p>
 												</div>
-												<div class="text-center">
-													<textarea class="form-control m-b" id="message" rows="15" placeholder="Vnesite obvestilo ..."></textarea>
-												</div>
-												<div class="text-center">
-													<div class="card-block demo-button">
-														<div class="tool-button">
-															<button class="btn btn-default btn-lg">
-																Dodaj
-															</button>
+												<form action="dodajOdstraniObvestilo.php" method="post">
+													<div class="text-center">
+														<textarea class="form-control m-b" id="obvestilo" name="obvestilo" rows="15" placeholder="Vnesite obvestilo ..."></textarea>
+													</div>
+													<div class="text-center">
+														<div class="card-block demo-button">
+															<div class="tool-button">
+																<input type="submit" name="submit" button type="button" class="btn btn-default btn-lg" value="Objavi"/>
+															</div>
 														</div>
 													</div>
-												</div>
+												</form>
 											</div>
 										</div>
 									</div>
@@ -271,49 +274,35 @@ $slika = mysqli_fetch_array($result2);
 													</li>
 												</ul>
 											</div>
-											<div class="row">
-												<div class="col-sm-6">
-													<div class="card card-block no-border bg-primary text-white">
-														<h6 class="m-a-0">Uporabniki v okolici</h6>
-														<h1 class="m-a-0">785</h1>
-													</div>
-												</div>
-												<div class="col-sm-6">
-													<div class="card card-block no-border bg-dark text-white">
-														<h6 class="m-a-0">Pregledi prejšnji teden</h6>
-														<h1 class="m-a-0">381</h1>
-													</div>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
-								<div class="card bg-white no-border">
-									<div class="row text-center">
-										<div class="col-sm-3 col-xs-6 p-t p-b">
-											<h4 class="m-t-0 m-b-0">82,56 €</h4>
-											<small class="text-muted bold">Dnevna prodaja</small>
-										</div>
-										<div class="col-sm-3 col-xs-6 p-t p-b">
-											<h4 class="m-t-0 m-b-0">498,00 €</h4>
-											<small class="text-muted bold">Tedenska prodaja</small>
-										</div>
-										<div class="col-sm-3 col-xs-6 p-t p-b">
-											<h4 class="m-t-0 m-b-0">2.903 €</h4>
-											<small class="text-muted bold">Mesečna prodaja</small>
-										</div>
-										<div class="col-sm-3 col-xs-6 p-t p-b">
-											<h4 class="m-t-0 m-b-0">20.343,49 €</h4>
-											<small class="text-muted bold">Letna prodaja</small>
-										</div>
-									</div>
-								</div>
-								<div class="m-x-n-g m-t-n-g overflow-hidden">
-									<div class="card m-b-0 bg-primary-dark text-white p-a-md no-border">
-										<h4 class="m-t-0"><span class="pull-right">82,56 € danes</span><span>Aktivnost</span></h4>
-										<div class="chart dashboard-line labels-white" style="height:300px"></div>
-									</div>
-								</div>
+								<h3>Nedavna obvestila</h3></br>
+<?php
+while ($obvestilo = mysqli_fetch_array($result)) {
+echo '<div class="tile-container">
+<div class="col-md-6">
+<div class="tile product-tile">
+<div class="card bg-white no-border">
+<div class="card-block">
+<h5 class="product-title">' . $obvestilo['datum'] . '</h5>
+</br>
+<span>' . $obvestilo['besedilo'] . '</span>
+</br></br>
+<div class="pull-right"><span>' . $slika['ime'] . '</span> </div></br>
+<form action="dodajOdstraniObvestilo.php" method="post">
+<input type="hidden" value="'.$obvestilo['id_obvestilo'].'" name="id_obvestilo">
+<center><input type="submit" button type="button" class="btn btn-danger" name="delete" value="Odstrani"></center>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+';
+								}
+								?>
+
 
 							</div>
 						</div>
