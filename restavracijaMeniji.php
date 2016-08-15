@@ -90,6 +90,11 @@ $slika = mysqli_fetch_array($result2);
 							<a href="restavracijaMeniji.php"> <i class="icon-book-open"></i><span>Meniji</span></a>
 						</li>
 						<!-- /meniji -->
+						<!-- komentarji -->
+						<li>
+							<a href="restavracijaKomentarji.php"> <i class="icon-envelope"></i><span>Komentarji</span></a>
+						</li>
+						<!-- /komentarji -->
 						<!-- urejanje -->
 						<li>
 							<a href="restavracijaUrejanje.php"> <i class="icon-wrench"></i><span>Urejanje</span></a>
@@ -158,26 +163,20 @@ $slika = mysqli_fetch_array($result2);
 						</div>
 						<div class="row profile-header text-white">
 							<div class="col col-xs-3">
-								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" alt=""  height="252" width="252"/>'; ?>
+								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" alt="" style="max-height: 252px; max-width: 252px"/>'; ?>
 							</div>
 							<div class="col p-b-lg col-xs-9">
 								<div class="profile-stats text-center">
 									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">
-												<div class="rating">
-													<i class="icon-star text-white"></i>
-													<i class="icon-star text-white"></i>
-													<i class="icon-star text-white"></i>
-													<i class="icon-star text-white"></i>
-													<i class="icon-star text-white"></i>
-												</div></h4>
-											<small>Ocena</small>
-										</div>
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">89</h4>
-											<small>Komentarji</small>
-										</div>
+										<h4 class="m-t-0 m-b-0">
+											<div class="rating">
+												<i class="icon-star text-white"></i>
+												<i class="icon-star text-white"></i>
+												<i class="icon-star text-white"></i>
+												<i class="icon-star text-white"></i>
+												<i class="icon-star text-white"></i>
+											</div></h4>
+										<small>Ocena</small>
 									</div>
 								</div>
 								<div class="profile-user">
@@ -206,61 +205,57 @@ $slika = mysqli_fetch_array($result2);
 						</div>
 						<div class="row">
 							<div class="card-block p-a-0">
-					
-										<div class="text-center">
+								<div class="text-center">
+									<div class="card bg-white no-border">
+										<div class="card-block demo-button">
+											<span><h4>Želite dodati novo jed?</h4></span>
+											<div class="tool-button">
+												<button class="btn btn-info" data-toggle="modal" data-target=".bs-modal-sm">
+													Dodaj
+												</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<?php
+								while ($meni = mysqli_fetch_array($result)) {
+								echo '
+								<div class="tile-container">
+									<div class="col-md-6">
+										<div class="tile product-tile">
 											<div class="card bg-white no-border">
-												<div class="card-block demo-button">
-													<span><h4>Želite dodati novo jed?</h4></span>
-													<div class="tool-button">
-														<button class="btn btn-info" data-toggle="modal" data-target=".bs-modal-sm">
-															Dodaj
-														</button>
+												<div class="col-md-6">
+													<div class="product-image">
+														<img class="card-img-top img-responsive center-block" alt="" src="data:image/jpeg;base64,'.base64_encode( $meni['slika'] ).'">
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="card-block">
+															<div class="product-meta">
+																<h5 class="product-title">' . $meni['jed'] . '</h5>
+																<span class="product-price">' . $meni['cena'] . ' €</span>
+																<span>' . $meni['sestavine'] . '</span> </br>
+																<span>' . $meni['info'] . '</span> </br></br>
+																<span>Študentski boni: ' . $meni['boni'] . '</span>
+															</div>
+															</br></br>
+															<div class="row">
+																<div class="pull-right">
+																	<form action="brisiMeni.php" method="post">
+																		<input type="hidden" value="'.$meni['id_meni'].'" name="id_meni">
+																		<input type="submit" button type="button" class="btn btn-danger" name="delete" value="Odstrani">
+																	</form>
+																</div>
+															</div>
+														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-										
-											<?php
-while ($meni = mysqli_fetch_array($result)) {
-echo '<div class="tile-container">
-<div class="col-md-6">
-<div class="tile product-tile">
-<div class="card bg-white no-border">
-<div class="col-md-6">
-<div class="product-image"><img class="card-img-top img-responsive center-block" alt="" src="data:image/jpeg;base64,'.base64_encode( $meni['slika'] ).'"></div>
-</div>
-<div class="row">
-<div class="col-md-6">
-<div class="card-block">
-<div class="product-meta">
-<h5 class="product-title">' . $meni['jed'] . '</h5>
-<span class="product-price">' . $meni['cena'] . ' €</span>
-<span>' . $meni['sestavine'] . '</span> </br>
-<span>' . $meni['info'] . '</span> </br></br>
-<span>Študentski boni: ' . $meni['boni'] . '</span>
-</div>
-</br></br>
-<div class="row">
-<div class="pull-right">
-<form action="brisiMeni.php" method="post">
-<input type="hidden" value="'.$meni['id_meni'].'" name="id_meni">
-<input type="submit" button type="button" class="btn btn-danger" name="delete" value="Odstrani">
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>';
-}
-											?>
-										
-										
-										
-									
+									</div>
+								</div>';
+								}?>
 							</div>
 						</div>
 					</div>

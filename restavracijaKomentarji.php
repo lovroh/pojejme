@@ -1,5 +1,15 @@
 <?php
-	session_start();
+include 'connection.php';
+session_start();
+
+$id = $_SESSION['id_restavracija'];
+$query = "SELECT * FROM obvestilo WHERE fk_id_restavracija = '$id'";
+$result = mysqli_query($con, $query);
+
+$query2 = "SELECT * FROM restavracija WHERE id_restavracija = '$id'";
+$result2 = mysqli_query($con, $query2);
+
+$slika = mysqli_fetch_array($result2);
 ?>
 <!doctype html>
 <html class="no-js" lang="">
@@ -79,6 +89,11 @@
 							<a href="restavracijaMeniji.php"> <i class="icon-book-open"></i><span>Meniji</span></a>
 						</li>
 						<!-- /meniji -->
+						<!-- komentarji -->
+						<li>
+							<a href="restavracijaKomentarji.php"> <i class="icon-envelope"></i><span>Komentarji</span></a>
+						</li>
+						<!-- /komentarji -->
 						<!-- urejanje -->
 						<li>
 							<a href="restavracijaUrejanje.php"> <i class="icon-wrench"></i><span>Urejanje</span></a>
@@ -116,12 +131,14 @@
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- uporabnik-->
 						<li>
+							<?php echo '
 							<a href="javascript:;" class="ripple"
-							   data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
-								<span>
-									<?php
-									echo $_SESSION['ime'];
-									?>
+							   data-toggle="dropdown"> <img src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" class="header-avatar img-circle" alt="user" title="user">
+								<span>';
+							?>
+							<?php
+							echo $_SESSION['ime'];
+							?>
 								</span> <span class="caret"></span> </a>
 							<ul class="dropdown-menu">
 								<li>
@@ -141,18 +158,17 @@
 				<div class="main-content">
 					<div class="m-t-n m-b">
 						<div class="card m-b-0 bg-primary-dark p-a-md no-border m-b m-x-n-g">
-							<div class="card-img-overlay p-a-0 " style="background: url(http://lorempixel.com/1920/600?8) no-repeat; background-size: cover;"></div>
+							<div class="card-img-overlay p-a-0 " style="background-color: rgba(175, 188, 255, 1); background-size: cover;"></div>
 							<div class="card-block" style="height: 200px"></div>
 						</div>
 						<div class="row profile-header text-white">
 							<div class="col col-xs-3">
-								<img class="profile-avatar" src="images/avatar.jpg" alt="" />
+								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" alt="" style="max-height: 252px; max-width: 252px"/>'; ?>
 							</div>
 							<div class="col p-b-lg col-xs-9">
 								<div class="profile-stats text-center">
 									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">
+										<h4 class="m-t-0 m-b-0">
 											<div class="rating">
 												<i class="icon-star text-white"></i>
 												<i class="icon-star text-white"></i>
@@ -160,12 +176,7 @@
 												<i class="icon-star text-white"></i>
 												<i class="icon-star text-white"></i>
 											</div></h4>
-											<small>Ocena</small>
-										</div>
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">89</h4>
-											<small>Komentarji</small>
-										</div>
+										<small>Ocena</small>
 									</div>
 								</div>
 								<div class="profile-user">
@@ -207,65 +218,27 @@
 										<p>
 											Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 										</p>
-										<div class="profile-timeline-controls">
-											<a class="pull-right" href="javascript:;"> <i class="icon-share"></i> </a>
-											<a class="m-r" href="javascript:;"> <i class="icon-heart"></i>&nbsp;Like </a>
-											<a href="javascript:;"> <i class="icon-bubble"></i>&nbsp;Comment </a>
-										</div>
 									</div>
 								</div>
 							</div>
-
-							<div class="card bg-white no-border">
-								<div class="card-block">
-									<div class="profile-timeline-header">
-										<a href="#" class="profile-timeline-user"> <img src="images/avatar.jpg" alt="" class="img-rounded"> </a>
-										<div class="profile-timeline-user-details">
-											<a href="#" class="bold">Sean Carpenter</a>
-											<br>
-											<em class="text-info small">created an album collection</em>
-										</div>
-									</div>
-									<div class="profile-timeline-content">
-										<p>
-											Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-										</p>
-
-										<div class="profile-timeline-controls">
-											<a class="pull-right" href="javascript:;"> <i class="icon-share"></i> </a>
-											<a class="m-r" href="javascript:;"> <i class="icon-heart"></i>&nbsp;Like </a>
-											<a href="javascript:;"> <i class="icon-bubble"></i>&nbsp;Comment </a>
-										</div>
-										<div class="post-comments">
-											<div class="media">
-												<a class="pull-left" href="javascript:;"> <img class="media-object avatar img-rounded" src="images/face3.jpg" alt=""> </a>
-												<div class="comment">
-													<div class="comment-author">
-														<a href="javascript:;"> Jane Doe
-														<time datetime="2015-09-01" class="time">
-															September 1st, 2015
-														</time> </a>
-													</div>
-													<p>
-														Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.
-													</p>
-													<hr>
-												</div>
-												<div class="media">
-													<a class="pull-left" href="javascript:;"> <img class="media-object avatar img-rounded" src="images/avatar.jpg" alt=""> </a>
-													<div class="comment">
-														<div class="comment-author">
-															<a href="javascript:;"> Jane Doe
-															<time datetime="2015-09-02" class="time">
-																September 2nd, 2015
-															</time> </a>
-														</div>
-														<p>
-															Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.
-														</p>
-													</div>
-												</div>
-											</div>
+						</div>
+						<div class="card bg-white no-border">
+							<div class="card-block">
+								<div class="text-center">
+									<h3 class="m-t">Odgovori na komentarje</h3>
+									<p>
+										Zahvale in razlage na temo komentarjev
+									</p>
+								</div>
+								<div class="text-center">
+									<textarea class="form-control m-b" id="message" rows="5" placeholder="Vnesite odgovor ..."></textarea>
+								</div>
+								<div class="text-center">
+									<div class="card-block demo-button">
+										<div class="tool-button">
+											<button class="btn btn-default btn-lg">
+												Oddaj
+											</button>
 										</div>
 									</div>
 								</div>

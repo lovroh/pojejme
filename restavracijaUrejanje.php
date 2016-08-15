@@ -87,6 +87,11 @@ $restavracija = mysqli_fetch_array($result2);
 							<a href="restavracijaMeniji.php"> <i class="icon-book-open"></i><span>Meniji</span></a>
 						</li>
 						<!-- /meniji -->
+						<!-- komentarji -->
+						<li>
+							<a href="restavracijaKomentarji.php"> <i class="icon-envelope"></i><span>Komentarji</span></a>
+						</li>
+						<!-- /komentarji -->
 						<!-- urejanje -->
 						<li>
 							<a href="restavracijaUrejanje.php"> <i class="icon-wrench"></i><span>Urejanje</span></a>
@@ -161,8 +166,7 @@ $restavracija = mysqli_fetch_array($result2);
 							<div class="col p-b-lg col-xs-9">
 								<div class="profile-stats text-center">
 									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">
+										<h4 class="m-t-0 m-b-0">
 											<div class="rating">
 												<i class="icon-star text-white"></i>
 												<i class="icon-star text-white"></i>
@@ -170,12 +174,7 @@ $restavracija = mysqli_fetch_array($result2);
 												<i class="icon-star text-white"></i>
 												<i class="icon-star text-white"></i>
 											</div></h4>
-											<small>Ocena</small>
-										</div>
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">89</h4>
-											<small>Komentarji</small>
-										</div>
+										<small>Ocena</small>
 									</div>
 								</div>
 								<div class="profile-user">
