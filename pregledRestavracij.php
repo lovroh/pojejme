@@ -39,7 +39,6 @@ session_start();
     <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="styles/app.skins.css">
     <!-- endbuild -->
-</head>end page stylesheets -->
 </head>
 
 <body class="page-loading">
@@ -79,7 +78,7 @@ session_start();
                 <!-- /filter -->
                 <!-- kosarica -->
                 <li>
-                    <a href="commerce-cart.html"> <h5><i class="icon-basket"></i><span>Košarica</span></h5> </a>
+                    <a href="kosarica.php"> <h5><i class="icon-basket"></i><span>Košarica</span></h5> </a>
                 </li>
                 <!-- /kosarica -->
                 <!-- uporabnik -->

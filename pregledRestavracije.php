@@ -89,7 +89,7 @@ $restavracija = mysqli_fetch_array($result2);
 						<!-- /filter -->
 						<!-- kosarica -->
 						<li>
-							<a href="commerce-cart.html"> <h5><i class="icon-basket"></i><span>Košarica</span></h5> </a>
+							<a href="kosarica.php"> <h5><i class="icon-basket"></i><span>Košarica</span></h5> </a>
 						</li>
 						<!-- /kosarica -->
 						<!-- uporabnik -->
@@ -317,7 +317,7 @@ $restavracija = mysqli_fetch_array($result2);
 				<!-- /top header -->
 				<!-- main area -->
 				<div class="main-content">
-					<a class="cart-summary" href="commerce-cart.html" style="cursor:pointer">
+					<a class="cart-summary" href="kosarica.php" style="cursor:pointer">
 					<div class="row-equal">
 						<div class="column text-right p-r">
 							<i class="icon-basket fa-2x"></i>
