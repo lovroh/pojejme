@@ -1,4 +1,6 @@
 <?php
+include 'connection.php';
+
 session_start();
 ?>
 <!doctype html>
@@ -85,13 +87,10 @@ session_start();
                     <a href="javascript:;"> <h5><i class="icon-user"></i><span>Uporabnik</span></h5> </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="javascript:;"> <span>Nastavitve</span> </a>
+                            <a href="edituser.php"> <span>Nastavitve</span> </a>
                         </li>
                         <li>
-                            <a href="javascript:;"> <span>Zgodovina nakupov<span> </a>
-                        </li>
-                        <li>
-                            <a href="extras-signin.html"> <span>Odjava<span> </a>
+                            <a href="odjava.php"> <span>Odjava<span> </a>
                         </li>
                     </ul>
                 </li>
@@ -227,6 +226,62 @@ session_start();
             </form>
 
             <ul class="nav navbar-nav navbar-right hidden-xs">
+                <!-- kosarica -->
+                <li>
+                    <a href="javascript:;" class="ripple"
+                       data-toggle="dropdown"> <i class="icon-basket"></i> </a>
+                    <ul class="dropdown-menu notifications">
+                        <li class="notifications-header">
+                            <p class="text-muted small">
+                                You have 3 new messages
+                            </p>
+                        </li>
+                        <li>
+                            <ul class="notifications-list">
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="notification-icon">
+                                            <div class="circle-icon bg-success text-white">
+                                                <i class="icon-bulb"></i>
+                                            </div>
+                                        </div> <span class="notification-message"><b>Sean</b> launched a new application</span> <span class="time">2s</span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="notification-icon">
+                                            <div class="circle-icon bg-danger text-white">
+                                                <i class="icon-cursor"></i>
+                                            </div>
+                                        </div> <span class="notification-message"><b>Removed
+												calendar</b> from app list</span> <span class="time">4h</span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="notification-icon">
+                                            <div class="circle-icon bg-primary text-white">
+                                                <i class="icon-basket"></i>
+                                            </div>
+                                        </div> <span class="notification-message"><b>Denise</b> bought <b>Urban Admin Kit</b></span> <span class="time">2d</span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <div class="notification-icon">
+                                            <div class="circle-icon bg-info text-white">
+                                                <i class="icon-bubble"></i>
+                                            </div>
+                                        </div> <span class="notification-message"><b>Vincent
+												commented</b> on an item</span> <span class="time">2s</span> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;"> <span
+                                            class="notification-icon"> <img src="images/face3.jpg"
+                                                                            class="avatar img-circle" alt=""> </span> <span class="notification-message"><b>Jack Hunt</b> has <b>joined</b> mailing list</span> <span class="time">9d</span> </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <!-- /kosarica -->
                 <!-- uporabnik-->
                 <li>
                 <?php
@@ -252,7 +307,6 @@ session_start();
                         ?>
                 </li>
                 <!-- /uporabnik-->
-
             </ul>
         </div>
         <!-- /top header -->
@@ -270,32 +324,36 @@ session_start();
                             <tr>
                                 <th class="col-md-2">Logotip</th>
                                 <th class="col-md-3">Naziv</th>
-                                <th class="col-md-4">Opis</th>
+                                <th class="col-md-3">Opis</th>
                                 <th class="col-md-2">Boni</th>
+                                <th class="col-md-2"></th>
                             </tr>
                             </thead>
                             <tbody>
-<?php
+                            <?php
 
-include 'connection.php';
+                            if (!isset($_POST['submit']) || $_POST['search'] == "") {
+                                $query = "SELECT * FROM restavracija";
+                                $result = mysqli_query($con, $query);
 
-if (!isset($_POST['submit']) || $_POST['search'] == "") {
-    $query = "SELECT * FROM restavracija";
-    $result = mysqli_query($con, $query);
-
-    while ($row = mysqli_fetch_array($result)) {
-        $img = $row[1];
-        echo "
-                            <tr>
-                                <td><img src='data:image/jpeg;base64,".base64_encode($img)." style='width:50px;height:50px'></td>
-                                <td>$row[2]</td>
-                                <td>Vrsta: $row[3]<br/> Kraj: $row[8], $row[9]<br/> Telefonska: $row[5]</td>
-                                <td> <h3 class='m-a-0 text-success'>$row[7]</h3></td>
-                            </tr>";  }
-}
-
-$con -> close();
-?>
+                                while ($row = mysqli_fetch_array($result)) {
+                                echo '
+                                <tr>
+                                    <td><img class="card-img-top img-responsive center-block" alt="" style="max-height: 100px; max-width: 125px" src="data:image/jpeg;base64,'.base64_encode( $row['slika'] ).'" ></td>
+                                    <td></br></br>' . $row['ime'] . '</td>
+                                    <td></br>Vrsta: ' . $row['ime'] . '<br/> Kraj: ' . $row['ime'] . ', ' . $row['ime'] . '<br/> Telefonska: ' . $row['ime'] . '</td>
+                                    <td></br></br><h3 class="m-a-0 text-success">' . $row['boni'] . '</h3></td>
+                                    <td></br></br>
+                                        <form action="pregledRestavracije.php" method="post">
+                             				<input type="hidden" value="'.$row['id_restavracija'].'" name="id_restavracija">
+                                            <input type="submit" button type="button" class="btn btn-info" name="ponudba" value="Ponudba">
+                                        </form>
+                                    </td>
+                                </tr>';
+                                }
+                            }
+                            $con -> close();
+                            ?>
                             </tbody>
                         </table>
                     </div>
