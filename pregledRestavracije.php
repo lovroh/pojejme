@@ -1,10 +1,24 @@
+<?php
+include 'connection.php';
+session_start();
 
+$id = $_POST['id_restavracija'];
+
+$query = "SELECT * FROM meni WHERE fk_id_restavracija = '$id'";
+$query2 = "SELECT * FROM restavracija WHERE id_restavracija = '$id'";
+
+$result = mysqli_query($con, $query);
+$result2 = mysqli_query($con, $query2);
+
+$restavracija = mysqli_fetch_array($result2);
+
+?>
 <!doctype html>
 <html class="no-js" lang="">
 
 	<head>
 		<meta charset="utf-8">
-		<title>Reactor - Bootstrap Admin Template</title>
+		<title>Pregled restavracije</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
 		<!-- page stylesheets -->
@@ -40,7 +54,11 @@
 
 	<body class="page-loading">
 		<!-- page loading spinner -->
-		
+		<div class="pageload">
+			<div class="pageload-inner">
+				<div class="sk-rotating-plane"></div>
+			</div>
+		</div>
 		<!-- /page loading spinner -->
 		<div class="app layout-fixed-header">
 			<!-- sidebar panel -->
@@ -79,13 +97,10 @@
 							<a href="javascript:;"> <h5><i class="icon-user"></i><span>Uporabnik</span></h5> </a>
 							<ul class="sub-menu">
 								<li>
-									<a href="javascript:;"> <span>Nastavitve</span> </a>
+									<a href="edituser.php"> <span>Nastavitve</span> </a>
 								</li>
 								<li>
-									<a href="javascript:;"> <span>Zgodovina nakupov<span> </a>
-								</li>
-								<li>
-									<a href="extras-signin.html"> <span>Odjava<span> </a>
+									<a href="odjava.php"> <span>Odjava<span> </a>
 								</li>
 							</ul>
 						</li>
@@ -191,130 +206,30 @@
 						<a class="brand-logo"> <span>POJEJ.ME</span> </a>
 						<!-- /logo -->
 					</div>
-					<ul class="nav navbar-nav hidden-xs">
+					<!-- iskanje -->
+					<form action="pregledRestavracij.php" method="POST">
+						<ul class="nav navbar-nav hidden-xs">
 
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i
-							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-pointer"></i> </a>
-						</li>
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i class="search-close-icon  hide"></i> <i class="search-open-icon ">
-							<p>
-								naslov, mesto..
-							</p></i> </a>
-						</li>
-						<li class="navbar-form search-form hide">
-							<input type="search"
-							class="form-control search-input" placeholder="naslov, mesto..">
-							<div class="search-predict hide">
-								<a href="#">Searching for 'purple rain'</a>
-								<div class="heading">
-									<span class="title">People</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span> </a>
-									</li>
-								</ul>
-								<div class="heading">
-									<span class="title">Page posts</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>The latest news for cloud-based developers </span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>Trending Goods of the Week</span> </a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
+							<li class="searchbox"><a href="javascript:;"
+													 data-toggle="search"> <i
+										class="search-close-icon icon-close hide"></i> <i
+										class="search-open-icon icon-pointer"></i>
+								</a></li>
+							<li class="searchbox"><a href="javascript:;"
+													 data-toggle="search"> <i class="search-close-icon  hide"></i>
+									<i class="search-open-icon "><p>naslov, kraj...</p></i>
+								</a></li>
+							<li class="navbar-form search-form hide"><input type="search" name="search"
+																			class="form-control search-input" placeholder="naslov, mesto..">
+							</li>
 
-					<ul class="nav navbar-nav hidden-xs">
+							<li class="navbar-form search-form hide">
+								<input type="submit" name="submit" value="Išči" class="btn btn-primary btn" />
+							</li>
+						</ul>
+					</form>
+					<!-- /iskanje -->
 
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i
-							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-magnifier"></i> </a>
-						</li>
-						<li class="searchbox">
-							<a href="javascript:;"
-							data-toggle="search"> <i class="search-close-icon  hide"></i> <i class="search-open-icon ">
-							<p>
-								npr. sushi, Mehiška,
-								ribe..
-							</p></i> </a>
-						</li>
-						<li class="navbar-form search-form hide">
-							<input type="search"
-							class="form-control search-input" placeholder="npr. sushi, Mehiška, ribe..">
-							<div class="search-predict hide">
-								<a href="#">Searching for 'purple rain'</a>
-								<div class="heading">
-									<span class="title">People</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span> </a>
-									</li>
-								</ul>
-								<div class="heading">
-									<span class="title">Page posts</span>
-								</div>
-								<ul class="predictive-list">
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>The latest news for cloud-based developers </span> </a>
-									</li>
-									<li>
-										<a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt=""> <span>Trending Goods of the Week</span> </a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- kosarica -->
 						<li>
@@ -374,23 +289,27 @@
 						<!-- /kosarica -->
 						<!-- uporabnik-->
 						<li>
-							<a href="javascript:;" class="ripple"
-							data-toggle="dropdown"> <img src="images/avatar.jpg"
-							class="header-avatar img-circle" alt="user" title="user"> <span>Nikola
-								Vočanec</span> <span class="caret"></span> </a>
-							<ul class="dropdown-menu">
-								<li>
-									<a href="javascript:;">Nastavitve</a>
-								</li>
-								<li>
-									<a href="javascript:;">Zgodovina nakupov</a>
-								</li>
-
-								<li role="separator" class="divider"></li>
-								<li>
-									<a href="extras-signin.html">Odjava</a>
-								</li>
-							</ul>
+							<?php
+							if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
+								<a href="javascript:;" class="ripple"  data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
+									<span>
+                        <?php echo $_SESSION['ime'];?>
+                        </span> <span class="caret"></span> </a>
+								<ul class="dropdown - menu">
+									<li>
+										<a href="urejanjeUporabnika.php">Nastavitve</a>
+									</li>
+									<li role="separator" class="divider"></li>
+									<li>
+										<a href="odjava.php">Odjava</a>
+									</li>
+								</ul>
+								<?php
+							}else { ?>
+								<a href="uporabnik-prijava.html">Prijava</a>
+								<?php
+							}
+							?>
 						</li>
 						<!-- /uporabnik-->
 					</ul>
@@ -411,7 +330,7 @@
 					</div> </a>
 					<div class="m-t-n m-b">
 						<div class="card m-b-0 bg-primary-dark p-a-md no-border m-b m-x-n-g">
-							<div class="card-img-overlay p-a-0 " style="background: url(http://lorempixel.com/1920/600?8) no-repeat; background-size: cover;"></div>
+							<div class="card-img-overlay p-a-0 " style="background-color: rgba(175, 188, 255, 1); background-size: cover;"></div>
 							<div class="card-block" style="height: 200px"></div>
 						</div>
 						<div class="row profile-header text-white">
@@ -421,8 +340,7 @@
 							<div class="col p-b-lg col-xs-9">
 								<div class="profile-stats text-center">
 									<div class="row">
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">
+										<h4 class="m-t-0 m-b-0">
 											<div class="rating">
 												<i class="icon-star text-white"></i>
 												<i class="icon-star text-white"></i>
@@ -430,17 +348,12 @@
 												<i class="icon-star text-white"></i>
 												<i class="icon-star text-white"></i>
 											</div></h4>
-											<small>Ocena</small>
-										</div>
-										<div class="col-xs-6">
-											<h4 class="m-t-0 m-b-0">89</h4>
-											<small>Komentarji</small>
-										</div>
+										<small>Ocena</small>
 									</div>
 								</div>
 								<div class="profile-user">
-									<h4 class="m-t-0 m-b-0">Restavracija 1</h4>
-									<small class="">Picerija in špagetarija</small>
+									<h4 class="m-t-0 m-b-0"><?php echo $restavracija['ime']; ?></h4>
+									<small class=""><?php echo $restavracija['vrsta']; ?></small>
 								</div>
 							</div>
 						</div>
@@ -470,83 +383,59 @@
 													Meniji
 												</div>
 												<div class="sub-title">
-													asdasdasdsadasdas
+													Trenutna ponudba restavracije
 												</div>
 											</div>
-											<a class="cart-summary" href="commerce-cart.html" style="cursor:pointer">
-												
-											<div class="row-equal">
-												<div class="column text-right p-r">
-													<i class="icon-basket fa-2x"></i>
-												</div>
-												<div class="column">
-													5 izdelkov
-													<br>
-													27,24 €
-												</div>
-											</div> </a>
+											<div class="row">
+												<div class="card-block p-a-0">
+													<?php
 
-											<?php
-
-											include 'connection.php';
-
-											$query = $query->conn("SELECT * FROM meni");
-
-											while($meni = mysqli_fetch_array($query)){
-
-												echo '<div class="tile-container">
-												<div class="col-md-6">
-													<div class="tile product-tile">
-														<div class="card bg-white no-border">
-															<div class="col-md-6">
-																<div class="product-image">
-																	<img class="card-img-top img-responsive center-block" alt="" src="http://lorempixel.com/600/500?1">
-																</div>
-															</div>
-															<div class="row">
-																<div class="col-md-6">
-																	<div class="card-block">
-																		<div class="product-meta">
-																			<h5 class="product-title text-capitalize">Klasična pica</h5>
-																			<span class="product-price">5,50 €</span>
-																			<span>
-																				<div class="rating">
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																					<i class="icon-star text-primary"></i>
-																				</div> </span>
-																			<span>Šunka, sir, gobe, paradižnikova omaka</span>
+													while($meni = mysqli_fetch_array($result)){
+													echo '
+													<div class="tile-container">
+														<div class="col-md-6">
+															<div class="tile product-tile">
+																<div class="card bg-white no-border">
+																	<div class="col-md-6">
+																		<div class="product-image">
+																			<img class="card-img-top img-responsive center-block" alt="" src="data:image/jpeg;base64,'.base64_encode( $meni['slika'] ).'" style="min-height: 200px; min-width: 200px">
 																		</div>
 																	</div>
-																</div>
-																<div class="product-actions">
-																	<div>
-																		<div class="cart-button">
-																			<span>
-																				<select name="quantity" id="quantity">
-																					<option label="1" value="number:1" selected="selected">1</option>
-																					<option label="2" value="number:2">2</option>
-																					<option label="3" value="number:3">3</option>
-																					<option label="4" value="number:4">4</option>
-																					<option label="5" value="number:5">5</option>
-																				</select> </span>
-																			<a class="btn btn-sm btn-primary text-uppercase"> <span>Dodaj v košarico</span> </a>
+																	<div class="row">
+																		<div class="col-md-6">
+																			<div class="card-block">
+																				<div class="product-meta">
+																					<h5 class="product-title">' . $meni['jed'] . '</h5>
+																					<span class="product-price">' . $meni['cena'] . ' €</span>
+																					<span>' . $meni['sestavine'] . '</span> </br>
+																					<span>' . $meni['info'] . '</span> </br></br>
+																					<span>Študentski boni: ' . $meni['boni'] . '</span>
+																				</div>
+																				<div class="product-actions">
+																					<div>
+																						<div class="cart-button">
+																							<span>
+																								<select name="quantity" id="quantity">
+																									<option label="1" value="number:1" selected="selected">1</option>
+																									<option label="2" value="number:2">2</option>
+																									<option label="3" value="number:3">3</option>
+																									<option label="4" value="number:4">4</option>
+																									<option label="5" value="number:5">5</option>
+																								</select> </span>
+																							<a class="btn btn-sm btn-primary text-uppercase"> <span>Dodaj v košarico</span> </a>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
 																		</div>
 																	</div>
 																</div>
 															</div>
 														</div>
-													</div>
+													</div>';
+												} ?>
 												</div>
-											</div>';
-
-											}
-
-											
-
-										?>
-
+											</div>
 										</div>
 										<div class="tab-pane" id="komentarji">
 											<div class="page-title">
@@ -554,7 +443,7 @@
 													Komentarji
 												</div>
 												<div class="sub-title">
-													asdasdasdsadasdas
+													Delite svoje izkušnje z drugimi
 												</div>
 											</div>
 											<div class="card bg-white no-border">
@@ -571,65 +460,6 @@
 														<p>
 															Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
 														</p>
-														<div class="profile-timeline-controls">
-															<a class="pull-right" href="javascript:;"> <i class="icon-share"></i> </a>
-															<a class="m-r" href="javascript:;"> <i class="icon-heart"></i>&nbsp;Like </a>
-															<a href="javascript:;"> <i class="icon-bubble"></i>&nbsp;Comment </a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="card bg-white no-border">
-												<div class="card-block">
-													<div class="profile-timeline-header">
-														<a href="#" class="profile-timeline-user"> <img src="images/avatar.jpg" alt="" class="img-rounded"> </a>
-														<div class="profile-timeline-user-details">
-															<a href="#" class="bold">Sean Carpenter</a>
-															<br>
-															<em class="text-info small">created an album collection</em>
-														</div>
-													</div>
-													<div class="profile-timeline-content">
-														<p>
-															Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Sed posuere consectetur est at lobortis. Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-														</p>
-
-														<div class="profile-timeline-controls">
-															<a class="pull-right" href="javascript:;"> <i class="icon-share"></i> </a>
-															<a class="m-r" href="javascript:;"> <i class="icon-heart"></i>&nbsp;Like </a>
-															<a href="javascript:;"> <i class="icon-bubble"></i>&nbsp;Comment </a>
-														</div>
-														<div class="post-comments">
-															<div class="media">
-																<a class="pull-left" href="javascript:;"> <img class="media-object avatar img-rounded" src="images/face3.jpg" alt=""> </a>
-																<div class="comment">
-																	<div class="comment-author">
-																		<a href="javascript:;"> Jane Doe
-																		<time datetime="2015-09-01" class="time">
-																			September 1st, 2015
-																		</time> </a>
-																	</div>
-																	<p>
-																		Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.
-																	</p>
-																	<hr>
-																</div>
-																<div class="media">
-																	<a class="pull-left" href="javascript:;"> <img class="media-object avatar img-rounded" src="images/avatar.jpg" alt=""> </a>
-																	<div class="comment">
-																		<div class="comment-author">
-																			<a href="javascript:;"> Jane Doe
-																			<time datetime="2015-09-02" class="time">
-																				September 2nd, 2015
-																			</time> </a>
-																		</div>
-																		<p>
-																			Vestibulum id ligula porta felis euismod semper. Sed posuere consectetur est at lobortis.
-																		</p>
-																	</div>
-																</div>
-															</div>
-														</div>
 													</div>
 												</div>
 											</div>
@@ -662,28 +492,27 @@
 													Obvestila
 												</div>
 												<div class="sub-title">
-													asdasdasdsadasdas
+													V primeru izrednih dogodkov
 												</div>
 											</div>
 											<div class="row">
+												<?php
+												$query3 = "SELECT * FROM obvestilo WHERE fk_id_restavracija = '$id'";
+												$result3 = mysqli_query($con, $query3);
+
+												while ($obvestilo = mysqli_fetch_array($result3)) {
+													echo '
 												<div class="col-md-6">
 													<div class="card bg-white no-border">
 														<div class="card-block">
-															<h6>7.2.2016</h6>
-															<h4>Zaprtje restavracije</h4>
-															<span>Z 7.2.2016 naša restavracija zapira svoja vrata. Zaradi nepravilnosti pri spletnem naročanju smo propadli. Hvala za zaupanje.</span>
+															<h6>' . $obvestilo['datum'] . '</h6>
+															<span>' . $obvestilo['besedilo'] . '</span></br>
+															<div class="pull-right"><span>Osebje ' . $restavracija['ime'] . '</span> </div></br>
 														</div>
 													</div>
-												</div>
-												<div class="col-md-6">
-													<div class="card bg-white no-border">
-														<div class="card-block">
-															<h6>20.1.2016</h6>
-															<h4>Obvestilo o začetku delovanja</h4>
-															<span>Ponosno sporočamo, da z 1.2.2016 začne delovati spletno naročanje v naši restavraciji</span>
-														</div>
-													</div>
-												</div>
+												</div>';
+												}
+												?>
 											</div>
 										</div>
 										<div class="tab-pane" id="vec">
@@ -692,7 +521,7 @@
 													O restavraciji
 												</div>
 												<div class="sub-title">
-													asdasdasdsadasdas
+													Več podatkov o restavraciji
 												</div>
 											</div>
 											<div class="col-md-6">
@@ -717,9 +546,9 @@
 													<div class="card bg-white no-border">
 														<div class="card-block">
 															<h4>Delovni čas</h4>
-															<span>Med tednom: 08:00 - 20:00</span></br>
-															<span>Sobota: 10:00 - 20:00</span></br>
-															<span>Nedelja: Zaprto</span>
+															<span>Med tednom: <?php echo $restavracija['teden1']; ?> - <?php echo $restavracija['teden2'];?></span></br>
+															<span>Sobota: <?php echo $restavracija['sobota1']; ?> - <?php echo $restavracija['sobota2'];?></span></br>
+															<span>Nedelja: <?php echo $restavracija['nedelja1']; ?> - <?php echo $restavracija['nedelja2'];?></span>
 														</div>
 													</div>
 												</div>
@@ -727,8 +556,8 @@
 													<div class="card bg-white no-border">
 														<div class="card-block">
 															<h4>Kontaktni podatki</h4>
-															<span>Telefon: 031 123 456</span></br>
-															<span>Email: restavracija1@gmail.com</span>
+															<span>Telefon: <?php echo $restavracija['number']; ?></span></br>
+															<span>Email: <?php echo $restavracija['emailfield']; ?></span>
 														</div>
 													</div>
 												</div>
@@ -748,26 +577,7 @@
 				<nav class="footer-right">
 					<ul class="nav">
 						<li>
-							<a href="javascript:;">Feedback</a>
-						</li>
-						<li>
-							<a href="javascript:;" class="scroll-up"> <i class="fa fa-angle-up"></i> </a>
-						</li>
-					</ul>
-				</nav>
-				<nav class="footer-left hidden-xs">
-					<ul class="nav">
-						<li>
-							<a href="javascript:;"><span>About</span> Reactor</a>
-						</li>
-						<li>
-							<a href="javascript:;">Privacy</a>
-						</li>
-						<li>
-							<a href="javascript:;">Terms</a>
-						</li>
-						<li>
-							<a href="javascript:;">Help</a>
+							<a href="landingPage/index.php"> <i class="fa fa-angle-left"> </i><span> Nazaj</span></a>
 						</li>
 					</ul>
 				</nav>
