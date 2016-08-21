@@ -120,18 +120,18 @@ $restavracija = mysqli_fetch_array($result2);
 							<!-- /studentski boni da ali ne -->
 							<!-- hrana -->
 							<li>
-								<h4>Vrsta kuhinje</h4>
+								<h4>Vrsta restavracije</h4>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
 									<input type="checkbox" id="r1">
-									<label for="r1">Picerija</label>
+									<label for="r1">Italijanska</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
 									<input type="checkbox" id="r2">
-									<label for="r2">Špagetarija</label>
+									<label for="r2">Morska</label>
 								</div>
 							</li>
 							<li>
@@ -149,19 +149,25 @@ $restavracija = mysqli_fetch_array($result2);
 							<li>
 								<div class="cs-checkbox m-b">
 									<input type="checkbox" id="r5">
-									<label for="r5">Jedi na žlico</label>
+									<label for="r5">Kitajska</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
 									<input type="checkbox" id="r6">
-									<label for="r6">Pijača</label>
+									<label for="r6">Grill</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
 									<input type="checkbox" id="r7">
-									<label for="r7">Morske jedi</label>
+									<label for="r7">Japonska</label>
+								</div>
+							</li>
+							<li>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r8">
+									<label for="r8">Drugo</label>
 								</div>
 							</li>
 							<!-- /hrana -->
@@ -174,17 +180,6 @@ $restavracija = mysqli_fetch_array($result2);
 								<div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
 							</li>
 							<!-- /cena -->
-							<!-- ocena -->
-							<li>
-								<h4>Ocena</h4>
-							</li>
-							<li>
-								<font size="5">
-									<center>
-										<input type="number" name="your_awesome_parameter" id="some_id" class="rating" data-max="5" data-min="1" data-icon-lib="fa mr5" data-active-icon="fa-star text-warning" data-inactive-icon="fa-star-o" data-clearable-icon="fa-trash-o" data-clearable=" " />
-									</center> </font>
-							</li>
-							<!-- /ocena -->
 						</div>
 					</ul>
 					<!-- za velike zaslone -->
@@ -338,19 +333,6 @@ $restavracija = mysqli_fetch_array($result2);
 								<img class="profile-avatar" src="images/avatar.jpg" alt="" />
 							</div>
 							<div class="col p-b-lg col-xs-9">
-								<div class="profile-stats text-center">
-									<div class="row">
-										<h4 class="m-t-0 m-b-0">
-											<div class="rating">
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-											</div></h4>
-										<small>Ocena</small>
-									</div>
-								</div>
 								<div class="profile-user">
 									<h4 class="m-t-0 m-b-0"><?php echo $restavracija['ime']; ?></h4>
 									<small class=""><?php echo $restavracija['vrsta']; ?></small>
@@ -635,32 +617,36 @@ $restavracija = mysqli_fetch_array($result2);
 							<!-- hrana -->
 							<h4>Vrsta kuhinje</h4>
 							<div class="cs-checkbox m-b">
+								<input type="checkbox" id="r9">
+								<label for="r9">Italijanska</label>
+							</div>
+							<div class="cs-checkbox m-b">
+								<input type="checkbox" id="r10">
+								<label for="r10">Morska</label>
+							</div>
+							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r11">
-								<label for="r11">Picerija</label>
+								<label for="r11">Fast food</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r12">
-								<label for="r12">Špagetarija</label>
+								<label for="r12">Mehiška</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r13">
-								<label for="r13">Fast food</label>
+								<label for="r13">Kitajska</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r14">
-								<label for="r14">Mehiška</label>
+								<label for="r14">Grill</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r15">
-								<label for="r15">Jedi na žlico</label>
+								<label for="r15">Japonska</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r16">
-								<label for="r16">Pijača</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r17">
-								<label for="r17">Morske jedi</label>
+								<label for="r16">Drugo</label>
 							</div>
 							<!-- /hrana -->
 							<!-- cena -->
@@ -668,13 +654,6 @@ $restavracija = mysqli_fetch_array($result2);
 							<br />
 							<div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
 							<!-- /cena -->
-							<!-- ocena -->
-							<h4>Ocena</h4>
-							<font size="5">
-								<center>
-									<input type="number" name="your_awesome_parameter" id="some_id" class="rating" data-max="5" data-min="1" data-icon-lib="fa mr5" data-active-icon="fa-star text-warning" data-inactive-icon="fa-star-o" data-clearable-icon="fa-trash-o" data-clearable=" " />
-								</center> </font>
-							<!-- /ocena -->
 						</div>
 					</div>
 					<div class="modal-footer no-border">
