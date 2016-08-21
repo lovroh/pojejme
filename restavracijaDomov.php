@@ -166,19 +166,6 @@ $slika = mysqli_fetch_array($result2);
 								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $slika['slika'] ).'" alt="" style="max-height: 252px; max-width: 252px"/>'; ?>
 							</div>
 							<div class="col p-b-lg col-xs-9">
-								<div class="profile-stats text-center">
-									<div class="row">
-										<h4 class="m-t-0 m-b-0">
-											<div class="rating">
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-											</div></h4>
-										<small>Ocena</small>
-									</div>
-								</div>
 								<div class="profile-user">
 									<h4 class="m-t-0 m-b-0">
 										<?php
