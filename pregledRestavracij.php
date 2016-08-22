@@ -39,126 +39,6 @@ session_start();
     <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="styles/app.skins.css">
     <!-- endbuild -->
-    <script type="text/javascript">
-
-        $('.slider').each(function() {
-           var data = $(this).data();
-           $(this).slider(data);
-        }   );
-         
-        function reset() {
-            $('tr').each(function() {
-                if (!$(this).is(":visible")) {
-                    $(this).show();
-                }
-            });
-        }
-       
-        function filter1() {
-            $('tr td:nth-child(5)').each(function() {
-                if ($(this).children().html()=="Ne") {
-                    $(this).parent().hide();
-                }
-            });
-        }
-        
-        function filter2() {
-            if ($('#r1').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Italijanska") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-            
-            if ($('#r2').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Morska") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-            
-            if ($('#r3').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Fast food") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-            
-            if ($('#r4').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Mehiška") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-              
-            if ($('#r5').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Kitajska") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-            
-            if ($('#r6').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Grill") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-            
-            if ($('#r7').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Japonska") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-            
-            if ($('#r8').is(":checked")){
-                $('tr td:nth-child(3)').each(function() {
-                    if ($(this).html()!="Drugo") {
-                        $(this).parent().hide();
-                    }
-                });
-            }
-        }   
-        
-        var test1;
-        
-        function filterBoni() {
-            if(test1 == null)
-                test1 = true;;
-            
-            if (test1) {
-                filter1();
-                test1 = false;
-            } else {
-                reset();
-                test1 = true;
-            } 
-        }
-        
-        var test2;
-        
-        function filterCheck() {
-            if(test2 == null)
-                test2 = true;;
-            
-            if (test2) {
-                filter2();
-                test2 = false;
-            } else {
-                reset();
-                test2 = true;
-            } 
-        }
-            
-    </script>
 </head>
 
 <body class="page-loading">
@@ -222,7 +102,7 @@ session_start();
                     <!-- studentski boni da ali ne -->
                     <li>
                         <div>
-                            <input onclick="filterBoni()" class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
+                            <input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
                         </div>
                     </li>
                     <br />
@@ -233,49 +113,49 @@ session_start();
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r1" onclick="filterCheck()">
+                            <input type="checkbox" id="r1">
                             <label for="r1">Italijanska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r2" onclick="filterCheck()">
+                            <input type="checkbox" id="r2">
                             <label for="r2">Morska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r3" onclick="filterCheck()">
+                            <input type="checkbox" id="r3">
                             <label for="r3">Fast food</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r4" onclick="filterCheck()">
+                            <input type="checkbox" id="r4">
                             <label for="r4">Mehiška</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r5" onclick="filterCheck()">
+                            <input type="checkbox" id="r5">
                             <label for="r5">Kitajska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r6" onclick="filterCheck()">
+                            <input type="checkbox" id="r6">
                             <label for="r6">Grill</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r7" onclick="filterCheck()">
+                            <input type="checkbox" id="r7">
                             <label for="r7">Japonska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r8" onclick="filterCheck()">
+                            <input type="checkbox" id="r8">
                             <label for="r8">Drugo</label>
                         </div>
                     </li>
@@ -332,7 +212,7 @@ session_start();
                     </li>
 
                     <li class="navbar-form search-form hide">
-                        <input type="submit" name="isci" value="Išči" class="btn btn-primary btn" />
+                        <input type="submit" name="submit" value="Išči" class="btn btn-primary btn" />
                     </li>
 
                 </ul>
@@ -438,94 +318,35 @@ session_start();
                             <tr>
                                 <th class="col-md-2">Logotip</th>
                                 <th class="col-md-3">Naziv</th>
-                                <th class="col-md-3">Vrsta</th>
                                 <th class="col-md-3">Opis</th>
                                 <th class="col-md-2">Boni</th>
                                 <th class="col-md-2"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php                                       
-                                include 'connection.php';
-                                        
-                                 if (isset($_POST['isci'])) {
-                                            
-                                    $search = $_POST['search'];
-                                            
-                                    if ($search!="") {
-                                                
-                                        $query = "SELECT * FROM restavracija WHERE kraj LIKE ".$search." OR ime LIKE ".$search." AND vrsta LIKE ".$search; 
-                                        $result = mysqli_query($con, $query);
-                                                                                    
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $img = $row[1];
-                                            echo "<tr role='row' class='restavracija'>
-                                                  <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
-                                                  <td>$row[2]</td>
-                                                  <td>$row[3]</td>
-                                                  <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
-                                                  <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
-                                                  </tr>";
-                                        }   
-                                    } else {
-                                                
-                                        $query = "SELECT * FROM restavracija";
-                                        $result = mysqli_query($con, $query);
-                                                                                    
-                                        while ($row = mysqli_fetch_array($result)) {
-                                            $img = $row[1];
-                                            echo "<tr role='row' class='restavracija'>
-                                                  <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
-                                                  <td>$row[2]</td>
-                                                  <td>$row[3]</td> 
-                                                  <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
-                                                  <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
-                                                  </tr>";
-                                        }
-                                     }
-                                  } else if (!isset($_POST['submit'])) {
-                                            
-                                    $query = "SELECT * FROM restavracija";
-                                    $result = mysqli_query($con, $query);
-                                                                                
-                                    while ($row = mysqli_fetch_array($result)) {
-                                        $img = $row[1];
-                                        echo "<tr role='row' class='restavracija'>
-                                              <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
-                                              <td>$row[2]</td>
-                                              <td>$row[3]</td>
-                                              <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
-                                              <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
-                                              </tr>";
-                                    }
-                                  } else {
-                                                 
-                                    $filter1 = $_POST['filter1'];
-                                    $filter2 = $_POST['filter2'];
-                                            
-                                    if (isset($_POST['filter1']) && isset($_POST['filter2']) && $_POST['filter1']!="" && $_POST['filter2']!="") {
-                                        $query = "SELECT * FROM restavracija WHERE kraj LIKE ".$filter1." OR ime LIKE ".$filter1." AND vrsta LIKE ".$filter2; 
-                                    } else if (isset($_POST['filter1'])) {
-                                        $query = "SELECT * FROM restavracija WHERE kraj LIKE ".$filter1." OR ime LIKE ".$filter1; 
-                                    } else if (isset($_POST['filter2'])) {
-                                        $query = "SELECT * FROM restavracija WHERE vrsta LIKE ".$filter2; 
-                                    }
-                                            
-                                    $result = mysqli_query($con, $query);
-                                                                                
-                                    while ($row = mysqli_fetch_array($result)) {
-                                        $img = $row[1];
-                                        echo "<tr role='row' class='restavracija'>
-                                              <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
-                                              <td>$row[2]</td>
-                                              <td>$row[3]</td> 
-                                              <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
-                                              <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
-                                              </tr>";
-                                     }
-                                   }
-                                         
-                                $con -> close();
+                            <?php
+
+                            if (!isset($_POST['submit']) || $_POST['search'] == "") {
+                                $query = "SELECT * FROM restavracija";
+                                $result = mysqli_query($con, $query);
+
+                                while ($row = mysqli_fetch_array($result)) {
+                                echo '
+                                <tr>
+                                    <td><img class="card-img-top img-responsive center-block" alt="" style="max-height: 100px; max-width: 125px" src="data:image/jpeg;base64,'.base64_encode( $row['slika'] ).'" ></td>
+                                    <td></br></br>' . $row['ime'] . '</td>
+                                    <td></br>Vrsta: ' . $row['ime'] . '<br/> Kraj: ' . $row['ime'] . ', ' . $row['ime'] . '<br/> Telefonska: ' . $row['ime'] . '</td>
+                                    <td></br></br><h3 class="m-a-0 text-success">' . $row['boni'] . '</h3></td>
+                                    <td></br></br>
+                                        <form action="pregledRestavracije.php" method="post">
+                             				<input type="hidden" value="'.$row['id_restavracija'].'" name="id_restavracija">
+                                            <input type="submit" button type="button" class="btn btn-info" name="ponudba" value="Ponudba">
+                                        </form>
+                                    </td>
+                                </tr>';
+                                }
+                            }
+                            $con -> close();
                             ?>
                             </tbody>
                         </table>
@@ -559,24 +380,22 @@ session_start();
                 <h4 class="modal-title">Iskanje</h4>
             </div>
             <div class="modal-body">
-            <form action="pregledRestavracij.php" method="POST">
                 <div class="form-group">
-                        
-    							<span class="input m-b-md">
-    								<input class="input__field" type="text" id="input-1" name="filter1">
-    								<label class="input__label" for="input-1"> <span class="input__label-content">Lokacija</span> </label> </span>
-                        <span class="input m-b-md">
-    								<input class="input__field" type="text" id="input-2" name="filter2">
-    								<label class="input__label" for="input-2"> <span class="input__label-content">Restavracija</span> </label> </span>
-    				    
+							<span class="input m-b-md">
+								<input class="input__field" type="text" id="input-1">
+								<label class="input__label" for="input-1"> <span class="input__label-content">Lokacija</span> </label> </span>
+                    <span class="input m-b-md">
+								<input class="input__field" type="text" id="input-2">
+								<label class="input__label" for="input-2"> <span class="input__label-content">Restavracija</span> </label> </span>
                 </div>
-                <div class="modal-footer no-border">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Zapri
-                    </button>
-                    <input type="submit" name="submit" class="btn btn-primary" value="Išči"/>              
-                </div>
-            </form>
+            </div>
+            <div class="modal-footer no-border">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    Zapri
+                </button>
+                <button type="button" class="btn btn-primary">
+                    Išči
+                </button>
             </div>
         </div>
     </div>
@@ -595,41 +414,41 @@ session_start();
             <div class="modal-body">
                 <div class="form-group">
                     <!-- studentski boni da ali ne -->
-                    <input onclick="filterBoni()" class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
+                    <input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
                     <br />
                     <!-- /studentski boni da ali ne -->
                     <!-- hrana -->
                     <h4>Vrsta kuhinje</h4>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r9" onclick="filterCheck()">
+                        <input type="checkbox" id="r9">
                         <label for="r9">Italijanska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r10" onclick="filterCheck()">
+                        <input type="checkbox" id="r10">
                         <label for="r10">Morska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r11" onclick="filterCheck()">
+                        <input type="checkbox" id="r11">
                         <label for="r11">Fast food</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r12" onclick="filterCheck()">
+                        <input type="checkbox" id="r12">
                         <label for="r12">Mehiška</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r13" onclick="filterCheck()">
+                        <input type="checkbox" id="r13">
                         <label for="r13">Kitajska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r14" onclick="filterCheck()">
+                        <input type="checkbox" id="r14">
                         <label for="r14">Grill</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r15" onclick="filterCheck()">
+                        <input type="checkbox" id="r15">
                         <label for="r15">Japonska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r16" onclick="filterCheck()">
+                        <input type="checkbox" id="r16">
                         <label for="r16">Drugo</label>
                     </div>
                     <!-- /hrana -->
@@ -705,6 +524,12 @@ session_start();
 <script src="scripts/tables/table-edit.js"></script>
 <script src="scripts/ui/alert.js"></script>
 <script src="scripts/forms/plugins.js"></script>
+<script type="text/javascript">
+    $('.slider').each(function() {
+        var data = $(this).data();
+        $(this).slider(data);
+    });
+</script>
 <!-- end initialize page scripts -->
 </body>
 
