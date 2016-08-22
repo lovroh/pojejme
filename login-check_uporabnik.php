@@ -7,7 +7,7 @@
     $password = $_POST['password'];
     
     $sql = "SELECT * FROM uporabnik";
-    $result = $conn -> query($sql);
+    $result = $con -> query($sql);
     $switch = false;
     
     if ($result -> num_rows > 0) {
@@ -29,9 +29,9 @@
     }
     
     if ($switch)
-       header("Location: ../../landing_page/index.php");
+       header("Location: landingPage/index.php");
     else 
        header("Location: uporabnik-prijava.html");
     
-    $conn -> close();
+    $con -> close();
 ?>

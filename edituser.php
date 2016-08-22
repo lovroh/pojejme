@@ -8,7 +8,6 @@
 
 	$ime = $_POST['ime'];
 	$priimek = $_POST['priimek'];
-	$opis = $_POST['opis'];
 	$email = $_POST['email'];
 	$telefonska = $_POST['telefonska'];
 	$ulica = $_POST['ulica'];
@@ -18,13 +17,27 @@
 
 	
 
-	$sql = "UPDATE uporabnik SET ime='$ime', priimek='$priimek', opis='$opis', email='$email',
+	$sql = "UPDATE uporabnik SET ime='$ime', priimek='$priimek', email='$email',
 	telefonska='$telefonska', ulica='$ulica', kraj='$kraj', postnast='$postnast' WHERE username='$username'";
 
-	if (!$conn->query($sql))
-		   echo "Error: " . $sql . "<br>" . $conn->error;
-	
 
-	$conn->close();
+
+	if (!$con->query($sql))
+		   echo "Error: " . $sql . "<br>" . $con->error;
+    else{
+        $_SESSION['ime'] = $ime;
+        $_SESSION['priimek'] = $priimek;
+        $_SESSION['email'] = $email;
+        $_SESSION['telefonska'] = $telefonska;
+        $_SESSION['ulica'] = $rulica;
+        $_SESSION['kraj'] = $kraj;
+        $_SESSION['postnast'] = $postnast;
+
+        header('Location: landingPage/index.php');
+    }
+
+
+
+$con->close();
 			
 ?>

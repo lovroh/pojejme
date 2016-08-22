@@ -224,17 +224,18 @@ $restavracija = mysqli_fetch_array($result2);
 						</ul>
 					</form>
 					<!-- /iskanje -->
-
 					<ul class="nav navbar-nav navbar-right hidden-xs">
 						<!-- uporabnik-->
 						<li>
 							<?php
 							if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
-								<a href="javascript:;" class="ripple"  data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
-									<span>
-                        <?php echo $_SESSION['ime'];?>
-                        </span> <span class="caret"></span> </a>
-								<ul class="dropdown - menu">
+								<a href="javascript:;" class="ripple"
+								   data-toggle="dropdown"> <img src="images/avatar.jpg"
+																class="header-avatar img-circle" alt="user" title="user">
+									<span><?php echo $_SESSION['ime']; ?> </span>
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
 									<li>
 										<a href="urejanjeUporabnika.php">Nastavitve</a>
 									</li>
@@ -248,8 +249,7 @@ $restavracija = mysqli_fetch_array($result2);
 								<a href="uporabnik-prijava.html">Prijava</a>
 								<?php
 							}
-							?>
-						</li>
+							?></li>
 						<!-- /uporabnik-->
 					</ul>
 				</div>

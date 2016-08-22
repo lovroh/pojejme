@@ -51,173 +51,56 @@
 				</div>
 				<ul class="nav navbar-nav hidden-xs">
 
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i
-							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-pointer"></i>
-					</a></li>
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i class="search-close-icon  hide"></i>
-							<i class="search-open-icon "><p>naslov, mesto..</p></i>
-					</a></li>
-					<li class="navbar-form search-form hide"><input type="search"
-						class="form-control search-input" placeholder="naslov, mesto..">
-						<div class="search-predict hide">
-							<a href="#">Searching for 'purple rain'</a>
-							<div class="heading">
-								<span class="title">People</span>
-							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
-										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span>
+					<form action="pregledRestavracij.php" method="POST">
+						<ul class="nav navbar-nav hidden-xs">
+
+							<li class="searchbox"><a href="javascript:;"
+													 data-toggle="search"> <i
+										class="search-close-icon icon-close hide"></i> <i
+										class="search-open-icon icon-pointer"></i>
 								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span>
+							<li class="searchbox"><a href="javascript:;"
+													 data-toggle="search"> <i class="search-close-icon  hide"></i>
+									<i class="search-open-icon "><p>naslov, kraj...</p></i>
 								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span>
-								</a></li>
-							</ul>
-							<div class="heading">
-								<span class="title">Page posts</span>
-							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>The latest news for cloud-based developers </span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>Trending Goods of the Week</span>
-								</a></li>
-							</ul>
-						</div></li>
+							<li class="navbar-form search-form hide"><input type="search" name="search"
+																			class="form-control search-input" placeholder="naslov, mesto..">
+							</li>
+
+							<li class="navbar-form search-form hide">
+								<input type="submit" name="submit" value="Išči" class="btn btn-primary btn" />
+							</li>
+
+						</ul>
+
+					</form>
 				</ul>
 
-				<ul class="nav navbar-nav hidden-xs">
-
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i
-							class="search-close-icon icon-close hide"></i> <i
-							class="search-open-icon icon-magnifier"></i>
-					</a></li>
-					<li class="searchbox"><a href="javascript:;"
-						data-toggle="search"> <i class="search-close-icon  hide"></i>
-							<i class="search-open-icon "><p>npr. sushi, Mehiška,
-									ribe..</p></i>
-					</a></li>
-					<li class="navbar-form search-form hide"><input type="search"
-						class="form-control search-input"
-						placeholder="npr. sushi, Mehiška, ribe..">
-						<div class="search-predict hide">
-							<a href="#">Searching for 'purple rain'</a>
-							<div class="heading">
-								<span class="title">People</span>
-							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
-										src="images/face1.jpg" class="img-circle" alt=""> <span>Tammy
-											Carpenter</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/face2.jpg" class="img-circle" alt=""> <span>Catherine
-											Moreno</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/face3.jpg" class="img-circle" alt=""> <span>Diana
-											Robertson</span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/face4.jpg" class="img-circle" alt=""> <span>Emma
-											Sullivan</span>
-								</a></li>
-							</ul>
-							<div class="heading">
-								<span class="title">Page posts</span>
-							</div>
-							<ul class="predictive-list">
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>The latest news for cloud-based developers </span>
-								</a></li>
-								<li><a class="avatar" href="#"> <img
-										src="images/unsplash/img2.jpeg" class="img-rounded" alt="">
-										<span>Trending Goods of the Week</span>
-								</a></li>
-							</ul>
-						</div></li>
-				</ul>
 				<ul class="nav navbar-nav navbar-right hidden-xs">
-
-					<li><a href="javascript:;" class="ripple"
-						data-toggle="dropdown"> <i class="icon-basket"></i>
-					</a>
-						<ul class="dropdown-menu notifications">
-							<li class="notifications-header">
-								<p class="text-muted small">You have 3 new messages</p>
-							</li>
-							<li>
-								<ul class="notifications-list">
-									<li><a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-success text-white">
-													<i class="icon-bulb"></i>
-												</div>
-											</div> <span class="notification-message"><b>Sean</b>
-												launched a new application</span> <span class="time">2s</span>
-									</a></li>
-									<li><a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-danger text-white">
-													<i class="icon-cursor"></i>
-												</div>
-											</div> <span class="notification-message"><b>Removed
-													calendar</b> from app list</span> <span class="time">4h</span>
-									</a></li>
-									<li><a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-primary text-white">
-													<i class="icon-basket"></i>
-												</div>
-											</div> <span class="notification-message"><b>Denise</b>
-												bought <b>Urban Admin Kit</b></span> <span class="time">2d</span>
-									</a></li>
-									<li><a href="javascript:;">
-											<div class="notification-icon">
-												<div class="circle-icon bg-info text-white">
-													<i class="icon-bubble"></i>
-												</div>
-											</div> <span class="notification-message"><b>Vincent
-													commented</b> on an item</span> <span class="time">2s</span>
-									</a></li>
-									<li><a href="javascript:;"> <span
-											class="notification-icon"> <img src="images/face3.jpg"
-												class="avatar img-circle" alt="">
-										</span> <span class="notification-message"><b>Jack Hunt</b>
-												has <b>joined</b> mailing list</span> <span class="time">9d</span>
-									</a></li>
-								</ul>
-							</li>
-						</ul></li>
-					<li><a href="javascript:;" class="ripple"
-						data-toggle="dropdown"> <img src="images/avatar.jpg"
-							class="header-avatar img-circle" alt="user" title="user"> <span>Nikola
-								Vočanec</span> <span class="caret"></span>
-					</a>
-						<ul class="dropdown-menu">
-							<li><a href="javascript:;">Nastavitve</a></li>
-							<li><a href="javascript:;">Zgodovina nakupov</a></li>
-
-							<li role="separator" class="divider"></li>
-							<li><a href="extras-signin.html">Logout</a></li>
-						</ul></li>
+					<li>
+						<?php
+						if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
+							<a href="javascript:;" class="ripple"
+							   data-toggle="dropdown"> <img src="images/avatar.jpg"
+															class="header-avatar img-circle" alt="user" title="user">
+								<span><?php echo $_SESSION['ime']; ?> </span>
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="urejanjeUporabnika.php">Nastavitve</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="odjava.php">Odjava</a>
+								</li>
+							</ul>
+							<?php
+						}else { ?>
+							<a href="uporabnik-prijava.html">Prijava</a>
+							<?php
+						}
+						?></li>
 				</ul>
 			</div>
 			<!-- /top header -->
@@ -242,7 +125,7 @@
 									<!-- end ngIf: currentContact -->
 									<div class="overflow-hidden">
 										<h1 class="ng-binding">
-											<b class="ng-binding">Nikola</b> Vocanec
+											<b class="ng-binding"><?php echo $_SESSION['ime']; ?></b> <?php echo $_SESSION['priimek']; ?>
 										</h1>
 									</div>
 								</div>
@@ -266,14 +149,13 @@
 				
 				$ime = '';
 				$priimek = '';
-				$opis = '';
 				$email = '';
 				$telefonska = '';
 				$ulica = '';
 				$kraj = '';
 				$postnast = '';
 
-				$query = $conn->query("SELECT * FROM uporabnik");
+				$query = $con->query("SELECT * FROM uporabnik");
 
 				while ($results = mysqli_fetch_array($query)){
 
@@ -281,7 +163,6 @@
 
 						$ime = $results['ime'];
 						$priimek = $results['priimek'];
-						$opis = $results['opis'];
 						$email = $results['email'];
 						$telefonska = $results['telefonska'];
 						$ulica = $results['ulica'];
@@ -308,12 +189,6 @@
 						<label class="col-sm-2 control-label">Priimek</label>
 						<div class="col-sm-3">
 							<input type="text" class="form-control" name="priimek" value="<?php echo htmlspecialchars($priimek);?>">
-						</div>
-					</div>
-					<div class="form-group">
-						<label class="col-sm-2 control-label">Opis</label>
-						<div class="col-sm-3">
-							<textarea class="form-control" rows="3" name="opis" value="<?php echo htmlspecialchars($opis);?>"></textarea>
 						</div>
 					</div>
 					<div class="form-group">
@@ -354,7 +229,7 @@
 					</div>
 					<div class="form-group">
 						<label class="col-sm-2 control-label"></label>
-						<button type="button" class="btn btn-primary">Shrani!</button>
+						<input type="submit" name="submit" value="Spremeni" class="btn btn-primary btn" />
 					</div>
 				</form>
 				<!-- /FORMA ZAUREJANJE UPORABNIKA -->

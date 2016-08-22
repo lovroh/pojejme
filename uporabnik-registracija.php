@@ -12,13 +12,13 @@
 	$kraj = $_POST['kraj'];
 	$postnast = $_POST['postnast'];
 	
-	$sql = "INSERT INTO uporabnik (id, username, password, ime, priimek, email, telefonska, ulica, kraj, postnast)
+	$sql = "INSERT INTO uporabnik (user_id, username, password, ime, priimek, email, telefonska, ulica, kraj, postnast)
 			VALUES (NULL, '$username', '$password', '$ime', '$priimek', '$email', '$telefonska', '$ulica', '$kraj', '$postnast')";
 			
-	if (!$conn->query($sql))
-		   echo "Error: " . $sql . "<br>" . $conn->error;
+	if (!$con->query($sql))
+		   echo "Error: " . $sql . "<br>" . $cnn->error;
 	
-	$conn->close();
+	$con->close();
     
-    header("Location: http://localhost/RIS/landing_page/prva/index.php");
+    header("Location: landingPage/index.php");
 ?>

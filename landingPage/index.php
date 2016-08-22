@@ -70,8 +70,9 @@
                         
                         if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) {
                             echo "<li class='dropdown'>
-                               <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dobrodošel, ".$_SESSION['ime']." ".$_SESSION['priimek']."</a>
+                               <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dobrodošel, ".$_SESSION['ime']."</a>
                                <ul class='dropdown-menu'>
+                                 <li><a href='../urejanjeUporabnika.php'>Nastavitve</a></li>
                                  <li><a href='../odjava.php'>Odjava</a></li>
                               </ul>
                             </li>";

@@ -222,28 +222,29 @@ session_start();
             <ul class="nav navbar-nav navbar-right hidden-xs">
                 <!-- uporabnik-->
                 <li>
-                <?php
+                    <?php
                     if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
-                        <a href="javascript:;" class="ripple"  data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
-                        <span>
-                        <?php echo $_SESSION['ime'];?>
-                        </span> <span class="caret"></span> </a>
-                        <ul class="dropdown - menu">
-                            <li>
-                                <a href="urejanjeUporabnika.php">Nastavitve</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="odjava.php">Odjava</a>
-                            </li>
-                        </ul>
+                    <a href="javascript:;" class="ripple"
+                       data-toggle="dropdown"> <img src="images/avatar.jpg"
+                                                    class="header-avatar img-circle" alt="user" title="user">
+                        <span><?php echo $_SESSION['ime']; ?> </span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="urejanjeUporabnika.php">Nastavitve</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <li>
+                            <a href="odjava.php">Odjava</a>
+                        </li>
+                    </ul>
                         <?php
-                        }else { ?>
-                            <a href="uporabnik-prijava.html">Prijava</a>
+                    }else { ?>
+                        <a href="uporabnik-prijava.html">Prijava</a>
                         <?php
-                        }
-                        ?>
-                </li>
+                    }
+                    ?></li>
                 <!-- /uporabnik-->
             </ul>
         </div>
