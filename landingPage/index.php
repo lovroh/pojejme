@@ -1,3 +1,7 @@
+<?php
+include '../connection.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,7 +151,7 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>Izberi</h3>
-                        <p class="text-muted">Izbor si lahko olajšaš z ocenami strank</p>
+                        <p class="text-muted">Izbor si prilagodi za svoj okus</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
@@ -161,7 +165,7 @@
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
                         <h3>Pojej</h3>
-                        <p class="text-muted">Ocene in povratni komentarji so zaželeni</p>
+                        <p class="text-muted">Povratni komentarji so zaželeni</p>
                     </div>
                 </div>
             </div>
@@ -184,54 +188,32 @@
                     <hr class="primary">
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                <img src="img/portfolio/1.jpg" class="img-responsive" alt="">
+            <?php
+            $query = "SELECT * FROM restavracija ORDER BY id_restavracija DESC LIMIT 3";
+            $result = mysqli_query($con, $query);
+
+            while ($row = mysqli_fetch_array($result)) {
+                echo ' <div class="col-lg-4 col-sm-6">
+                <a href="../pregledRestavracij.php" class="portfolio-box">
+                <img class="img-responsive" alt="" src="data:image/jpeg;base64,'.base64_encode( $row['slika'] ).'" style="max-height: 200px; max-width: 250px">
                     <div class="portfolio-box-caption">
                         <div class="portfolio-box-caption-content">
                             <div class="project-category text-faded">
-                                Restavracija
+                                ' . $row['ime'] . '
                             </div>
                             <div class="project-name">
-                                Project Name
+                                ' . $row['vrsta'] . '
                             </div>
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                <img src="img/portfolio/2.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Restavracija
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <a href="#" class="portfolio-box">
-                <img src="img/portfolio/3.jpg" class="img-responsive" alt="">
-                    <div class="portfolio-box-caption">
-                        <div class="portfolio-box-caption-content">
-                            <div class="project-category text-faded">
-                                Restavracija
-                            </div>
-                            <div class="project-name">
-                                Project Name
-                            </div>
-                        </div>
-                    </div>
-                </a>
-             </div>
+            </div> ';
+            }
+
+            ?>
          </div>
     </section>
-    
+
     <section class="bg-dark" id="about">
         <div class="container">
             <div class="row">
@@ -289,15 +271,6 @@
                                 <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
                             </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-below">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        Copyright &copy; Your Website 2014
                     </div>
                 </div>
             </div>
