@@ -1,3 +1,10 @@
+<?php
+error_reporting(0);
+session_start();
+    $user_id = (isset($_SESSION['user_id'])? $_SESSION['user_id']:header("Location: ../uporabnik-prijava.html"));
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -170,10 +177,13 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Preglej ponudbo restavracij!</h2>
-                <a href="../static/app/pregledRestavracij.php" class="btn btn-default btn-xl wow tada">Pregled</a>
+                <a class="btn btn-default btn-xl wow tada" href="food_menu.php">Pregled</a>
             </div>
         </div>
     </section>
+    
+    
+    
     <section id="novo">
         <div class="container">
             <div class="row">
