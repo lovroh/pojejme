@@ -111,18 +111,18 @@ session_start();
           <!-- /studentski boni da ali ne -->
           <!-- hrana -->
           <li>
-            <h4>Vrsta kuhinje</h4>
+            <h4>Vrsta restavracije</h4>
           </li>
           <li>
             <div class="cs-checkbox m-b">
               <input type="checkbox" id="r1">
-              <label for="r1">Picerija</label>
+              <label for="r1">Italijanska</label>
             </div>
           </li>
           <li>
             <div class="cs-checkbox m-b">
               <input type="checkbox" id="r2">
-              <label for="r2">Špagetarija</label>
+              <label for="r2">Morska</label>
             </div>
           </li>
           <li>
@@ -140,19 +140,25 @@ session_start();
           <li>
             <div class="cs-checkbox m-b">
               <input type="checkbox" id="r5">
-              <label for="r5">Jedi na žlico</label>
+              <label for="r5">Kitajska</label>
             </div>
           </li>
           <li>
             <div class="cs-checkbox m-b">
               <input type="checkbox" id="r6">
-              <label for="r6">Pijača</label>
+              <label for="r6">Grill</label>
             </div>
           </li>
           <li>
             <div class="cs-checkbox m-b">
               <input type="checkbox" id="r7">
-              <label for="r7">Morske jedi</label>
+              <label for="r7">Japonska</label>
+            </div>
+          </li>
+          <li>
+            <div class="cs-checkbox m-b">
+              <input type="checkbox" id="r8">
+              <label for="r8">Drugo</label>
             </div>
           </li>
           <!-- /hrana -->
@@ -165,17 +171,6 @@ session_start();
             <div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
           </li>
           <!-- /cena -->
-          <!-- ocena -->
-          <li>
-            <h4>Ocena</h4>
-          </li>
-          <li>
-            <font size="5">
-              <center>
-                <input type="number" name="your_awesome_parameter" id="some_id" class="rating" data-max="5" data-min="1" data-icon-lib="fa mr5" data-active-icon="fa-star text-warning" data-inactive-icon="fa-star-o" data-clearable-icon="fa-trash-o" data-clearable=" " />
-              </center> </font>
-          </li>
-          <!-- /ocena -->
         </div>
       </ul>
       <!-- za velike zaslone -->
@@ -227,62 +222,6 @@ session_start();
       </form>
 
       <ul class="nav navbar-nav navbar-right hidden-xs">
-        <!-- kosarica -->
-        <li>
-          <a href="javascript:;" class="ripple"
-             data-toggle="dropdown"> <i class="icon-basket"></i> </a>
-          <ul class="dropdown-menu notifications">
-            <li class="notifications-header">
-              <p class="text-muted small">
-                You have 3 new messages
-              </p>
-            </li>
-            <li>
-              <ul class="notifications-list">
-                <li>
-                  <a href="javascript:;">
-                    <div class="notification-icon">
-                      <div class="circle-icon bg-success text-white">
-                        <i class="icon-bulb"></i>
-                      </div>
-                    </div> <span class="notification-message"><b>Sean</b> launched a new application</span> <span class="time">2s</span> </a>
-                </li>
-                <li>
-                  <a href="javascript:;">
-                    <div class="notification-icon">
-                      <div class="circle-icon bg-danger text-white">
-                        <i class="icon-cursor"></i>
-                      </div>
-                    </div> <span class="notification-message"><b>Removed
-												calendar</b> from app list</span> <span class="time">4h</span> </a>
-                </li>
-                <li>
-                  <a href="javascript:;">
-                    <div class="notification-icon">
-                      <div class="circle-icon bg-primary text-white">
-                        <i class="icon-basket"></i>
-                      </div>
-                    </div> <span class="notification-message"><b>Denise</b> bought <b>Urban Admin Kit</b></span> <span class="time">2d</span> </a>
-                </li>
-                <li>
-                  <a href="javascript:;">
-                    <div class="notification-icon">
-                      <div class="circle-icon bg-info text-white">
-                        <i class="icon-bubble"></i>
-                      </div>
-                    </div> <span class="notification-message"><b>Vincent
-												commented</b> on an item</span> <span class="time">2s</span> </a>
-                </li>
-                <li>
-                  <a href="javascript:;"> <span
-                          class="notification-icon"> <img src="images/face3.jpg"
-                                                          class="avatar img-circle" alt=""> </span> <span class="notification-message"><b>Jack Hunt</b> has <b>joined</b> mailing list</span> <span class="time">9d</span> </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <!-- /kosarica -->
         <!-- uporabnik-->
         <li>
           <?php
@@ -489,32 +428,36 @@ session_start();
           <!-- hrana -->
           <h4>Vrsta kuhinje</h4>
           <div class="cs-checkbox m-b">
+            <input type="checkbox" id="r9">
+            <label for="r9">Italijanska</label>
+          </div>
+          <div class="cs-checkbox m-b">
+            <input type="checkbox" id="r10">
+            <label for="r10">Morska</label>
+          </div>
+          <div class="cs-checkbox m-b">
             <input type="checkbox" id="r11">
-            <label for="r11">Picerija</label>
+            <label for="r11">Fast food</label>
           </div>
           <div class="cs-checkbox m-b">
             <input type="checkbox" id="r12">
-            <label for="r12">Špagetarija</label>
+            <label for="r12">Mehiška</label>
           </div>
           <div class="cs-checkbox m-b">
             <input type="checkbox" id="r13">
-            <label for="r13">Fast food</label>
+            <label for="r13">Kitajska</label>
           </div>
           <div class="cs-checkbox m-b">
             <input type="checkbox" id="r14">
-            <label for="r14">Mehiška</label>
+            <label for="r14">Grill</label>
           </div>
           <div class="cs-checkbox m-b">
             <input type="checkbox" id="r15">
-            <label for="r15">Jedi na žlico</label>
+            <label for="r15">Japonska</label>
           </div>
           <div class="cs-checkbox m-b">
             <input type="checkbox" id="r16">
-            <label for="r16">Pijača</label>
-          </div>
-          <div class="cs-checkbox m-b">
-            <input type="checkbox" id="r17">
-            <label for="r17">Morske jedi</label>
+            <label for="r16">Drugo</label>
           </div>
           <!-- /hrana -->
           <!-- cena -->
@@ -522,13 +465,6 @@ session_start();
           <br />
           <div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
           <!-- /cena -->
-          <!-- ocena -->
-          <h4>Ocena</h4>
-          <font size="5">
-            <center>
-              <input type="number" name="your_awesome_parameter" id="some_id" class="rating" data-max="5" data-min="1" data-icon-lib="fa mr5" data-active-icon="fa-star text-warning" data-inactive-icon="fa-star-o" data-clearable-icon="fa-trash-o" data-clearable=" " />
-            </center> </font>
-          <!-- /ocena -->
         </div>
       </div>
       <div class="modal-footer no-border">
@@ -539,10 +475,10 @@ session_start();
           Išči
         </button>
       </div>
+
     </div>
   </div>
 </div>
-<!-- /filter modal mobile-->
   </div>
 <!-- build:js({.tmp,app}) scripts/app.min.js -->
 <script src="scripts/helpers/modernizr.js"></script>

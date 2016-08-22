@@ -79,6 +79,7 @@
                             echo "<li class='dropdown'>
                                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>Dobrodošli, ".$_SESSION['ime']."</a>
                                <ul class='dropdown-menu'>
+                                 <li><a href='../restavracijaDomov.php'>Domov</a></li>
                                  <li><a href='../odjava.php'>Odjava</a></li>
                               </ul>
                             </li>";
@@ -170,7 +171,7 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Preglej ponudbo restavracij!</h2>
-                <a href="../static/app/pregledRestavracij.php" class="btn btn-default btn-xl wow tada">Pregled</a>
+                <a href="../pregledRestavracij.php" class="btn btn-default btn-xl wow tada">Pregled</a>
             </div>
         </div>
     </section>

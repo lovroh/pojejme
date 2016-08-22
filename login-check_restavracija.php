@@ -14,6 +14,7 @@ if(isset($_POST["submit"])) {
         $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
 
         if(mysqli_num_rows($result) == 1) {
+            $_SESSION['loggedin_restavracija'] = true;
             $_SESSION['id_restavracija'] = $row['id_restavracija'];
             $_SESSION['ime'] = $row['ime'];
             $_SESSION['vrsta'] = $row['vrsta'];

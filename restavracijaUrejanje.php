@@ -164,19 +164,6 @@ $restavracija = mysqli_fetch_array($result2);
 								<?php echo '<img class="profile-avatar" src="data:image/jpeg;base64,'.base64_encode( $restavracija['slika'] ).'" alt="" style="max-height: 252px; max-width: 252px"/>'; ?>
 							</div>
 							<div class="col p-b-lg col-xs-9">
-								<div class="profile-stats text-center">
-									<div class="row">
-										<h4 class="m-t-0 m-b-0">
-											<div class="rating">
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-												<i class="icon-star text-white"></i>
-											</div></h4>
-										<small>Ocena</small>
-									</div>
-								</div>
 								<div class="profile-user">
 									<h4 class="m-t-0 m-b-0">
 										<?php
@@ -229,7 +216,16 @@ $restavracija = mysqli_fetch_array($result2);
 																<div class="form-group">
 																	<label class="col-sm-3 control-label">Vrsta</label>
 																	<div class="col-sm-8">
-																		<input type="text" class="form-control" id="vrsta" name="vrsta" value="<?php echo $restavracija['vrsta']; ?>">
+																		<select class="form-control" id="vrsta" name="vrsta" value="<?php echo $restavracija['vrsta']; ?>">
+																			<option value="Italijanska">Italijanska</option>
+																			<option value="Morska">Morska</option>
+																			<option value="Fast food">Fast food</option>
+																			<option value="Mehiška">Mehiška</option>
+																			<option value="Kitajska">Kitajska</option>
+																			<option value="Grill">Grill</option>
+																			<option value="Japonska">Japonska</option>
+																			<option value="Drugo">Drugo</option>
+																		</select>
 																	</div>
 																</div>
 																</br></br>
