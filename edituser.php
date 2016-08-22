@@ -15,8 +15,6 @@
 	$postnast = $_POST['postnast'];
 
 
-	
-
 	$sql = "UPDATE uporabnik SET ime='$ime', priimek='$priimek', email='$email',
 	telefonska='$telefonska', ulica='$ulica', kraj='$kraj', postnast='$postnast' WHERE username='$username'";
 

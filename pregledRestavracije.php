@@ -373,12 +373,12 @@ $restavracija = mysqli_fetch_array($result2);
 												</div>
 											</div>
                                             <input type="hidden" id="shoW_com" value="comment_show.php" />
-											
+
                                             <div id="comment_show">
-                                            
-                                            
+
+
                                             </div>
-                                            
+
                                             
 											<div class="card bg-white no-border">
                                                 <form id="sv_comment" action="comment_sv.php" method="get" enctype="multipart/form-data">
@@ -389,6 +389,7 @@ $restavracija = mysqli_fetch_array($result2);
     															Izrazi svoje mnenje o restavraciji in jedeh
     														</p>
     													</div>
+														<input type="hidden" name="fk_id_restavracija" value="<php $id">
                                                         <div class="text-center">
     														<input class="form-control m-b" type="text" name="username" placeholder="User name" value="<?php echo (isset($_SESSION['username'])? $_SESSION['username']:'');?>" size="100" required="required" />
     													</div>
@@ -446,24 +447,7 @@ $restavracija = mysqli_fetch_array($result2);
 													Več podatkov o restavraciji
 												</div>
 											</div>
-											<div class="col-md-6">
-												<div class="card bg-white no-border">
-													<div class="card-block">
-														<div class="world-map page-height-xs">
-															<div id="google-container"></div>
-														</div>
-													</div>
-												</div>
-											</div>
 											<div class="row">
-												<div class="col-md-6">
-													<div class="card bg-white no-border">
-														<div class="card-block">
-															<h4>O nas</h4>
-															<span>Smo restavracija ki že 30 let balbalbalblab balbalbal balbalb abalbal balba l neki takga!</span>
-														</div>
-													</div>
-												</div>
 												<div class="col-md-6">
 													<div class="card bg-white no-border">
 														<div class="card-block">
@@ -672,8 +656,8 @@ $restavracija = mysqli_fetch_array($result2);
 				var data = $(this).data();
 				$(this).slider(data);
 			});
-            
-            
+
+
             $(function(){
                     $('#sv_comment').on('submit', function(a){
                         a.preventDefault();
@@ -689,10 +673,10 @@ $restavracija = mysqli_fetch_array($result2);
                             error: function (jXHR, textStatus, errorThrown) {html("")}
                         });
                       });
-                      
+
                       show_comment();
             });
-            
+
             function show_comment(){
                 var submiturl = $('#shoW_com').val();
                 $.ajax({
@@ -707,7 +691,7 @@ $restavracija = mysqli_fetch_array($result2);
                             }else{
                                 //
                             }
-                            
+
                          },
                         error: function (jXHR, textStatus, errorThrown) {html("")}
                     });

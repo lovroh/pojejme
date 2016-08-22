@@ -43,11 +43,11 @@ session_start();
 
 <body class="page-loading">
 <!-- page loading spinner -->
- <div class="pageload">
-     <div class="pageload-inner">
-         <div class="sk-rotating-plane"></div>
-     </div>
- </div>
+<div class="pageload">
+    <div class="pageload-inner">
+        <div class="sk-rotating-plane"></div>
+    </div>
+</div>
 <!-- /page loading spinner -->
 <div class="app layout-fixed-header">
     <!-- sidebar panel -->
@@ -224,21 +224,21 @@ session_start();
                 <li>
                     <?php
                     if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
-                    <a href="javascript:;" class="ripple"
-                       data-toggle="dropdown"> <img src="images/avatar.jpg"
-                                                    class="header-avatar img-circle" alt="user" title="user">
-                        <span><?php echo $_SESSION['ime']; ?> </span>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="urejanjeUporabnika.php">Nastavitve</a>
-                        </li>
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="odjava.php">Odjava</a>
-                        </li>
-                    </ul>
+                        <a href="javascript:;" class="ripple"
+                           data-toggle="dropdown"> <img src="images/avatar.jpg"
+                                                        class="header-avatar img-circle" alt="user" title="user">
+                            <span><?php echo $_SESSION['ime']; ?> </span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="urejanjeUporabnika.php">Nastavitve</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="odjava.php">Odjava</a>
+                            </li>
+                        </ul>
                         <?php
                     }else { ?>
                         <a href="uporabnik-prijava.html">Prijava</a>
@@ -276,11 +276,11 @@ session_start();
                                 $result = mysqli_query($con, $query);
 
                                 while ($row = mysqli_fetch_array($result)) {
-                                echo '
+                                    echo '
                                 <tr>
                                     <td><img class="card-img-top img-responsive center-block" alt="" style="max-height: 100px; max-width: 125px" src="data:image/jpeg;base64,'.base64_encode( $row['slika'] ).'" ></td>
                                     <td></br></br>' . $row['ime'] . '</td>
-                                    <td></br>Vrsta: ' . $row['ime'] . '<br/> Kraj: ' . $row['ime'] . ', ' . $row['ime'] . '<br/> Telefonska: ' . $row['ime'] . '</td>
+                                    <td></br>Vrsta: ' . $row['vrsta'] . '<br/> Kraj: ' . $row['kraj'] . ', ' . $row['naslov'] . '<br/> Telefonska: ' . $row['number'] . '</td>
                                     <td></br></br><h3 class="m-a-0 text-success">' . $row['boni'] . '</h3></td>
                                     <td></br></br>
                                         <form action="pregledRestavracije.php" method="post">
