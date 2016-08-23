@@ -162,15 +162,6 @@ session_start();
             </div>
           </li>
           <!-- /hrana -->
-          <!-- cena -->
-          <li>
-            <h4>Cena</h4>
-          </li>
-          <br />
-          <li>
-            <div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-          </li>
-          <!-- /cena -->
         </div>
       </ul>
       <!-- za velike zaslone -->
@@ -192,7 +183,7 @@ session_start();
         </div>
         <!-- /toggle offscreen menu -->
         <!-- logo -->
-        <a class="brand-logo"> <span>REACTOR</span>
+        <a class="brand-logo"> <span>POJEJ.ME</span>
         </a>
         <!-- /logo -->
       </div>
@@ -225,27 +216,28 @@ session_start();
         <!-- uporabnik-->
         <li>
           <?php
-                    if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
-          <a href="javascript:;" class="ripple"  data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
-            <span>
-                        <?php echo $_SESSION['ime'];?>
-                        </span> <span class="caret"></span> </a>
-          <ul class="dropdown - menu">
-            <li>
-              <a href="urejanjeUporabnika.php">Nastavitve</a>
-            </li>
-            <li role="separator" class="divider"></li>
-            <li>
-              <a href="odjava.php">Odjava</a>
-            </li>
-          </ul>
-          <?php
-                        }else { ?>
-          <a href="uporabnik-prijava.html">Prijava</a>
-          <?php
-                        }
-                        ?>
-        </li>
+          if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
+            <a href="javascript:;" class="ripple"
+               data-toggle="dropdown"> <img src="images/avatar.jpg"
+                                            class="header-avatar img-circle" alt="user" title="user">
+              <span><?php echo $_SESSION['ime']; ?> </span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="urejanjeUporabnika.php">Nastavitve</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a href="odjava.php">Odjava</a>
+              </li>
+            </ul>
+            <?php
+          }else { ?>
+            <a href="uporabnik-prijava.html">Prijava</a>
+            <?php
+          }
+          ?></li>
         <!-- /uporabnik-->
       </ul>
     </div>
@@ -357,8 +349,8 @@ session_start();
         </div>
         <div class="row">
           <div class="col-xs-12">
-            <a href="javascript:;" class="btn btn-primary pull-right">Checkout</a>
-            <a href="javascript:;" class="btn btn-default" ui-sref="app.commerce.products">Continue shopping</a>
+            <a href="javascript:;" class="btn btn-primary pull-right">Potrdi naročilo</a>
+            <a href="javascript:;" class="btn btn-default" ui-sref="app.commerce.products">Nazaj</a>
           </div>
         </div>
       </div>
@@ -460,11 +452,6 @@ session_start();
             <label for="r16">Drugo</label>
           </div>
           <!-- /hrana -->
-          <!-- cena -->
-          <h4>Cena</h4>
-          <br />
-          <div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-          <!-- /cena -->
         </div>
       </div>
       <div class="modal-footer no-border">

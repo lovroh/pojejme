@@ -115,12 +115,12 @@ include '../connection.php';
                 <div class="col-lg-8 col-lg-offset-2">
                     <div class="panel panel-default">
                         <div class="panel-body ">
-                            <form class="form-inline">
+                            <form action="../pregledRestavracij.php" class="form-inline" method="POST">
                                 <h4>Preglej ponudbo restavracij!</h4></br>
                                 <div class="row">
-                                    <input type="text" class="form-control" placeholder="Naslov, kraj">
-                                    <input type="text" class="form-control" placeholder="Restavracija, vrsta hrane">
-                                    <button type="submit" class="btn btn-default">Išči</button>
+                                    <input type="text" class="form-control" placeholder="Naslov, kraj" name="filter1">
+                                    <input type="text" class="form-control" placeholder="Restavracija, vrsta hrane" name="filter2">
+                                    <button type="submit" name="submit" class="btn btn-default">Išči</button>
                                 </div>
                             </form>
                         </div>

@@ -50,6 +50,301 @@ $restavracija = mysqli_fetch_array($result2);
 		<link rel="stylesheet" href="styles/app.css">
 		<link rel="stylesheet" href="styles/app.skins.css">
 		<!-- endbuild -->
+		<script type="text/javascript">
+         
+        function reset() {
+            $('.boni').each(function() {
+                if (!$(this).is(":visible")) {
+                    $(this).parent().parent().parent().parent().parent().show();
+                }
+            });
+        }
+       
+        function filter1() {
+            $('.boni').each(function() {
+                if ($(this).html()=="Ne") {
+                    $(this).parent().parent().parent().parent().parent().hide();
+                }
+            });
+        }
+        
+        var checked = [];
+        
+        function filter2() {
+            checked = [];
+            $(".check").each(function() {
+                if ($(this).is(":checked")) {
+                    checked.push(true);
+                } else {
+                    checked.push(false);
+                }
+            });
+        }
+        
+        function filterCheck() {
+            if(checked==null) {
+                checked = [];
+            }
+            filter2();
+            
+            var test = false;
+            for (var i=0; i<checked.length; i++) {
+                if (checked[i]==true)
+                 test = true;
+            }
+            
+            if (test==true) {
+                $('.vrsta').each(function() {
+                    $(this).parent().parent().parent().parent().parent().hide();
+                });  
+            } else {
+                $('.vrsta').each(function() {
+                    $(this).parent().parent().parent().parent().parent().show();
+                });  
+            }            
+
+            if (checked[0]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Pica") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[1]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Špageti") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[2]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Zrezek") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[3]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Juha") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[4]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Jed na žlico") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[5]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Pijača") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[6]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Riba") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+            if (checked[7]==true) {
+                $('.vrsta').each(function() {
+                    if ($(this).html()=="Žar") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+			if (checked[8]==true) {
+				$('.vrsta').each(function() {
+					if ($(this).html()=="Drugo") {
+						$(this).parent().parent().parent().parent().parent().show();
+					}
+				});
+			}
+        } 
+        
+        /*
+        function filter2() {
+            if ($('#r1').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Italijanska") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Italijanska") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter3() {
+            if ($('#r2').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Morska") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Morksa") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter4() {
+            if ($('#r3').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Fast food") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Fast food") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter5() {
+            if ($('#r4').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Mehiška") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Mehiška") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter6() {
+            if ($('#r5').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Kitajska") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Kitajska") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter7() {
+            if ($('#r6').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Grill") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Grill") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter8() {
+            if ($('#r7').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Japonska") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden")) {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Japonska") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }
+        
+        function filter9() {
+            if ($('#r8').is(":checked")){
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Drugo") {
+                        $(this).parent().parent().parent().parent().parent().hide();
+                    } else {
+                        if ($(this).is(":hidden"))   {
+                            $(this).parent().parent().parent().parent().parent().show();
+                        }
+                    }
+                });
+            } else {
+                $('.vrsta').each(function() {
+                    if ($(this).html()!="Drugo") {
+                        $(this).parent().parent().parent().parent().parent().show();
+                    }
+                });
+            }
+        }*/
+        
+        var test1;
+        
+        function filterBoni() {
+            if(test1 == null)
+                test1 = true;;
+            
+            if (test1) {
+                filter1();
+                test1 = false;
+            } else {
+                reset();
+                test1 = true;
+            } 
+        }
+            
+    </script>
 	</head>
 
 	<body class="page-loading">
@@ -77,35 +372,35 @@ $restavracija = mysqli_fetch_array($result2);
 				<nav role="navigation">
 					<!-- za za telefone -->
 					<ul class="nav hidden-md hidden-lg">
-						<!-- iskanje -->
-						<li>
-							<a href="javascript:;"> <h5><i class="icon-magnifier"></i><span data-toggle="modal" data-target=".bs-modal-sm1">Iskanje</span></h5> </a>
-						</li>
-						<!-- /iskanje -->
-						<!-- filter -->
-						<li>
-							<a href="javascript:;"> <h5><i class="icon-book-open"></i><span data-toggle="modal" data-target=".bs-modal-sm2">Filter</span></h5> </a>
-						</li>
-						<!-- /filter -->
-						<!-- kosarica -->
-						<li>
-							<a href="kosarica.php"> <h5><i class="icon-basket"></i><span>Košarica</span></h5> </a>
-						</li>
-						<!-- /kosarica -->
-						<!-- uporabnik -->
-						<li>
-							<a href="javascript:;"> <h5><i class="icon-user"></i><span>Uporabnik</span></h5> </a>
-							<ul class="sub-menu">
-								<li>
-									<a href="edituser.php"> <span>Nastavitve</span> </a>
-								</li>
-								<li>
-									<a href="odjava.php"> <span>Odjava<span> </a>
-								</li>
-							</ul>
-						</li>
-						<!-- /uporabnik -->
-					</ul>
+                <!-- iskanje -->
+                <li>
+                    <a href="javascript:;"> <h5><i class="icon-magnifier"></i><span data-toggle="modal" data-target=".bs-modal-sm1">Iskanje</span></h5> </a>
+                </li>
+                <!-- /iskanje -->
+                <!-- filter -->
+                <li>
+                    <a href="javascript:;"> <h5><i class="icon-book-open"></i><span data-toggle="modal" data-target=".bs-modal-sm2">Filter</span></h5> </a>
+                </li>
+                <!-- /filter -->
+                <!-- kosarica -->
+                <li>
+                    <a href="kosarica.php"> <h5><i class="icon-basket"></i><span>Košarica</span></h5> </a>
+                </li>
+                <!-- /kosarica -->
+                <!-- uporabnik -->
+                <li>
+                    <a href="javascript:;"> <h5><i class="icon-user"></i><span>Uporabnik</span></h5> </a>
+                    <ul class="sub-menu">
+                        <li>
+                            <a href="urejanjeUporabnika.php"> <span>Nastavitve</span> </a>
+                        </li>
+                        <li>
+                            <a href="odjava.php"> <span>Odjava<span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- /uporabnik -->
+            </ul>
 					<!-- /za telefone -->
 					<!-- za velike zaslone -->
 					<ul class="nav hidden-xs">
@@ -113,73 +408,70 @@ $restavracija = mysqli_fetch_array($result2);
 							<!-- studentski boni da ali ne -->
 							<li>
 								<div>
-									<input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
+									<input onclick="filterBoni()" class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
 								</div>
 							</li>
 							<br />
 							<!-- /studentski boni da ali ne -->
 							<!-- hrana -->
 							<li>
-								<h4>Vrsta restavracije</h4>
+								<h4>Vrsta hrane</h4>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r1">
-									<label for="r1">Italijanska</label>
+									<input type="checkbox" id="r1" onclick="filterCheck()" class="check">
+									<label for="r1">Pica</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r2">
-									<label for="r2">Morska</label>
+									<input type="checkbox" id="r2" onclick="filterCheck()" class="check">
+									<label for="r2">Špageti</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r3">
-									<label for="r3">Fast food</label>
+									<input type="checkbox" id="r3" onclick="filterCheck()" class="check">
+									<label for="r3">Zrezek</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r4">
-									<label for="r4">Mehiška</label>
+									<input type="checkbox" id="r4" onclick="filterCheck()" class="check">
+									<label for="r4">Juha</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r5">
-									<label for="r5">Kitajska</label>
+									<input type="checkbox" id="r5" onclick="filterCheck()" class="check">
+									<label for="r5">Jed na žlico</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r6">
-									<label for="r6">Grill</label>
+									<input type="checkbox" id="r6" onclick="filterCheck()" class="check">
+									<label for="r6">Pijača</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r7">
-									<label for="r7">Japonska</label>
+									<input type="checkbox" id="r7" onclick="filterCheck()" class="check">
+									<label for="r7">Riba</label>
 								</div>
 							</li>
 							<li>
 								<div class="cs-checkbox m-b">
-									<input type="checkbox" id="r8">
-									<label for="r8">Drugo</label>
+									<input type="checkbox" id="r8" onclick="filterCheck()" class="check">
+									<label for="r8">Žar</label>
+								</div>
+							</li>
+							<li>
+								<div class="cs-checkbox m-b">
+									<input type="checkbox" id="r9" onclick="filterCheck()" class="check">
+									<label for="r19">Drugo</label>
 								</div>
 							</li>
 							<!-- /hrana -->
-							<!-- cena -->
-							<li>
-								<h4>Cena</h4>
-							</li>
-							<br />
-							<li>
-								<div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-							</li>
-							<!-- /cena -->
 						</div>
 					</ul>
 					<!-- za velike zaslone -->
@@ -334,9 +626,10 @@ $restavracija = mysqli_fetch_array($result2);
 																				<div class="product-meta">
 																					<h5 class="product-title">' . $meni['jed'] . '</h5>
 																					<span class="product-price">' . $meni['cena'] . ' €</span>
+																					<span class="vrsta">' . $meni['vrsta'] . '</span></br>
 																					<span>' . $meni['sestavine'] . '</span> </br>
 																					<span>' . $meni['info'] . '</span> </br></br>
-																					<span>Študentski boni: ' . $meni['boni'] . '</span>
+																					<span>Študentski boni:</span> <span class="boni">' . $meni['boni'] . '</span>
 																				</div>
 																				<div class="product-actions">
 																					<div>
@@ -572,45 +865,44 @@ $restavracija = mysqli_fetch_array($result2);
 							<br />
 							<!-- /studentski boni da ali ne -->
 							<!-- hrana -->
-							<h4>Vrsta kuhinje</h4>
+							<h4>Vrsta hrane</h4>
 							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r9">
-								<label for="r9">Italijanska</label>
-							</div>
-							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r10">
-								<label for="r10">Morska</label>
+								<input type="checkbox" id="1">
+								<label for="r1">Pica</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r11">
-								<label for="r11">Fast food</label>
+								<label for="r11">Špageti</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r12">
-								<label for="r12">Mehiška</label>
+								<label for="r12">Zrezek</label>
 							</div>
 							<div class="cs-checkbox m-b">
-								<input type="checkbox" id="r13">
-								<label for="r13">Kitajska</label>
+								<input type="checkbox" id="r4">
+								<label for="r4">Juha</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r14">
-								<label for="r14">Grill</label>
+								<label for="r14">Jed na žlico</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r15">
-								<label for="r15">Japonska</label>
+								<label for="r15">Pijača</label>
 							</div>
 							<div class="cs-checkbox m-b">
 								<input type="checkbox" id="r16">
-								<label for="r16">Drugo</label>
+								<label for="r16">Riba</label>
+							</div>
+							<div class="cs-checkbox m-b">
+								<input type="checkbox" id="r17">
+								<label for="r17">Žar</label>
+							</div>
+							<div class="cs-checkbox m-b">
+								<input type="checkbox" id="r18">
+								<label for="r18">Drugo</label>
 							</div>
 							<!-- /hrana -->
-							<!-- cena -->
-							<h4>Cena</h4>
-							<br />
-							<div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-							<!-- /cena -->
 						</div>
 					</div>
 					<div class="modal-footer no-border">

@@ -39,15 +39,236 @@ session_start();
     <link rel="stylesheet" href="styles/app.css">
     <link rel="stylesheet" href="styles/app.skins.css">
     <!-- endbuild -->
+    <script type="text/javascript">
+         
+        function reset() {
+            $('.restavracija').each(function() {
+                if (!$(this).is(":visible")) {
+                    $(this).show();
+                }
+            });
+        }
+       
+        function filter1() {
+            $('tr td:nth-child(5)').each(function() {
+                if ($(this).children().html()=="Ne") {
+                    $(this).parent().hide();
+                }
+            });
+        }
+        
+        var checked = [];
+
+        function filter2() {
+            checked = [];
+            $(".check").each(function() {
+                if ($(this).is(":checked")) {
+                    checked.push(true);
+                } else {
+                    checked.push(false);
+                }
+            });
+        }
+        
+        var checkedTel = [];
+        
+        function filter3() {
+            checkedTel = [];
+            $(".checkTel").each(function() {
+                if ($(this).is(":checked")) {
+                    checkedTel.push(true);
+                } else {
+                    checkedTel.push(false);
+                }
+            });
+        }
+            
+        var test1;
+        
+        function filterBoni() {
+            if(test1 == null)
+                test1 = true;;
+            
+            if (test1) {
+                filter1();
+                test1 = false;
+            } else {
+                reset();
+                test1 = true;
+            } 
+        }
+          
+        function filterCheck() {
+            if(checked==null) {
+                checked = [];
+            }
+            filter2();
+            
+            var test = false;
+            for (var i=0; i<checked.length; i++) {
+                if (checked[i]==true)
+                 test = true;
+            }
+            
+            if (test==true) {
+                $('.restavracija').each(function() {
+                    $(this).hide();
+                });  
+            } else {
+                $('.restavracija').each(function() {
+                    $(this).show();
+                });  
+            }
+            
+
+            if (checked[0]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Italijanska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[1]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Morska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[2]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Fast food") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[3]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Mehiška") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[4]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Kitajska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[5]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Grill") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[6]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Japonska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checked[7]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Drugo") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+        }  
+        
+        function filterCheckTel() {
+            if(checkedTel==null) {
+                checkedTel = [];
+            }
+            filter3();
+            console.log(checkedTel);
+            
+            var test = false;
+            for (var i=0; i<checkedTel.length; i++) {
+                if (checkedTel[i]==true)
+                    test = true;
+            }
+            
+            if (test==true) {
+                $('.restavracija').each(function() {
+                    $(this).hide();
+                });  
+            } else {
+                $('.restavracija').each(function() {
+                    $(this).show();
+                });  
+            }
+
+            if (checkedTel[0]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Italijanska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[1]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Morska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[2]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Fast food") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[3]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Mehiška") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[4]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Kitajska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[5]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Grill") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[6]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Japonska") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+            if (checkedTel[7]==true) {
+                $('tr td:nth-child(3)').each(function() {
+                    if ($(this).html()=="Drugo") {
+                        $(this).parent().show();
+                    }
+                });
+            }
+        }
+    </script>
 </head>
 
 <body class="page-loading">
 <!-- page loading spinner -->
-<div class="pageload">
-    <div class="pageload-inner">
-        <div class="sk-rotating-plane"></div>
-    </div>
-</div>
+ <div class="pageload">
+     <div class="pageload-inner">
+         <div class="sk-rotating-plane"></div>
+     </div>
+ </div>
 <!-- /page loading spinner -->
 <div class="app layout-fixed-header">
     <!-- sidebar panel -->
@@ -86,7 +307,7 @@ session_start();
                     <a href="javascript:;"> <h5><i class="icon-user"></i><span>Uporabnik</span></h5> </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="edituser.php"> <span>Nastavitve</span> </a>
+                            <a href="urejanjeUporabnika.php"> <span>Nastavitve</span> </a>
                         </li>
                         <li>
                             <a href="odjava.php"> <span>Odjava<span> </a>
@@ -102,7 +323,7 @@ session_start();
                     <!-- studentski boni da ali ne -->
                     <li>
                         <div>
-                            <input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
+                            <input onclick="filterBoni()" class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
                         </div>
                     </li>
                     <br />
@@ -113,62 +334,53 @@ session_start();
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r1">
+                            <input type="checkbox" id="r1" onclick="filterCheck()" class="check">
                             <label for="r1">Italijanska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r2">
+                            <input type="checkbox" id="r2" onclick="filterCheck()" class="check">
                             <label for="r2">Morska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r3">
+                            <input type="checkbox" id="r3" onclick="filterCheck()" class="check">
                             <label for="r3">Fast food</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r4">
+                            <input type="checkbox" id="r4" onclick="filterCheck()" class="check">
                             <label for="r4">Mehiška</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r5">
+                            <input type="checkbox" id="r5" onclick="filterCheck()" class="check">
                             <label for="r5">Kitajska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r6">
+                            <input type="checkbox" id="r6" onclick="filterCheck()" class="check">
                             <label for="r6">Grill</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r7">
+                            <input type="checkbox" id="r7" onclick="filterCheck()" class="check">
                             <label for="r7">Japonska</label>
                         </div>
                     </li>
                     <li>
                         <div class="cs-checkbox m-b">
-                            <input type="checkbox" id="r8">
+                            <input type="checkbox" id="r8" onclick="filterCheck()" class="check">
                             <label for="r8">Drugo</label>
                         </div>
                     </li>
                     <!-- /hrana -->
-                    <!-- cena -->
-                    <li>
-                        <h4>Cena</h4>
-                    </li>
-                    <br />
-                    <li>
-                        <div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-                    </li>
-                    <!-- /cena -->
                 </div>
             </ul>
             <!-- za velike zaslone -->
@@ -190,7 +402,7 @@ session_start();
                 </div>
                 <!-- /toggle offscreen menu -->
                 <!-- logo -->
-                <a class="brand-logo"> <span>REACTOR</span>
+                <a class="brand-logo"> <span>POJEJ.ME</span>
                 </a>
                 <!-- /logo -->
             </div>
@@ -212,7 +424,7 @@ session_start();
                     </li>
 
                     <li class="navbar-form search-form hide">
-                        <input type="submit" name="submit" value="Išči" class="btn btn-primary btn" />
+                        <input type="submit" name="isci" value="Išči" class="btn btn-primary btn" />
                     </li>
 
                 </ul>
@@ -221,30 +433,28 @@ session_start();
 
             <ul class="nav navbar-nav navbar-right hidden-xs">
                 <!-- uporabnik-->
-                <li>
-                    <?php
-                    if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
-                        <a href="javascript:;" class="ripple"
-                           data-toggle="dropdown"> <img src="images/avatar.jpg"
-                                                        class="header-avatar img-circle" alt="user" title="user">
-                            <span><?php echo $_SESSION['ime']; ?> </span>
-                            <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="urejanjeUporabnika.php">Nastavitve</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a href="odjava.php">Odjava</a>
-                            </li>
-                        </ul>
-                        <?php
-                    }else { ?>
-                        <a href="uporabnik-prijava.html">Prijava</a>
-                        <?php
-                    }
-                    ?></li>
+               <li>
+		<?php
+		if (isset($_SESSION['loggedin_uporabnik']) && $_SESSION['loggedin_uporabnik'] == true) { ?>
+			<a href="javascript:;" class="ripple" data-toggle="dropdown"> <img src="images/avatar.jpg" class="header-avatar img-circle" alt="user" title="user">
+			<span><?php echo $_SESSION['ime']; ?> </span>
+			<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="urejanjeUporabnika.php">Nastavitve</a>
+				</li>
+				<li role="separator" class="divider"></li>
+				<li>
+					<a href="odjava.php">Odjava</a>
+				</li>
+				</ul>
+				<?php
+		}else { ?>
+			<a href="uporabnik-prijava.html">Prijava</a>
+			<?php
+		}
+		?></li>
                 <!-- /uporabnik-->
             </ul>
         </div>
@@ -263,35 +473,116 @@ session_start();
                             <tr>
                                 <th class="col-md-2">Logotip</th>
                                 <th class="col-md-3">Naziv</th>
+                                <th class="col-md-3">Vrsta</th>
                                 <th class="col-md-3">Opis</th>
                                 <th class="col-md-2">Boni</th>
                                 <th class="col-md-2"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <?php
-
-                            if (!isset($_POST['submit']) || $_POST['search'] == "") {
-                                $query = "SELECT * FROM restavracija";
-                                $result = mysqli_query($con, $query);
-
-                                while ($row = mysqli_fetch_array($result)) {
-                                    echo '
-                                <tr>
-                                    <td><img class="card-img-top img-responsive center-block" alt="" style="max-height: 100px; max-width: 125px" src="data:image/jpeg;base64,'.base64_encode( $row['slika'] ).'" ></td>
-                                    <td></br></br>' . $row['ime'] . '</td>
-                                    <td></br>Vrsta: ' . $row['vrsta'] . '<br/> Kraj: ' . $row['kraj'] . ', ' . $row['naslov'] . '<br/> Telefonska: ' . $row['number'] . '</td>
-                                    <td></br></br><h3 class="m-a-0 text-success">' . $row['boni'] . '</h3></td>
-                                    <td></br></br>
-                                        <form action="pregledRestavracije.php" method="post">
-                             				<input type="hidden" value="'.$row['id_restavracija'].'" name="id_restavracija">
-                                            <input type="submit" button type="button" class="btn btn-info" name="ponudba" value="Ponudba">
-                                        </form>
-                                    </td>
-                                </tr>';
-                                }
-                            }
-                            $con -> close();
+                            <?php                                       
+                                include 'connection.php';
+                                        
+                                 if (isset($_POST['isci'])) {
+                                            
+                                    $search = $_POST['search'];
+                                            
+                                    if ($search!="") {
+                                                
+                                        $query = "SELECT * FROM restavracija WHERE kraj LIKE '$search%' OR ime LIKE '$search%' AND vrsta LIKE '$search%'"; 
+                                        $result = mysqli_query($con, $query);
+                                                                                    
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $img = $row[1];
+                                            echo "<tr role='row' class='restavracija'>
+                                                  <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
+                                                  <td>$row[2]</td>
+                                                  <td>$row[3]</td>
+                                                  <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
+                                                  <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
+                                                  <td><form action='pregledRestavracije.php' method='post'>
+                                                        <input type='hidden' value='".$row["id_restavracija"]."' name='id_restavracija'>
+                                                        <input type='submit' button type='button' class='btn btn-info' name='ponudba' value='Ponudba'>
+                                                        </form>
+                                                  </td>
+                                                  </tr>";
+                                        }   
+                                    } else {
+                                                
+                                        $query = "SELECT * FROM restavracija";
+                                        $result = mysqli_query($con, $query);
+                                                                                    
+                                        while ($row = mysqli_fetch_array($result)) {
+                                            $img = $row[1];
+                                            echo "<tr role='row' class='restavracija'>
+                                                  <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
+                                                  <td>$row[2]</td>
+                                                  <td>$row[3]</td> 
+                                                  <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
+                                                  <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
+                                                  <td><form action='pregledRestavracije.php' method='post'>
+                                                        <input type='hidden' value='".$row["id_restavracija"]."' name='id_restavracija'>
+                                                        <input type='submit' button type='button' class='btn btn-info' name='ponudba' value='Ponudba'>
+                                                        </form>
+                                                  </td>
+                                                  </tr>";
+                                        }
+                                     }
+                                  } else if (!isset($_POST['submit'])) {
+                                            
+                                    $query = "SELECT * FROM restavracija";
+                                    $result = mysqli_query($con, $query);
+                                                                                
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $img = $row[1];
+                                        echo "<tr role='row' class='restavracija'>
+                                              <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
+                                              <td>$row[2]</td>
+                                              <td>$row[3]</td>
+                                              <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
+                                              <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
+                                              <td><form action='pregledRestavracije.php' method='post'>
+                                                        <input type='hidden' value='".$row["id_restavracija"]."' name='id_restavracija'>
+                                                        <input type='submit' button type='button' class='btn btn-info' name='ponudba' value='Ponudba'>
+                                                        </form>
+                                                  </td>
+                                              </tr>";
+                                    }
+                                  } else {
+                                      
+                                    $filter1 = $_POST['filter1'];
+                                    $filter2 = $_POST['filter2'];
+                                    
+                                    if (isset($_POST['filter1']) && isset($_POST['filter2']) && $_POST['filter1']!="" && $_POST['filter2']!="") {
+                                        $query = "SELECT * FROM restavracija WHERE kraj LIKE '$filter1%' OR ime LIKE '$filter1%' AND vrsta LIKE '$filter2%'"; 
+                                    } else if (isset($_POST['filter1'])) {
+                                        $query = "SELECT * FROM restavracija WHERE kraj LIKE '$filter1%' OR ime LIKE '$filter1%'"; 
+                                    } else if (isset($_POST['filter2'])) {
+                                        $query = "SELECT * FROM restavracija WHERE vrsta LIKE '$filter2%'"; 
+                                    } else {
+                                        echo "napaka";
+                                    }
+                                            
+                                    $result = mysqli_query($con, $query);
+                                                                                
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $img = $row[1];
+                                        echo "<tr role='row' class='restavracija'>
+                                              <td><img src='data:image/jpeg;base64,".base64_encode($img)."'style=width:50px;height:50px/></td>
+                                              <td>$row[2]</td>
+                                              <td>$row[3]</td> 
+                                              <td>Kraj: $row[8]<br/> Naslov: $row[9]<br/> Telefonska: $row[5]</td>
+                                              <td><h3 class='m-a-0 text-success'>$row[7]</h3></td>
+                                              <td><form action='pregledRestavracije.php' method='post'>
+                                                        <input type='hidden' value='".$row["id_restavracija"]."' name='id_restavracija'>
+                                                        <input type='submit' button type='button' class='btn btn-info' name='ponudba' value='Ponudba'>
+                                                        </form>
+                                                  </td>
+                                              </tr>";
+                                     }
+                                   }
+                                         
+                                $con -> close();
                             ?>
                             </tbody>
                         </table>
@@ -325,12 +616,13 @@ session_start();
                 <h4 class="modal-title">Iskanje</h4>
             </div>
             <div class="modal-body">
+            <form action="pregledRestavracij.php" method="POST">
                 <div class="form-group">
 							<span class="input m-b-md">
-								<input class="input__field" type="text" id="input-1">
+								<input class="input__field" type="text" id="input-1" name="filter1">
 								<label class="input__label" for="input-1"> <span class="input__label-content">Lokacija</span> </label> </span>
                     <span class="input m-b-md">
-								<input class="input__field" type="text" id="input-2">
+								<input class="input__field" type="text" id="input-2" name="filter2">
 								<label class="input__label" for="input-2"> <span class="input__label-content">Restavracija</span> </label> </span>
                 </div>
             </div>
@@ -338,10 +630,11 @@ session_start();
                 <button type="button" class="btn btn-default" data-dismiss="modal">
                     Zapri
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button type="submit" name="submit" class="btn btn-primary">
                     Išči
                 </button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -359,57 +652,49 @@ session_start();
             <div class="modal-body">
                 <div class="form-group">
                     <!-- studentski boni da ali ne -->
-                    <input class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
+                    <input onclick="filterBoni()" class="to-labelauty" type="checkbox" data-labelauty="Študentski boni" checked/>
                     <br />
                     <!-- /studentski boni da ali ne -->
                     <!-- hrana -->
-                    <h4>Vrsta kuhinje</h4>
+                    <h4>Vrsta restavracije</h4>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r9">
+                        <input type="checkbox" id="r9" onclick="filterCheckTel()" class="checkTel">
                         <label for="r9">Italijanska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r10">
+                        <input type="checkbox" id="r10" onclick="filterCheckTel()" class="checkTel">
                         <label for="r10">Morska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r11">
+                        <input type="checkbox" id="r11" onclick="filterCheckTel()" class="checkTel">
                         <label for="r11">Fast food</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r12">
+                        <input type="checkbox" id="r12" onclick="filterCheckTel()" class="checkTel">
                         <label for="r12">Mehiška</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r13">
+                        <input type="checkbox" id="r13" onclick="filterCheckTel()" class="checkTel">
                         <label for="r13">Kitajska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r14">
+                        <input type="checkbox" id="r14" onclick="filterCheckTel()" class="checkTel">
                         <label for="r14">Grill</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r15">
+                        <input type="checkbox" id="r15" onclick="filterCheckTel()" class="checkTel">
                         <label for="r15">Japonska</label>
                     </div>
                     <div class="cs-checkbox m-b">
-                        <input type="checkbox" id="r16">
+                        <input type="checkbox" id="r16" onclick="filterCheckTel()" class="checkTel">
                         <label for="r16">Drugo</label>
                     </div>
                     <!-- /hrana -->
-                    <!-- cena -->
-                    <h4>Cena</h4>
-                    <br />
-                    <div class="slider slider-primary" data-values="[75,300]" data-range="true" data-min="0" data-max="500"></div>
-                    <!-- /cena -->
                 </div>
             </div>
             <div class="modal-footer no-border">
                 <button type="button" class="btn btn-default" data-dismiss="modal">
                     Zapri
-                </button>
-                <button type="button" class="btn btn-primary">
-                    Išči
                 </button>
             </div>
 
@@ -469,13 +754,7 @@ session_start();
 <script src="scripts/tables/table-edit.js"></script>
 <script src="scripts/ui/alert.js"></script>
 <script src="scripts/forms/plugins.js"></script>
-<script type="text/javascript">
-    $('.slider').each(function() {
-        var data = $(this).data();
-        $(this).slider(data);
-    });
-</script>
 <!-- end initialize page scripts -->
 </body>
 
-</html>
+</html>				

@@ -192,77 +192,7 @@ $slika = mysqli_fetch_array($result2);
 						</div>
 						<div class="row">
 							<div class="card-block p-a-0">
-								<div class="row">
-									<div class="col-md-8">
-										<div class="card bg-white no-border">
-											<div class="card-block">
-												<div class="text-center">
-													<h3 class="m-t">Obvestilo</h3>
-													<p>
-														Obvestite svoje stranke o novih dogodkih
-													</p>
-												</div>
-												<form action="dodajOdstraniObvestilo.php" method="post">
-													<div class="text-center">
-														<textarea class="form-control m-b" id="obvestilo" name="obvestilo" rows="15" placeholder="Vnesite obvestilo ..."></textarea>
-													</div>
-													<div class="text-center">
-														<div class="card-block demo-button">
-															<div class="tool-button">
-																<input type="submit" name="submit" button type="button" class="btn btn-default btn-lg" value="Objavi"/>
-															</div>
-														</div>
-													</div>
-												</form>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-4">
-										<div class="card bg-white no-border">
-											<div class="card-block">
-												<h3 class="m-t">Dogodki</h3>
-												<ul class="notifications">
-													<li>
-														<ul class="notifications-list">
-															<li>
-																<a href="javascript:;">
-																<div class="notification-icon">
-																	<div class="circle-icon bg-success text-white">
-																		<i class="icon-bulb"></i>
-																	</div>
-																</div> <span class="notification-message"><b>Sean</b> launched a new application</span> <span class="time">2s</span> </a>
-															</li>
-															<li>
-																<a href="javascript:;">
-																<div class="notification-icon">
-																	<div class="circle-icon bg-danger text-white">
-																		<i class="icon-cursor"></i>
-																	</div>
-																</div> <span class="notification-message"><b>Removed calendar</b> from app list</span> <span class="time">4h</span> </a>
-															</li>
-															<li>
-																<a href="javascript:;">
-																<div class="notification-icon">
-																	<div class="circle-icon bg-primary text-white">
-																		<i class="icon-basket"></i>
-																	</div>
-																</div> <span class="notification-message"><b>Denise</b> bought <b>Urban Admin Kit</b></span> <span class="time">2d</span> </a>
-															</li>
-															<li>
-																<a href="javascript:;">
-																<div class="notification-icon">
-																	<div class="circle-icon bg-info text-white">
-																		<i class="icon-bubble"></i>
-																	</div>
-																</div> <span class="notification-message"><b>Vincent commented</b> on one of your items</span> <span class="time">2s</span> </a>
-															</li>
-														</ul>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+
 								<h3>Nedavna obvestila</h3></br>
 <?php
 while ($obvestilo = mysqli_fetch_array($result)) {
@@ -290,6 +220,32 @@ echo '<div class="tile-container">
 								?>
 
 
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<div class="card bg-white no-border">
+										<div class="card-block">
+											<div class="text-center">
+												<h3 class="m-t">Obvestilo</h3>
+												<p>
+													Obvestite svoje stranke o novih dogodkih
+												</p>
+											</div>
+											<form action="dodajOdstraniObvestilo.php" method="post">
+												<div class="text-center">
+													<textarea class="form-control m-b" id="obvestilo" name="obvestilo" rows="15" placeholder="Vnesite obvestilo ..."></textarea>
+												</div>
+												<div class="text-center">
+													<div class="card-block demo-button">
+														<div class="tool-button">
+															<input type="submit" name="submit" button type="button" class="btn btn-default btn-lg" value="Objavi"/>
+														</div>
+													</div>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

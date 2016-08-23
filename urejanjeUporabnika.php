@@ -45,7 +45,7 @@
 					</div>
 					<!-- /toggle offscreen menu -->
 					<!-- logo -->
-					<a class="brand-logo"> <span>REACTOR</span>
+					<a class="brand-logo"> <span>POJEJ.ME</span>
 					</a>
 					<!-- /logo -->
 				</div>
