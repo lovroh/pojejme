@@ -68,7 +68,7 @@
 							</li>
 
 							<li class="navbar-form search-form hide">
-								<input type="submit" name="submit" value="Išči" class="btn btn-primary btn" />
+								<input type="submit" name="isci" value="Išči" class="btn btn-primary btn" />
 							</li>
 
 						</ul>

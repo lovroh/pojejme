@@ -168,167 +168,6 @@ $restavracija = mysqli_fetch_array($result2);
 			}
         } 
         
-        /*
-        function filter2() {
-            if ($('#r1').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Italijanska") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Italijanska") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter3() {
-            if ($('#r2').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Morska") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Morksa") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter4() {
-            if ($('#r3').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Fast food") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Fast food") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter5() {
-            if ($('#r4').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Mehiška") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Mehiška") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter6() {
-            if ($('#r5').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Kitajska") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Kitajska") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter7() {
-            if ($('#r6').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Grill") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Grill") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter8() {
-            if ($('#r7').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Japonska") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden")) {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Japonska") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }
-        
-        function filter9() {
-            if ($('#r8').is(":checked")){
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Drugo") {
-                        $(this).parent().parent().parent().parent().parent().hide();
-                    } else {
-                        if ($(this).is(":hidden"))   {
-                            $(this).parent().parent().parent().parent().parent().show();
-                        }
-                    }
-                });
-            } else {
-                $('.vrsta').each(function() {
-                    if ($(this).html()!="Drugo") {
-                        $(this).parent().parent().parent().parent().parent().show();
-                    }
-                });
-            }
-        }*/
-        
         var test1;
         
         function filterBoni() {
@@ -511,7 +350,7 @@ $restavracija = mysqli_fetch_array($result2);
 							</li>
 
 							<li class="navbar-form search-form hide">
-								<input type="submit" name="submit" value="Išči" class="btn btn-primary btn" />
+								<input type="submit" name="isci" value="Išči" class="btn btn-primary btn" />
 							</li>
 						</ul>
 					</form>
@@ -819,6 +658,7 @@ $restavracija = mysqli_fetch_array($result2);
 		<!-- iskanje modal mobile -->
 		<div class="modal bs-modal-sm1" tabindex="-1" role="dialog" aria-hidden="true">
 			<div class="modal-dialog">
+			    <Form action="pregledRestavracij.php" method="POST">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
@@ -829,10 +669,10 @@ $restavracija = mysqli_fetch_array($result2);
 					<div class="modal-body">
 						<div class="form-group">
 							<span class="input m-b-md">
-								<input class="input__field" type="text" id="input-1">
+								<input class="input__field" type="text" id="input-1" name="filter1">
 								<label class="input__label" for="input-1"> <span class="input__label-content">Lokacija</span> </label> </span>
 							<span class="input m-b-md">
-								<input class="input__field" type="text" id="input-2">
+								<input class="input__field" type="text" id="input-2" name="filter2">
 								<label class="input__label" for="input-2"> <span class="input__label-content">Restavracija</span> </label> </span>
 						</div>
 					</div>
@@ -840,11 +680,10 @@ $restavracija = mysqli_fetch_array($result2);
 						<button type="button" class="btn btn-default" data-dismiss="modal">
 							Zapri
 						</button>
-						<button type="button" class="btn btn-primary">
-							Išči
-						</button>
+						<input type="submit" name="submit" value="Išči" class="btn btn-primary"/>
 					</div>
 				</div>
+				</form>
 			</div>
 		</div>
 		<!-- /iskanje modal mobile-->
